@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AnalyticsWindow</class>
+ <widget class="QWidget" name="AnalyticsWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Exam Schedule Analytics Dashboard</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="titleLabel">
+     <property name="text">
+      <string>📊 Exam Schedule Analytics Dashboard</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="styleSheet">
+      <string>QLabel {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2E86AB;
+    padding: 10px;
+    background-color: #F5F5F5;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="instructionLabel">
+     <property name="text">
+      <string>📌 Use "⬅️ Back to Main" button below or press ESC to return to the main application</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="styleSheet">
+      <string>QLabel {
+    font-size: 12px;
+    font-style: italic;
+    color: #666666;
+    padding: 5px;
+    background-color: #F0F8FF;
+    border: 1px solid #E0E0E0;
+    border-radius: 3px;
+    margin: 5px;
+}</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QScrollArea" name="scrollArea">
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1180</width>
+        <height>1600</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <property name="spacing">
+        <number>15</number>
+       </property>
+       <property name="leftMargin">
+        <number>15</number>
+       </property>
+       <property name="topMargin">
+        <number>15</number>
+       </property>
+       <property name="rightMargin">
+        <number>15</number>
+       </property>
+       <property name="bottomMargin">
+        <number>15</number>
+       </property>
+       
+       <!-- Chart 1: Exam Load Overview -->
+       <item row="0" column="0">
+        <widget class="QGroupBox" name="examLoadGroupBox">
+         <property name="title">
+          <string>🎯 1. Exam Load Overview</string>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>550</width>
+           <height>350</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>QGroupBox {
+    font-weight: bold;
+    border: 2px solid #cccccc;
+    border-radius: 8px;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 10px;
+    padding: 0 5px 0 5px;
+}</string>
+         </property>
+         <layout class="QVBoxLayout" name="examLoadLayout">
+          <item>
+           <widget class="QLabel" name="examLoadSubtitle">
+            <property name="text">
+             <string>📊 Exams Scheduled per Day</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="examLoadChartWidget" native="true">
+            <property name="minimumSize">
+             <size>
+              <width>500</width>
+              <height>280</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       
+       <!-- Chart 2: Department Distribution -->
+       <item row="0" column="1">
+        <widget class="QGroupBox" name="departmentGroupBox">
+         <property name="title">
+          <string>🧑‍🏫 2. Department-wise Exam Distribution</string>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>550</width>
+           <height>350</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>QGroupBox {
+    font-weight: bold;
+    border: 2px solid #cccccc;
+    border-radius: 8px;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 10px;
+    padding: 0 5px 0 5px;
+}</string>
+         </property>
+         <layout class="QVBoxLayout" name="departmentLayout">
+          <item>
+           <widget class="QLabel" name="departmentSubtitle">
+            <property name="text">
+             <string>🥧 Exam Distribution by Department</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="departmentChartWidget" native="true">
+            <property name="minimumSize">
+             <size>
+              <width>500</width>
+              <height>280</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       
+       <!-- Chart 3: Room Utilization -->
+       <item row="1" column="0">
+        <widget class="QGroupBox" name="roomUtilizationGroupBox">
+         <property name="title">
+          <string>🏫 3. Room Utilization</string>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>550</width>
+           <height>350</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>QGroupBox {
+    font-weight: bold;
+    border: 2px solid #cccccc;
+    border-radius: 8px;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 10px;
+    padding: 0 5px 0 5px;
+}</string>
+         </property>
+         <layout class="QVBoxLayout" name="roomUtilizationLayout">
+          <item>
+           <widget class="QLabel" name="roomUtilizationSubtitle">
+            <property name="text">
+             <string>📈 Room Capacity Utilization (%)</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="roomUtilizationChartWidget" native="true">
+            <property name="minimumSize">
+             <size>
+              <width>500</width>
+              <height>280</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       
+       <!-- Chart 4: Conflict Detection -->
+       <item row="1" column="1">
+        <widget class="QGroupBox" name="conflictGroupBox">
+         <property name="title">
+          <string>⚡ 4. Conflict Detection Summary</string>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>550</width>
+           <height>350</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>QGroupBox {
+    font-weight: bold;
+    border: 2px solid #cccccc;
+    border-radius: 8px;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 10px;
+    padding: 0 5px 0 5px;
+}</string>
+         </property>
+         <layout class="QVBoxLayout" name="conflictLayout">
+          <item>
+           <widget class="QLabel" name="conflictSubtitle">
+            <property name="text">
+             <string>📊 Conflicts Detected per Course</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="conflictChartWidget" native="true">
+            <property name="minimumSize">
+             <size>
+              <width>500</width>
+              <height>280</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       
+       <!-- Chart 5: Exam Duration & Overlaps -->
+       <item row="2" column="0" colspan="2">
+        <widget class="QGroupBox" name="examTimingGroupBox">
+         <property name="title">
+          <string>⏰ 5. Exam Duration &amp; Overlaps</string>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>1100</width>
+           <height>350</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>QGroupBox {
+    font-weight: bold;
+    border: 2px solid #cccccc;
+    border-radius: 8px;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 10px;
+    padding: 0 5px 0 5px;
+}</string>
+         </property>
+         <layout class="QVBoxLayout" name="examTimingLayout">
+          <item>
+           <widget class="QLabel" name="examTimingSubtitle">
+            <property name="text">
+             <string>📊 Exam Timings Overview (Gantt-Style)</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="examTimingChartWidget" native="true">
+            <property name="minimumSize">
+             <size>
+              <width>1050</width>
+              <height>280</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       
+       <!-- Chart 6: Room Load Over Days -->
+       <item row="3" column="0">
+        <widget class="QGroupBox" name="roomLoadGroupBox">
+         <property name="title">
+          <string>📈 6. Room Load Over Days</string>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>550</width>
+           <height>350</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>QGroupBox {
+    font-weight: bold;
+    border: 2px solid #cccccc;
+    border-radius: 8px;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 10px;
+    padding: 0 5px 0 5px;
+}</string>
+         </property>
+         <layout class="QVBoxLayout" name="roomLoadLayout">
+          <item>
+           <widget class="QLabel" name="roomLoadSubtitle">
+            <property name="text">
+             <string>🕹️ Room Load Trends Over Exam Days</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="roomLoadChartWidget" native="true">
+            <property name="minimumSize">
+             <size>
+              <width>500</width>
+              <height>280</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       
+       <!-- Chart 7: Student Exam Distribution -->
+       <item row="3" column="1">
+        <widget class="QGroupBox" name="studentDistributionGroupBox">
+         <property name="title">
+          <string>👨‍🎓 7. Student Exam Count Distribution</string>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>550</width>
+           <height>350</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>QGroupBox {
+    font-weight: bold;
+    border: 2px solid #cccccc;
+    border-radius: 8px;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 10px;
+    padding: 0 5px 0 5px;
+}</string>
+         </property>
+         <layout class="QVBoxLayout" name="studentDistributionLayout">
+          <item>
+           <widget class="QLabel" name="studentDistributionSubtitle">
+            <property name="text">
+             <string>📊 Number of Exams per Student</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="studentDistributionChartWidget" native="true">
+            <property name="minimumSize">
+             <size>
+              <width>500</width>
+              <height>280</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="buttonLayout">
+     <item>
+      <widget class="QPushButton" name="refreshButton">
+       <property name="text">
+        <string>🔄 Refresh Data</string>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>120</width>
+         <height>35</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string>QPushButton {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 8px;
+}
+QPushButton:hover {
+    background-color: #45a049;
+}
+QPushButton:pressed {
+    background-color: #3d8b40;
+}</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="exportButton">
+       <property name="text">
+        <string>📄 Export Report</string>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>120</width>
+         <height>35</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string>QPushButton {
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 8px;
+}
+QPushButton:hover {
+    background-color: #1976D2;
+}
+QPushButton:pressed {
+    background-color: #1565C0;
+}</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="closeButton">
+       <property name="text">
+        <string>⬅️ Back to Main</string>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>120</width>
+         <height>35</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string>QPushButton {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 8px;
+}
+QPushButton:hover {
+    background-color: #d32f2f;
+}
+QPushButton:pressed {
+    background-color: #b71c1c;
+}</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

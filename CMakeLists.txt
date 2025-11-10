@@ -22,7 +22,11 @@ find_package(Qt6 REQUIRED COMPONENTS
     Core 
     Gui 
     Widgets
+    Charts
 )
+
+# Try to find DataVisualization, but make it optional
+find_package(Qt6 QUIET COMPONENTS DataVisualization)
 
 # Add PrintSupport for PDF export
 find_package(Qt6 REQUIRED COMPONENTS PrintSupport)
@@ -45,7 +49,8 @@ include_directories(${Qt6Gui_INCLUDE_DIRS})
 include_directories(${Qt6Widgets_INCLUDE_DIRS})
 
 # Find Qt package components
-find_package(Qt6 REQUIRED COMPONENTS Core Gui Widgets)
+find_package(Qt6 REQUIRED COMPONENTS Core Gui Widgets Charts)
+find_package(Qt6 QUIET COMPONENTS DataVisualization)
 
 # Source files
 set(SOURCES
@@ -56,6 +61,7 @@ set(SOURCES
     src/scheduletablemodel.cpp
     src/DatabaseManager.cpp
     src/TimetableGenerator.cpp
+    src/analyticswindow.cpp
 )
 
 # Header files
@@ -64,6 +70,7 @@ set(HEADERS
     include/connectdialog.h
     include/generatetimetabledialog.h
     include/scheduletablemodel.h
+    include/analyticswindow.h
 )
 
 # UI files
@@ -71,6 +78,7 @@ set(UI_FILES
     ui/mainwindow.ui
     ui/connectdialog.ui
     ui/generatetimetabledialog.ui
+    ui/analyticswindow.ui
 )
 
 # Create executable
@@ -86,7 +94,14 @@ target_link_libraries(TimetablePlannerGUI PRIVATE
     Qt::Gui
     Qt::Widgets
     Qt::PrintSupport
+    Qt::Charts
 )
+
+# Link DataVisualization if available
+if(TARGET Qt::DataVisualization)
+    target_link_libraries(TimetablePlannerGUI PRIVATE Qt::DataVisualization)
+    target_compile_definitions(TimetablePlannerGUI PRIVATE HAVE_DATAVISUALIZATION)
+endif()
 
 # Set the UI directory for the target
 set_target_properties(TimetablePlannerGUI PROPERTIES

@@ -10,6 +10,9 @@ QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
+// Forward declaration
+class AnalyticsWindow;
+
 class MainWindow : public QMainWindow {
     Q_OBJECT
 
@@ -25,6 +28,7 @@ private slots:
     void onExportText();
     void onExportPDF();
     void onShiftCourse();
+    void onAnalytics();
     void onAbout();
 
 private:
@@ -38,6 +42,7 @@ private:
     bool isConnected;
     bool scheduleGenerated;
     ScheduleTableModel *scheduleModel;
+    AnalyticsWindow *analyticsWindow;
 };
 
 #endif // MAINWINDOW_H

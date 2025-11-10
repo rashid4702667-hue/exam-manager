@@ -58,6 +58,8 @@
     <addaction name="actionGenerate"/>
     <addaction name="actionViewSchedule"/>
     <addaction name="separator"/>
+    <addaction name="actionAnalytics"/>
+    <addaction name="separator"/>
     <addaction name="actionShiftCourse"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
@@ -84,6 +86,7 @@
    <addaction name="actionConnect"/>
    <addaction name="actionGenerate"/>
    <addaction name="actionViewSchedule"/>
+   <addaction name="actionAnalytics"/>
    <addaction name="separator"/>
    <addaction name="actionExportCSV"/>
    <addaction name="actionExportText"/>
@@ -156,6 +159,17 @@
   <action name="actionAbout">
    <property name="text">
     <string>About</string>
+   </property>
+  </action>
+  <action name="actionAnalytics">
+   <property name="text">
+    <string>📊 Analytics Dashboard</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+A</string>
+   </property>
+   <property name="toolTip">
+    <string>Open Analytics Dashboard with Charts and Statistics</string>
    </property>
   </action>
  </widget>

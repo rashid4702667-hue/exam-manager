@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "connectdialog.h"
 #include "generatetimetabledialog.h"
+#include "analyticswindow.h"
 #include <QMessageBox>
 #include <QFileDialog>
 
@@ -12,6 +13,7 @@ MainWindow::MainWindow(QWidget *parent)
     , isConnected(false)
     , scheduleGenerated(false)
     , scheduleModel(nullptr)  // Initialize to nullptr first
+    , analyticsWindow(nullptr)
 {
     try {
         qDebug() << "Creating UI...";
@@ -49,6 +51,10 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     try {
+        if (analyticsWindow) {
+            delete analyticsWindow;
+            analyticsWindow = nullptr;
+        }
         if (ui) {
             delete ui;
             ui = nullptr;
@@ -70,6 +76,7 @@ void MainWindow::setupConnections()
     connect(ui->actionExportText, &QAction::triggered, this, &MainWindow::onExportText);
     connect(ui->actionExportPDF, &QAction::triggered, this, &MainWindow::onExportPDF);
     connect(ui->actionShiftCourse, &QAction::triggered, this, &MainWindow::onShiftCourse);
+    connect(ui->actionAnalytics, &QAction::triggered, this, &MainWindow::onAnalytics);
     connect(ui->actionAbout, &QAction::triggered, this, &MainWindow::onAbout);
 }
 
@@ -197,6 +204,28 @@ void MainWindow::onShiftCourse()
     QMessageBox::information(this, "Not Implemented", "Course shifting feature coming soon!");
 }
 
+void MainWindow::onAnalytics()
+{
+    if (!analyticsWindow) {
+        analyticsWindow = new AnalyticsWindow(&dbManager, &generator, this);
+        // Set window modality and properties for better UX
+        analyticsWindow->setWindowModality(Qt::ApplicationModal);
+        analyticsWindow->setAttribute(Qt::WA_DeleteOnClose, false);
+    }
+    
+    // Update the database and generator references in case they changed
+    analyticsWindow->setDatabaseManager(&dbManager);
+    analyticsWindow->setTimetableGenerator(&generator);
+    
+    analyticsWindow->refreshAnalytics();
+    analyticsWindow->show();
+    analyticsWindow->raise();
+    analyticsWindow->activateWindow();
+    
+    // Optionally hide the main window to focus on analytics
+    // this->hide();
+}
+
 void MainWindow::onAbout()
 {
     QMessageBox::about(this, "About Timetable Planner",
@@ -226,4 +255,5 @@ void MainWindow::enableScheduleActions(bool enable)
     ui->actionExportText->setEnabled(enable && scheduleGenerated);
     ui->actionExportPDF->setEnabled(enable && scheduleGenerated);
     ui->actionShiftCourse->setEnabled(enable && scheduleGenerated);
+    ui->actionAnalytics->setEnabled(enable); // Analytics can work with or without generated schedule
 }

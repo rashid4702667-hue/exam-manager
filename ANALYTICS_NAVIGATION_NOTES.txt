@@ -1,0 +1,19 @@
+// Alternative implementation note: 
+// If you want even better modal behavior, you can change the inheritance in analyticswindow.h 
+// from QWidget to QDialog and adjust accordingly:
+
+/*
+class AnalyticsWindow : public QDialog  // instead of QWidget
+{
+    // ... rest of the class remains the same
+};
+
+// In main window:
+void MainWindow::onAnalytics()
+{
+    AnalyticsWindow analytics(&dbManager, this);
+    analytics.exec(); // Modal execution
+}
+*/
+
+// The current implementation with QWidget + proper parent handling should work well for your needs.

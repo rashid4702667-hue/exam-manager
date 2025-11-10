@@ -1,11 +1,8 @@
 #include "../include/TimetableGenerator.h"
 #include <iostream>
 #include <fstream>
-#include <QString>
-#include <QPdfWriter>
-#include <QPainter>
-#include <QTextDocument>
-#include <QPageSize>
+#include <sstream>
+#include <cstdio>
 
 TimetableGenerator::TimetableGenerator(DatabaseManager& db)
     : database(db), generated(false) {
@@ -176,138 +173,234 @@ bool TimetableGenerator::exportToPDF(const std::string& filename) {
         return false;
     }
 
-    // Set up the PDF writer
-    QString qfilename = QString::fromStdString(filename);
-    QPdfWriter writer(qfilename);
-    writer.setPageSize(QPageSize(QPageSize::A4));
-    writer.setPageMargins(QMarginsF(40, 40, 40, 40));  // Increased margins to match image
-    writer.setResolution(300);
-
-    QPainter painter(&writer);
-    QFont titleFont("Arial", 12, QFont::Bold);
-    QFont headerFont("Arial", 10, QFont::Normal);  // Normal weight for header
-    QFont normalFont("Arial", 10, QFont::Normal);  // Normal weight for content
-
-    // Calculate dimensions
-    const int pageWidth = writer.width();
-    const int leftMargin = 40;
-    const int topMargin = 40;
-    const int rowHeight = 20;  // Reduced for tighter rows like in image
-    const int headerRowHeight = 25;  // Slightly taller header row
+    std::ofstream file(filename, std::ios::binary);
     
-    // Calculate column widths based on content
-    const int totalWidth = pageWidth - (2 * leftMargin);
-    const int dayWidth = totalWidth * 0.12;        // ~12% of space
-    const int dateWidth = totalWidth * 0.12;       // ~12% of space
-    const int courseWidth = totalWidth * 0.12;     // ~12% of space
-    const int rollWidth = totalWidth * 0.40;       // ~40% of space
-    const int roomWidth = totalWidth * 0.12;       // ~12% of space
-    const int studentsWidth = totalWidth * 0.12;   // ~12% of space
-
-    // Draw title and header info (right-aligned)
-    int currentY = topMargin;
-    painter.setFont(titleFont);
-    painter.drawText(QRect(leftMargin, currentY, pageWidth - 2*leftMargin, headerRowHeight),
-                    Qt::AlignRight, "EXAM TIMETABLE");
-
-    currentY += headerRowHeight;
-    painter.setFont(normalFont);
-    painter.drawText(QRect(leftMargin, currentY, pageWidth - 2*leftMargin, rowHeight),
-                    Qt::AlignRight, "All exams scheduled at 2:00 PM - 5:00 PM");
-
-    currentY += rowHeight;
-    painter.drawText(QRect(leftMargin, currentY, pageWidth - 2*leftMargin, rowHeight),
-                    Qt::AlignRight, "Room capacity: 55 students per room");
-
-    currentY += rowHeight;
-    painter.drawText(QRect(leftMargin, currentY, pageWidth - 2*leftMargin, rowHeight),
-                    Qt::AlignRight, "No student clashes detected");
-
-    // Move down to start the table
-    currentY += rowHeight;
-
-    // Move down to start the table and add extra spacing
-    currentY += rowHeight * 1.5;
-
-    // Calculate column positions
-    int currentX = leftMargin;
-
-    // Draw table headers
-    painter.setFont(headerFont);
-    painter.drawText(QRect(currentX, currentY, dayWidth, headerRowHeight),
-                    Qt::AlignLeft | Qt::AlignVCenter, "Course");
-    currentX += dayWidth;
-
-    painter.drawText(QRect(currentX, currentY, dateWidth, headerRowHeight),
-                    Qt::AlignLeft | Qt::AlignVCenter, "Date");
-    currentX += dateWidth;
-
-    painter.drawText(QRect(currentX, currentY, courseWidth, headerRowHeight),
-                    Qt::AlignLeft | Qt::AlignVCenter, "Room");
-    currentX += courseWidth;
-
-    // Skip headers for the remaining columns (leave them blank)
-    currentX += rollWidth;     // Roll Numbers column - no header
-    currentX += roomWidth;     // Room column - no header
-    currentX += studentsWidth; // Students column - no header
-
-    // Draw horizontal line under headers
-    currentY += rowHeight;
-    painter.drawLine(leftMargin, currentY, pageWidth - leftMargin, currentY);
-
-    // Draw data rows
-    painter.setFont(normalFont);
+    if (!file.is_open()) {
+        std::cerr << "Error: Could not open file " << filename << " for writing." << std::endl;
+        return false;
+    }
+    
+    // PDF structure with proper formatting and improved dimensions
+    std::ostringstream content;
+    std::ostringstream pageContent;
+    
+    // Build page content with better spacing
+    pageContent << "BT\n";
+    pageContent << "/F1 16 Tf\n";
+    pageContent << "250 750 Td\n";  // Centered title
+    pageContent << "(EXAM TIMETABLE) Tj\n";
+    pageContent << "ET\n";
+    
+    // Add header info with better positioning
+    pageContent << "BT\n";
+    pageContent << "/F1 10 Tf\n";
+    pageContent << "50 720 Td\n";  // Higher starting position
+    pageContent << "(All exams scheduled at 2:00 PM - 5:00 PM) Tj\n";
+    pageContent << "0 -15 Td\n";
+    pageContent << "(Room capacity: 55 students per room) Tj\n";
+    pageContent << "0 -15 Td\n";
+    pageContent << "(No student clashes detected) Tj\n";
+    pageContent << "ET\n";
+    
+    // Draw table border with improved dimensions
+    float tableTop = 650;
+    float tableLeft = 40;
+    float tableRight = 570;
+    float tableWidth = tableRight - tableLeft;
+    
+    // Calculate column widths with better proportions
+    float dayColWidth = tableWidth * 0.12;      // Day column
+    float dateColWidth = tableWidth * 0.15;     // Date column
+    float courseColWidth = tableWidth * 0.15;   // Course ID column
+    float rollColWidth = tableWidth * 0.35;     // Roll Numbers column (largest)
+    float roomColWidth = tableWidth * 0.13;     // Room column  
+    float studentsColWidth = tableWidth * 0.10; // Students column
+    
+    // Draw table border
+    pageContent << tableLeft << " " << tableTop << " " << tableWidth << " 20 re S\n";  // Header border
+    
+    // Note: Removing vertical column separators to match the desired clean table format
+    // The table will only have horizontal lines between rows
+    
+    // Draw table headers with better spacing
+    float headerY = tableTop - 15;
+    pageContent << "BT\n";
+    pageContent << "/F1 10 Tf\n";
+    
+    // Day header
+    pageContent << (tableLeft + 5) << " " << headerY << " Td\n";
+    pageContent << "(Day) Tj\n";
+    
+    // Date header  
+    pageContent << (dayColWidth - 5) << " 0 Td\n";
+    pageContent << "(Date) Tj\n";
+    
+    // Course ID header
+    pageContent << (dateColWidth - 5) << " 0 Td\n";
+    pageContent << "(Course ID) Tj\n";
+    
+    // Roll Numbers header
+    pageContent << (courseColWidth - 5) << " 0 Td\n";
+    pageContent << "(Roll Numbers) Tj\n";
+    
+    // Room header
+    pageContent << (rollColWidth - 15) << " 0 Td\n";
+    pageContent << "(Room) Tj\n";
+    
+    // Students header
+    pageContent << (roomColWidth - 5) << " 0 Td\n";
+    pageContent << "(Students) Tj\n";
+    
+    pageContent << "ET\n";
+    
+    // Draw line under headers
+    float headerLineY = tableTop - 20;
+    pageContent << tableLeft << " " << headerLineY << " m\n";
+    pageContent << tableRight << " " << headerLineY << " l\n";
+    pageContent << "S\n";
+    
+    // Add schedule data with improved row spacing
+    float currentRowY = headerLineY - 18;  // Increased row spacing from 12 to 18
+    int rowCount = 0;
     
     for (const auto& entry : schedule) {
-        std::string day, date, courseId, rollNumbers, room, students;
-        size_t pos = 0, nextPos;
+        std::string day, dayNum, date, courseId, rollNumbers, room, students;
+        size_t nextPos;
         std::string str = entry;
         
-        // Parse CSV format
+        // Parse CSV format: day,dayNum,date,courseId,rollNumbers,room,students
         nextPos = str.find(","); day = str.substr(0, nextPos); str = str.substr(nextPos + 1);
+        nextPos = str.find(","); dayNum = str.substr(0, nextPos); str = str.substr(nextPos + 1);
         nextPos = str.find(","); date = str.substr(0, nextPos); str = str.substr(nextPos + 1);
         nextPos = str.find(","); courseId = str.substr(0, nextPos); str = str.substr(nextPos + 1);
         nextPos = str.find(","); rollNumbers = str.substr(0, nextPos); str = str.substr(nextPos + 1);
         nextPos = str.find(","); room = str.substr(0, nextPos); str = str.substr(nextPos + 1);
         students = str;
-
-        currentY += rowHeight;
-        currentX = leftMargin;  // Reset X position for new row
-
-        // Draw row data
-        painter.drawText(QRect(currentX, currentY, dayWidth, rowHeight),
-                        Qt::AlignLeft | Qt::AlignVCenter, QString::fromStdString(day));
-        currentX += dayWidth;
-
-        painter.drawText(QRect(currentX, currentY, dateWidth, rowHeight),
-                        Qt::AlignLeft | Qt::AlignVCenter, QString::fromStdString(date));
-        currentX += dateWidth;
-
-        painter.drawText(QRect(currentX, currentY, courseWidth, rowHeight),
-                        Qt::AlignLeft | Qt::AlignVCenter, QString::fromStdString(courseId));
-        currentX += courseWidth;
-
-        // Use elided text for roll numbers if too long
-        QString rollNumbersText = QString::fromStdString(rollNumbers);
-        QFontMetrics fm(normalFont);
-        QString elidedText = fm.elidedText(rollNumbersText, Qt::ElideRight, rollWidth - 5);
-        painter.drawText(QRect(currentX, currentY, rollWidth, rowHeight),
-                        Qt::AlignLeft | Qt::AlignVCenter, elidedText);
-        currentX += rollWidth;
-
-        painter.drawText(QRect(currentX, currentY, roomWidth, rowHeight),
-                        Qt::AlignLeft | Qt::AlignVCenter, QString::fromStdString(room));
-        currentX += roomWidth;
-
-        painter.drawText(QRect(currentX, currentY, studentsWidth, rowHeight),
-                        Qt::AlignLeft | Qt::AlignVCenter, QString::fromStdString(students));
-
-        // Draw horizontal line under row
-        currentY += rowHeight;
-        painter.drawLine(leftMargin, currentY, pageWidth - leftMargin, currentY);
+        
+        if (currentRowY < 50) {
+            // Start new page if needed
+            pageContent << "showpage\n";
+            currentRowY = 750;
+            rowCount = 0;
+        }
+        
+        pageContent << "BT\n";
+        pageContent << "/F1 9 Tf\n";  // Slightly smaller font for data
+        
+        // Day
+        pageContent << (tableLeft + 5) << " " << currentRowY << " Td\n";
+        pageContent << "(" << day << ") Tj\n";
+        
+        // Date
+        pageContent << (dayColWidth - 5) << " 0 Td\n";
+        pageContent << "(" << date << ") Tj\n";
+        
+        // Course ID
+        pageContent << (dateColWidth - 5) << " 0 Td\n";
+        pageContent << "(" << courseId << ") Tj\n";
+        
+        // Roll Numbers (truncate if too long)
+        pageContent << (courseColWidth - 5) << " 0 Td\n";
+        std::string rollRange = rollNumbers;
+        if (rollRange.length() > 30) {
+            rollRange = rollRange.substr(0, 27) + "...";
+        }
+        pageContent << "(" << rollRange << ") Tj\n";
+        
+        // Room
+        pageContent << (rollColWidth - 15) << " 0 Td\n";
+        pageContent << "(" << room << ") Tj\n";
+        
+        // Students
+        pageContent << (roomColWidth - 5) << " 0 Td\n";
+        pageContent << "(" << students << ") Tj\n";
+        
+        pageContent << "ET\n";
+        
+        // Draw horizontal line after each row for better separation
+        pageContent << tableLeft << " " << (currentRowY - 5) << " m\n";
+        pageContent << tableRight << " " << (currentRowY - 5) << " l\n";
+        pageContent << "S\n";
+        
+        currentRowY -= 18;  // Move to next row with increased spacing
+        rowCount++;
     }
-
-    painter.end();
+    
+    // Draw final bottom border
+    pageContent << tableLeft << " " << currentRowY << " m\n";
+    pageContent << tableRight << " " << currentRowY << " l\n";
+    pageContent << "S\n";
+    
+    // Get content string
+    std::string pageContentStr = pageContent.str();
+    int contentLength = pageContentStr.length();
+    
+    // Build PDF structure with proper xref table
+    content << "%PDF-1.4\n";
+    
+    // Object 1: Catalog
+    int obj1Offset = content.tellp();
+    content << "1 0 obj\n";
+    content << "<< /Type /Catalog /Pages 2 0 R >>\n";
+    content << "endobj\n";
+    
+    // Object 2: Pages
+    int obj2Offset = content.tellp();
+    content << "2 0 obj\n";
+    content << "<< /Type /Pages /Kids [3 0 R] /Count 1 >>\n";
+    content << "endobj\n";
+    
+    // Object 3: Page
+    int obj3Offset = content.tellp();
+    content << "3 0 obj\n";
+    content << "<< /Type /Page /Parent 2 0 R /Resources 4 0 R /MediaBox [0 0 612 792] /Contents 5 0 R >>\n";
+    content << "endobj\n";
+    
+    // Object 4: Resources
+    int obj4Offset = content.tellp();
+    content << "4 0 obj\n";
+    content << "<< /Font << /F1 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >> >> >>\n";
+    content << "endobj\n";
+    
+    // Object 5: Contents
+    int obj5Offset = content.tellp();
+    content << "5 0 obj\n";
+    content << "<< /Length " << contentLength << " >>\n";
+    content << "stream\n";
+    content << pageContentStr;
+    content << "\nendstream\n";
+    content << "endobj\n";
+    
+    // Cross-reference table
+    int xrefOffset = content.tellp();
+    content << "xref\n";
+    content << "0 6\n";
+    content << "0000000000 65535 f \n";
+    
+    // Format offsets with leading zeros to 10 digits
+    char buffer[20];
+    sprintf(buffer, "%010d 00000 n \n", obj1Offset);
+    content << buffer;
+    sprintf(buffer, "%010d 00000 n \n", obj2Offset);
+    content << buffer;
+    sprintf(buffer, "%010d 00000 n \n", obj3Offset);
+    content << buffer;
+    sprintf(buffer, "%010d 00000 n \n", obj4Offset);
+    content << buffer;
+    sprintf(buffer, "%010d 00000 n \n", obj5Offset);
+    content << buffer;
+    
+    // Trailer
+    content << "trailer\n";
+    content << "<< /Size 6 /Root 1 0 R >>\n";
+    content << "startxref\n";
+    content << xrefOffset << "\n";
+    content << "%%EOF\n";
+    
+    file << content.str();
+    file.close();
+    
+    std::cout << "Schedule exported to " << filename << std::endl;
     return true;
 }
 

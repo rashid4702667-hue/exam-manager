@@ -7,7 +7,7 @@
 #include <numeric>
 
 AnalyticsWindow::AnalyticsWindow(DatabaseManager* dbManager, QWidget *parent)
-    : QWidget(parent)
+    : QDialog(parent)
     , ui(new Ui::AnalyticsWindow)
     , m_databaseManager(dbManager)
     , m_examLoadChartView(nullptr)
@@ -23,20 +23,19 @@ AnalyticsWindow::AnalyticsWindow(DatabaseManager* dbManager, QWidget *parent)
 {
     ui->setupUi(this);
     
-    // Set window properties for better navigation
+    // Set window properties for modal dialog
     setWindowTitle("📊 Exam Schedule Analytics Dashboard - Timetable Planner");
     setMinimumSize(1200, 800);
+    setModal(true);
     
-    // Set window flags to make it a proper dialog
-    if (parent) {
-        setWindowFlags(Qt::Window | Qt::WindowTitleHint | Qt::WindowCloseButtonHint);
-        setAttribute(Qt::WA_DeleteOnClose, false);
-    }
+    // Set window flags for proper dialog behavior
+    setWindowFlags(Qt::Dialog | Qt::WindowTitleHint | Qt::WindowCloseButtonHint | Qt::WindowMaximizeButtonHint);
     
     // Connect signals
     connect(ui->refreshButton, &QPushButton::clicked, this, &AnalyticsWindow::onRefreshClicked);
     connect(ui->exportButton, &QPushButton::clicked, this, &AnalyticsWindow::onExportClicked);
     connect(ui->closeButton, &QPushButton::clicked, this, &AnalyticsWindow::onCloseClicked);
+    connect(ui->backButton, &QPushButton::clicked, this, &AnalyticsWindow::onCloseClicked);
     
     // Setup chart views
     setupChartViews();
@@ -593,34 +592,22 @@ void AnalyticsWindow::onExportClicked()
 
 void AnalyticsWindow::onCloseClicked()
 {
-    // Close the analytics window and return focus to main window
-    hide();
-    
-    // Ensure parent window is visible and active
-    if (parentWidget()) {
-        parentWidget()->show();
-        parentWidget()->raise();
-        parentWidget()->activateWindow();
-    }
+    // Accept the dialog to close it properly
+    accept();
 }
 
 void AnalyticsWindow::keyPressEvent(QKeyEvent* event)
 {
     if (event->key() == Qt::Key_Escape) {
-        onCloseClicked();
+        accept(); // Close dialog on ESC
     } else {
-        QWidget::keyPressEvent(event);
+        QDialog::keyPressEvent(event);
     }
 }
 
 void AnalyticsWindow::closeEvent(QCloseEvent* event)
 {
-    // When user clicks window X button, also ensure main window is visible
-    if (parentWidget()) {
-        parentWidget()->show();
-        parentWidget()->raise();
-        parentWidget()->activateWindow();
-    }
+    // Accept the close event
     event->accept();
 }
 

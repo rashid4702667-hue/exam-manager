@@ -208,18 +208,15 @@ void MainWindow::onAnalytics()
 {
     if (!analyticsWindow) {
         analyticsWindow = new AnalyticsWindow(&dbManager, this);
-        // Set window modality and properties for better UX
-        analyticsWindow->setWindowModality(Qt::ApplicationModal);
         analyticsWindow->setAttribute(Qt::WA_DeleteOnClose, false);
     }
     
     analyticsWindow->refreshAnalytics();
-    analyticsWindow->show();
-    analyticsWindow->raise();
-    analyticsWindow->activateWindow();
     
-    // Optionally hide the main window to focus on analytics
-    // this->hide();
+    // Show analytics as modal dialog instead of hiding main window
+    if (analyticsWindow->exec() == QDialog::Accepted) {
+        // Dialog closed normally, main window will be visible again
+    }
 }
 
 void MainWindow::onAbout()

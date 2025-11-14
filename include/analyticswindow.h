@@ -1,7 +1,7 @@
 #ifndef ANALYTICSWINDOW_H
 #define ANALYTICSWINDOW_H
 
-#include <QWidget>
+#include <QDialog>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QGridLayout>
@@ -92,7 +92,7 @@ struct AnalyticsData {
     std::map<int, int> studentExamCountDistribution; // examCount -> studentCount
 };
 
-class AnalyticsWindow : public QWidget
+class AnalyticsWindow : public QDialog
 {
     Q_OBJECT
 

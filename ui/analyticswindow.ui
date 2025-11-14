@@ -15,22 +15,126 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
+    <widget class="QFrame" name="headerFrame">
+     <property name="styleSheet">
+      <string>QFrame {
+    background-color: #2E86AB;
+    border-radius: 8px;
+    margin: 5px;
+}</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <layout class="QHBoxLayout" name="headerLayout">
+      <property name="spacing">
+       <number>15</number>
+      </property>
+      <property name="leftMargin">
+       <number>15</number>
+      </property>
+      <property name="topMargin">
+       <number>10</number>
+      </property>
+      <property name="rightMargin">
+       <number>15</number>
+      </property>
+      <property name="bottomMargin">
+       <number>10</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="backButton">
+        <property name="text">
+         <string>⬅️ Back to Main</string>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>140</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string>QPushButton {
+    background-color: #FFFFFF;
+    color: #2E86AB;
+    border: 2px solid #FFFFFF;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 8px 16px;
+}
+QPushButton:hover {
+    background-color: #F0F8FF;
+    border-color: #F0F8FF;
+}
+QPushButton:pressed {
+    background-color: #E0F0FF;
+}</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="headerSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="headerTitleLabel">
+        <property name="text">
+         <string>📊 Exam Schedule Analytics Dashboard</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="styleSheet">
+         <string>QLabel {
+    font-size: 24px;
+    font-weight: bold;
+    color: #FFFFFF;
+    padding: 5px;
+}</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="headerSpacerRight">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>180</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
     <widget class="QLabel" name="titleLabel">
      <property name="text">
-      <string>📊 Exam Schedule Analytics Dashboard</string>
+      <string>📈 Real-time Analytics Dashboard</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
      </property>
      <property name="styleSheet">
       <string>QLabel {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
     color: #2E86AB;
-    padding: 10px;
-    background-color: #F5F5F5;
-    border-radius: 5px;
-    margin-bottom: 10px;
+    padding: 5px;
+    margin: 5px;
 }</string>
      </property>
     </widget>

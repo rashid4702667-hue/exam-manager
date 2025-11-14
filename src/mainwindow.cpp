@@ -207,15 +207,11 @@ void MainWindow::onShiftCourse()
 void MainWindow::onAnalytics()
 {
     if (!analyticsWindow) {
-        analyticsWindow = new AnalyticsWindow(&dbManager, &generator, this);
+        analyticsWindow = new AnalyticsWindow(&dbManager, this);
         // Set window modality and properties for better UX
         analyticsWindow->setWindowModality(Qt::ApplicationModal);
         analyticsWindow->setAttribute(Qt::WA_DeleteOnClose, false);
     }
-    
-    // Update the database and generator references in case they changed
-    analyticsWindow->setDatabaseManager(&dbManager);
-    analyticsWindow->setTimetableGenerator(&generator);
     
     analyticsWindow->refreshAnalytics();
     analyticsWindow->show();

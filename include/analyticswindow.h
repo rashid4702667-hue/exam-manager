@@ -52,7 +52,6 @@
 
 // Forward declarations
 class DatabaseManager;
-class TimetableGenerator;
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class AnalyticsWindow; }
@@ -98,11 +97,10 @@ class AnalyticsWindow : public QWidget
     Q_OBJECT
 
 public:
-    AnalyticsWindow(DatabaseManager* dbManager = nullptr, TimetableGenerator* timetableGen = nullptr, QWidget *parent = nullptr);
+    AnalyticsWindow(DatabaseManager* dbManager = nullptr, QWidget *parent = nullptr);
     ~AnalyticsWindow();
 
     void setDatabaseManager(DatabaseManager* dbManager);
-    void setTimetableGenerator(TimetableGenerator* timetableGen);
     void refreshAnalytics();
 
 private slots:
@@ -117,7 +115,6 @@ protected:
 private:
     Ui::AnalyticsWindow *ui;
     DatabaseManager* m_databaseManager;
-    TimetableGenerator* m_timetableGenerator;
     AnalyticsData m_analyticsData;
     
     // Chart views for each analytics section

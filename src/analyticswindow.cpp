@@ -86,6 +86,22 @@ void AnalyticsWindow::setupChartViews()
     // Will be created when charts are generated
 }
 
+void AnalyticsWindow::clearWidgetLayout(QWidget* widget)
+{
+    if (!widget) return;
+    QLayout* layout = widget->layout();
+    if (!layout) return;
+    QLayoutItem* item = nullptr;
+    while ((item = layout->takeAt(0)) != nullptr) {
+        if (QWidget* w = item->widget()) {
+            w->deleteLater();
+        }
+        delete item;
+    }
+    delete layout;
+    widget->setLayout(nullptr);
+}
+
 void AnalyticsWindow::clearCharts()
 {
     // Clean up existing chart views
@@ -263,7 +279,10 @@ void AnalyticsWindow::createExamLoadChart()
     m_examLoadChartView->setRenderHint(QPainter::Antialiasing);
     
     // Add to layout
-    ui->examLoadChartWidget->setLayout(new QVBoxLayout());
+    clearWidgetLayout(ui->examLoadChartWidget);
+    auto examLoadLayout = new QVBoxLayout();
+    examLoadLayout->setContentsMargins(8,8,8,8);
+    ui->examLoadChartWidget->setLayout(examLoadLayout);
     ui->examLoadChartWidget->layout()->addWidget(m_examLoadChartView);
 }
 
@@ -299,7 +318,10 @@ void AnalyticsWindow::createDepartmentDistributionChart()
     m_departmentChartView->setRenderHint(QPainter::Antialiasing);
     
     // Add to layout
-    ui->departmentChartWidget->setLayout(new QVBoxLayout());
+    clearWidgetLayout(ui->departmentChartWidget);
+    auto deptLayout = new QVBoxLayout();
+    deptLayout->setContentsMargins(8,8,8,8);
+    ui->departmentChartWidget->setLayout(deptLayout);
     ui->departmentChartWidget->layout()->addWidget(m_departmentChartView);
 }
 
@@ -343,7 +365,10 @@ void AnalyticsWindow::createRoomUtilizationChart()
     m_roomUtilizationChartView->setRenderHint(QPainter::Antialiasing);
     
     // Add to layout
-    ui->roomUtilizationChartWidget->setLayout(new QVBoxLayout());
+    clearWidgetLayout(ui->roomUtilizationChartWidget);
+    auto roomUtilLayout = new QVBoxLayout();
+    roomUtilLayout->setContentsMargins(8,8,8,8);
+    ui->roomUtilizationChartWidget->setLayout(roomUtilLayout);
     ui->roomUtilizationChartWidget->layout()->addWidget(m_roomUtilizationChartView);
 }
 
@@ -386,7 +411,10 @@ void AnalyticsWindow::createConflictDetectionChart()
     m_conflictChartView->setRenderHint(QPainter::Antialiasing);
     
     // Add to layout
-    ui->conflictChartWidget->setLayout(new QVBoxLayout());
+    clearWidgetLayout(ui->conflictChartWidget);
+    auto conflictLayout = new QVBoxLayout();
+    conflictLayout->setContentsMargins(8,8,8,8);
+    ui->conflictChartWidget->setLayout(conflictLayout);
     ui->conflictChartWidget->layout()->addWidget(m_conflictChartView);
 }
 
@@ -429,7 +457,10 @@ void AnalyticsWindow::createExamTimingChart()
     m_examTimingChartView->setRenderHint(QPainter::Antialiasing);
     
     // Add to layout
-    ui->examTimingChartWidget->setLayout(new QVBoxLayout());
+    clearWidgetLayout(ui->examTimingChartWidget);
+    auto timingLayout = new QVBoxLayout();
+    timingLayout->setContentsMargins(8,8,8,8);
+    ui->examTimingChartWidget->setLayout(timingLayout);
     ui->examTimingChartWidget->layout()->addWidget(m_examTimingChartView);
 }
 
@@ -525,7 +556,10 @@ void AnalyticsWindow::createRoomLoadOverDaysChart()
 #endif
     
     // Add to layout
-    ui->roomLoadChartWidget->setLayout(new QVBoxLayout());
+    clearWidgetLayout(ui->roomLoadChartWidget);
+    auto roomLoadLayout = new QVBoxLayout();
+    roomLoadLayout->setContentsMargins(8,8,8,8);
+    ui->roomLoadChartWidget->setLayout(roomLoadLayout);
     ui->roomLoadChartWidget->layout()->addWidget(m_roomLoad3DWidget);
 }
 
@@ -568,7 +602,10 @@ void AnalyticsWindow::createStudentExamDistributionChart()
     m_studentDistributionChartView->setRenderHint(QPainter::Antialiasing);
     
     // Add to layout
-    ui->studentDistributionChartWidget->setLayout(new QVBoxLayout());
+    clearWidgetLayout(ui->studentDistributionChartWidget);
+    auto studentLayout = new QVBoxLayout();
+    studentLayout->setContentsMargins(8,8,8,8);
+    ui->studentDistributionChartWidget->setLayout(studentLayout);
     ui->studentDistributionChartWidget->layout()->addWidget(m_studentDistributionChartView);
 }
 

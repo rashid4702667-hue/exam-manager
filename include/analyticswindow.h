@@ -155,6 +155,7 @@ private:
     QString formatPercentage(double value);
     std::vector<ExamScheduleData> getExamScheduleFromDatabase();
     void exportChartsAsPDF(const QString& filename);
+    void clearWidgetLayout(QWidget* widget);
     
     // Sample data generation (for testing without database)
     void generateSampleData();

@@ -33,6 +33,7 @@ private:
     std::string startDate;
 
     void cleanup();
+    std::string calculateExamDate(const std::string& startDate, int dayOffset);
 };
 
 #endif // TIMETABLEGENERATOR_H

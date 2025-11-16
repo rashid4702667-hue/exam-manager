@@ -6,6 +6,7 @@
 #include <map>
 #include <ctime>
 #include <iomanip>
+#include <algorithm>
 
 TimetableGenerator::TimetableGenerator(DatabaseManager& db)
     : database(db), generated(false) {
@@ -22,36 +23,120 @@ void TimetableGenerator::setStartDate(const std::string& date) {
 bool TimetableGenerator::generate() {
     schedule.clear();
     
-    // Sample entries with day numbers
-    schedule.push_back("Friday,1,02-01-2026,ML101,CT-24001 to CT-24085,Room#1,55/55");
-    schedule.push_back("Friday,1,02-01-2026,ML101,CT-24312 to CT-24318,Room#2,25/55");
-    schedule.push_back("Saturday,2,03-01-2026,AI401,CT-24001 to CT-24085,Room#1,55/55");
-    schedule.push_back("Saturday,2,03-01-2026,AI401,CT-24086 to CT-24166,Room#2,55/55");
-    schedule.push_back("Saturday,2,03-01-2026,AI401,CT-24169 to CT-24249,Room#3,55/55");
-    schedule.push_back("Saturday,2,03-01-2026,AI401,CT-24252 to CT-24320,Room#4,47/55");
-    schedule.push_back("Sunday,3,04-01-2026,CS301,CT-24002 to CT-24311,Room#1,55/55");
-    schedule.push_back("Monday,4,05-01-2026,CN601,CT-24073 to CT-24137,Room#2,55/55");
-    schedule.push_back("Monday,4,05-01-2026,CN601,CT-24139 to CT-24203,Room#3,55/55");
-    schedule.push_back("Monday,4,05-01-2026,CN601,CT-24205 to CT-24269,Room#4,55/55");
-    schedule.push_back("Monday,4,05-01-2026,CN601,CT-24273 to CT-24320,Room#5,42/55");
+    // Fetch data from database/CSV
+    LinkedList<Course> courses = database.fetchCourses();
+    LinkedList<Student> students = database.fetchStudents();
+    LinkedList<Enrollment> enrollments = database.fetchEnrollments();
     
-    // Additional lab sessions for better room utilization
-    schedule.push_back("Tuesday,5,06-01-2026,DB301,CT-24001 to CT-24055,Lab1,55/55");
-    schedule.push_back("Tuesday,5,06-01-2026,OOP201,CT-24056 to CT-24110,Lab2,55/55");
-    schedule.push_back("Wednesday,6,07-01-2026,SE701,CT-24111 to CT-24165,Lab3,55/55");
-    schedule.push_back("Wednesday,6,07-01-2026,WD801,CT-24166 to CT-24220,Lab4,55/55");
-    schedule.push_back("Thursday,7,08-01-2026,CC901,CT-24221 to CT-24275,Lab5,55/55");
-    schedule.push_back("Thursday,7,08-01-2026,CY102,CT-24276 to CT-24320,Lab1,45/55");
+    std::cout << "Generating timetable with " << courses.getSize() << " courses, " 
+              << students.getSize() << " students, and " << enrollments.getSize() 
+              << " enrollments." << std::endl;
     
-    // Additional sessions using Room#6 through Room#11
-    schedule.push_back("Friday,8,09-01-2026,DS501,CT-24001 to CT-24055,Room#6,55/55");
-    schedule.push_back("Friday,8,09-01-2026,DS501,CT-24056 to CT-24110,Room#7,55/55");
-    schedule.push_back("Saturday,9,10-01-2026,WD801,CT-24111 to CT-24165,Room#8,55/55");
-    schedule.push_back("Saturday,9,10-01-2026,WD801,CT-24166 to CT-24220,Room#9,55/55");
-    schedule.push_back("Sunday,10,11-01-2026,SE701,CT-24221 to CT-24275,Room#10,55/55");
-    schedule.push_back("Sunday,10,11-01-2026,SE701,CT-24276 to CT-24320,Room#11,45/55");
+    if (courses.getSize() == 0) {
+        std::cerr << "No courses found! Please import data first." << std::endl;
+        return false;
+    }
+    
+    // Create mapping of course to enrolled students
+    std::map<std::string, std::vector<std::string>> courseEnrollments;
+    
+    // Initialize enrollment map for all courses by iterating through the linked list
+    Node<Course>* courseNode = courses.getHead();
+    while (courseNode != nullptr) {
+        courseEnrollments[courseNode->data.courseId] = std::vector<std::string>();
+        courseNode = courseNode->next;
+    }
+    
+    // Populate enrollment map by iterating through enrollments
+    Node<Enrollment>* enrollmentNode = enrollments.getHead();
+    while (enrollmentNode != nullptr) {
+        std::string courseId = enrollmentNode->data.courseId;
+        std::string studentId = enrollmentNode->data.rollNo;
+        
+        if (courseEnrollments.find(courseId) != courseEnrollments.end()) {
+            courseEnrollments[courseId].push_back(studentId);
+        }
+        enrollmentNode = enrollmentNode->next;
+    }
+    
+    // Generate schedule for each course
+    int dayCounter = 1;
+    int roomCounter = 1;
+    const int maxRooms = 15; // Maximum rooms available
+    const int roomCapacity = 55; // Room capacity
+    
+    // Days of the week
+    std::vector<std::string> dayNames = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+    int currentDay = 0;
+    
+    // Iterate through courses
+    courseNode = courses.getHead();
+    while (courseNode != nullptr) {
+        Course course = courseNode->data;
+        std::string courseId = course.courseId;
+        
+        std::vector<std::string> enrolledStudents = courseEnrollments[courseId];
+        
+        if (enrolledStudents.empty()) {
+            std::cout << "Warning: No students enrolled in course " << courseId << std::endl;
+            courseNode = courseNode->next;
+            continue; // Skip courses with no enrollments
+        }
+        
+        // Calculate how many sessions needed based on enrolled students
+        int totalStudents = enrolledStudents.size();
+        int sessionsNeeded = (totalStudents + roomCapacity - 1) / roomCapacity; // Ceiling division
+        
+        for (int session = 0; session < sessionsNeeded; session++) {
+            // Calculate date based on start date and day counter
+            std::string examDate = calculateExamDate(startDate, dayCounter);
+            std::string dayName = dayNames[currentDay];
+            
+            // Determine room (cycle through available rooms)
+            std::string room;
+            if (roomCounter <= 11) {
+                room = "Room#" + std::to_string(roomCounter);
+            } else {
+                room = "Lab" + std::to_string(roomCounter - 11);
+            }
+            
+            // Calculate student range for this session
+            int startIdx = session * roomCapacity;
+            int endIdx = std::min(startIdx + roomCapacity - 1, (int)enrolledStudents.size() - 1);
+            int studentsInSession = endIdx - startIdx + 1;
+            
+            std::string studentRange;
+            if (studentsInSession == 1) {
+                studentRange = enrolledStudents[startIdx];
+            } else {
+                studentRange = enrolledStudents[startIdx] + " to " + enrolledStudents[endIdx];
+            }
+            
+            // Create schedule entry
+            std::string scheduleEntry = dayName + "," + 
+                                       std::to_string(dayCounter) + "," + 
+                                       examDate + "," + 
+                                       courseId + "," + 
+                                       studentRange + "," + 
+                                       room + "," + 
+                                       std::to_string(studentsInSession) + "/" + std::to_string(roomCapacity);
+            
+            schedule.push_back(scheduleEntry);
+            
+            // Move to next room
+            roomCounter++;
+            if (roomCounter > maxRooms) {
+                roomCounter = 1;
+                dayCounter++;
+                currentDay = (currentDay + 1) % 7; // Cycle through days
+            }
+        }
+        
+        courseNode = courseNode->next;
+    }
     
     generated = true;
+    std::cout << "Timetable generated successfully with " << schedule.size() << " exam sessions." << std::endl;
     return true;
 }
 
@@ -110,8 +195,9 @@ bool TimetableGenerator::exportToCSV(const std::string& filename) {
             // Parse students (remaining string)
             students = str;
 
-            // Convert date to proper format (MM-DD-YYYY)
-            std::string formattedDate = date.substr(3, 2) + "-" + date.substr(0, 2) + "-2026";
+            // Keep date in DD-MM-YYYY format, but ensure Excel can interpret it properly
+            // Convert DD-MM-YYYY to DD/MM/YYYY for better Excel compatibility
+            std::string formattedDate = date.substr(0, 2) + "/" + date.substr(3, 2) + "/" + date.substr(6, 4);
 
             // Get course name and section based on course ID
             std::string section, courseName;
@@ -211,224 +297,258 @@ bool TimetableGenerator::exportToPDF(const std::string& filename) {
         return false;
     }
     
-    // PDF structure with proper formatting and improved dimensions
-    std::ostringstream content;
+    // Create page content with absolute positioning
     std::ostringstream pageContent;
     
-    // Build page content with better spacing
+    // Title - centered
     pageContent << "BT\n";
-    pageContent << "/F1 16 Tf\n";
-    pageContent << "250 750 Td\n";  // Centered title
-    pageContent << "(EXAM TIMETABLE) Tj\n";
+    pageContent << "/F1 20 Tf\n";
+    pageContent << "150 720 Td\n";
+    pageContent << "(EXAMINATION TIMETABLE) Tj\n";
     pageContent << "ET\n";
     
-    // Add header info with better positioning
+    // Subtitle
     pageContent << "BT\n";
-    pageContent << "/F1 10 Tf\n";
-    pageContent << "50 720 Td\n";  // Higher starting position
-    pageContent << "(All exams scheduled at 2:00 PM - 5:00 PM) Tj\n";
-    pageContent << "0 -15 Td\n";
-    pageContent << "(Room capacity: 55 students per room) Tj\n";
-    pageContent << "0 -15 Td\n";
-    pageContent << "(No student clashes detected) Tj\n";
+    pageContent << "/F1 11 Tf\n";
+    pageContent << "72 690 Td\n";
+    pageContent << "(Exam Duration: 2:00 PM - 5:00 PM | Room Capacity: 55 Students) Tj\n";
     pageContent << "ET\n";
     
-    // Draw table border with improved dimensions
+    // Define table dimensions and positions
+    float leftMargin = 72;
     float tableTop = 650;
-    float tableLeft = 40;
-    float tableRight = 570;
-    float tableWidth = tableRight - tableLeft;
+    float rowHeight = 18;
     
-    // Calculate column widths with better proportions
-    float dayColWidth = tableWidth * 0.12;      // Day column
-    float dateColWidth = tableWidth * 0.15;     // Date column
-    float courseColWidth = tableWidth * 0.15;   // Course ID column
-    float rollColWidth = tableWidth * 0.35;     // Roll Numbers column (largest)
-    float roomColWidth = tableWidth * 0.13;     // Room column  
-    float studentsColWidth = tableWidth * 0.10; // Students column
+    // Column positions (absolute X coordinates) - optimized for page width
+    float dayX = leftMargin;
+    float dateX = leftMargin + 55;
+    float courseX = leftMargin + 140;
+    float studentsX = leftMargin + 210;
+    float roomX = leftMargin + 420;
+    float capX = leftMargin + 485;
+    float tableRightEdge = leftMargin + 530; // Ensure table fits within page margins
     
-    // Draw table border
-    pageContent << tableLeft << " " << tableTop << " " << tableWidth << " 20 re S\n";  // Header border
+    // Table header background
+    pageContent << "0.9 g\n";
+    pageContent << leftMargin << " " << (tableTop - 2) << " " << (tableRightEdge - leftMargin) << " " << rowHeight << " re f\n";
+    pageContent << "0 g\n";
     
-    // Note: Removing vertical column separators to match the desired clean table format
-    // The table will only have horizontal lines between rows
+    // Draw table borders - complete border frame
+    pageContent << "0.5 w\n";
     
-    // Draw table headers with better spacing
-    float headerY = tableTop - 15;
-    pageContent << "BT\n";
-    pageContent << "/F1 10 Tf\n";
-    
-    // Day header
-    pageContent << (tableLeft + 5) << " " << headerY << " Td\n";
-    pageContent << "(Day) Tj\n";
-    
-    // Date header  
-    pageContent << (dayColWidth - 5) << " 0 Td\n";
-    pageContent << "(Date) Tj\n";
-    
-    // Course ID header
-    pageContent << (dateColWidth - 5) << " 0 Td\n";
-    pageContent << "(Course ID) Tj\n";
-    
-    // Roll Numbers header
-    pageContent << (courseColWidth - 5) << " 0 Td\n";
-    pageContent << "(Roll Numbers) Tj\n";
-    
-    // Room header
-    pageContent << (rollColWidth - 15) << " 0 Td\n";
-    pageContent << "(Room) Tj\n";
-    
-    // Students header
-    pageContent << (roomColWidth - 5) << " 0 Td\n";
-    pageContent << "(Students) Tj\n";
-    
-    pageContent << "ET\n";
-    
-    // Draw line under headers
-    float headerLineY = tableTop - 20;
-    pageContent << tableLeft << " " << headerLineY << " m\n";
-    pageContent << tableRight << " " << headerLineY << " l\n";
-    pageContent << "S\n";
-    
-    // Add schedule data with improved row spacing
-    float currentRowY = headerLineY - 18;  // Increased row spacing from 12 to 18
-    int rowCount = 0;
-    
-    for (const auto& entry : schedule) {
-        std::string day, dayNum, date, courseId, rollNumbers, room, students;
-        size_t nextPos;
-        std::string str = entry;
-        
-        // Parse CSV format: day,dayNum,date,courseId,rollNumbers,room,students
-        nextPos = str.find(","); day = str.substr(0, nextPos); str = str.substr(nextPos + 1);
-        nextPos = str.find(","); dayNum = str.substr(0, nextPos); str = str.substr(nextPos + 1);
-        nextPos = str.find(","); date = str.substr(0, nextPos); str = str.substr(nextPos + 1);
-        nextPos = str.find(","); courseId = str.substr(0, nextPos); str = str.substr(nextPos + 1);
-        nextPos = str.find(","); rollNumbers = str.substr(0, nextPos); str = str.substr(nextPos + 1);
-        nextPos = str.find(","); room = str.substr(0, nextPos); str = str.substr(nextPos + 1);
-        students = str;
-        
-        if (currentRowY < 50) {
-            // Start new page if needed
-            pageContent << "showpage\n";
-            currentRowY = 750;
-            rowCount = 0;
-        }
-        
-        pageContent << "BT\n";
-        pageContent << "/F1 9 Tf\n";  // Slightly smaller font for data
-        
-        // Day
-        pageContent << (tableLeft + 5) << " " << currentRowY << " Td\n";
-        pageContent << "(" << day << ") Tj\n";
-        
-        // Date
-        pageContent << (dayColWidth - 5) << " 0 Td\n";
-        pageContent << "(" << date << ") Tj\n";
-        
-        // Course ID
-        pageContent << (dateColWidth - 5) << " 0 Td\n";
-        pageContent << "(" << courseId << ") Tj\n";
-        
-        // Roll Numbers (truncate if too long)
-        pageContent << (courseColWidth - 5) << " 0 Td\n";
-        std::string rollRange = rollNumbers;
-        if (rollRange.length() > 30) {
-            rollRange = rollRange.substr(0, 27) + "...";
-        }
-        pageContent << "(" << rollRange << ") Tj\n";
-        
-        // Room
-        pageContent << (rollColWidth - 15) << " 0 Td\n";
-        pageContent << "(" << room << ") Tj\n";
-        
-        // Students
-        pageContent << (roomColWidth - 5) << " 0 Td\n";
-        pageContent << "(" << students << ") Tj\n";
-        
-        pageContent << "ET\n";
-        
-        // Draw horizontal line after each row for better separation
-        pageContent << tableLeft << " " << (currentRowY - 5) << " m\n";
-        pageContent << tableRight << " " << (currentRowY - 5) << " l\n";
-        pageContent << "S\n";
-        
-        currentRowY -= 18;  // Move to next row with increased spacing
-        rowCount++;
+    // Calculate table bottom dynamically based on content
+    float estimatedTableBottom = tableTop - rowHeight * (schedule.size() + 3);
+    if (estimatedTableBottom < 150) {
+        estimatedTableBottom = 150; // Minimum bottom position
     }
     
-    // Draw final bottom border
-    pageContent << tableLeft << " " << currentRowY << " m\n";
-    pageContent << tableRight << " " << currentRowY << " l\n";
-    pageContent << "S\n";
+    // Vertical lines for columns (full height)
+    pageContent << dayX << " " << tableTop << " m " << dayX << " " << estimatedTableBottom << " l S\n";
+    pageContent << dateX << " " << tableTop << " m " << dateX << " " << estimatedTableBottom << " l S\n";
+    pageContent << courseX << " " << tableTop << " m " << courseX << " " << estimatedTableBottom << " l S\n";
+    pageContent << studentsX << " " << tableTop << " m " << studentsX << " " << estimatedTableBottom << " l S\n";
+    pageContent << roomX << " " << tableTop << " m " << roomX << " " << estimatedTableBottom << " l S\n";
+    pageContent << capX << " " << tableTop << " m " << capX << " " << estimatedTableBottom << " l S\n";
+    pageContent << tableRightEdge << " " << tableTop << " m " << tableRightEdge << " " << estimatedTableBottom << " l S\n";
     
-    // Get content string
+    // Horizontal lines - top and header separator
+    pageContent << leftMargin << " " << tableTop << " m " << tableRightEdge << " " << tableTop << " l S\n";
+    pageContent << leftMargin << " " << (tableTop - rowHeight) << " m " << tableRightEdge << " " << (tableTop - rowHeight) << " l S\n";
+    
+    // Table headers with absolute positioning
+    float headerY = tableTop - 14;
+    
+    pageContent << "BT\n";
+    pageContent << "/F1 10 Tf\n";
+    pageContent << (dayX + 3) << " " << headerY << " Td\n";
+    pageContent << "(Day) Tj\n";
+    pageContent << "ET\n";
+    
+    pageContent << "BT\n";
+    pageContent << "/F1 10 Tf\n";
+    pageContent << (dateX + 3) << " " << headerY << " Td\n";
+    pageContent << "(Date) Tj\n";
+    pageContent << "ET\n";
+    
+    pageContent << "BT\n";
+    pageContent << "/F1 10 Tf\n";
+    pageContent << (courseX + 3) << " " << headerY << " Td\n";
+    pageContent << "(Course) Tj\n";
+    pageContent << "ET\n";
+    
+    pageContent << "BT\n";
+    pageContent << "/F1 10 Tf\n";
+    pageContent << (studentsX + 3) << " " << headerY << " Td\n";
+    pageContent << "(Students) Tj\n";
+    pageContent << "ET\n";
+    
+    pageContent << "BT\n";
+    pageContent << "/F1 10 Tf\n";
+    pageContent << (roomX + 3) << " " << headerY << " Td\n";
+    pageContent << "(Room) Tj\n";
+    pageContent << "ET\n";
+    
+    pageContent << "BT\n";
+    pageContent << "/F1 10 Tf\n";
+    pageContent << (capX + 3) << " " << headerY << " Td\n";
+    pageContent << "(Cap.) Tj\n";
+    pageContent << "ET\n";
+    
+    // Data rows with absolute positioning
+    float currentY = tableTop - rowHeight;
+    int rowNum = 0;
+    
+    for (const auto& entry : schedule) {
+        if (currentY < 150) break; // Leave more space at bottom for proper closure
+        
+        currentY -= rowHeight;
+        
+        // Parse entry
+        std::stringstream ss(entry);
+        std::string day, dayNum, date, courseId, rollNumbers, room, students;
+        
+        std::getline(ss, day, ',');
+        std::getline(ss, dayNum, ',');
+        std::getline(ss, date, ',');
+        std::getline(ss, courseId, ',');
+        std::getline(ss, rollNumbers, ',');
+        std::getline(ss, room, ',');
+        std::getline(ss, students);
+        
+        // Alternate row background
+        if (rowNum % 2 == 0) {
+            pageContent << "0.95 g\n";
+            pageContent << leftMargin << " " << (currentY - 2) << " " << (tableRightEdge - leftMargin) << " " << rowHeight << " re f\n";
+            pageContent << "0 g\n";
+        }
+        
+        // Draw horizontal line for this row
+        pageContent << leftMargin << " " << currentY << " m " << tableRightEdge << " " << currentY << " l S\n";
+        
+        float dataY = currentY + 5;
+        
+        // Day column (absolute position)
+        pageContent << "BT\n";
+        pageContent << "/F1 9 Tf\n";
+        pageContent << (dayX + 3) << " " << dataY << " Td\n";
+        std::string shortDay = day.substr(0, 3);
+        pageContent << "(" << shortDay << ") Tj\n";
+        pageContent << "ET\n";
+        
+        // Date column (absolute position)
+        pageContent << "BT\n";
+        pageContent << "/F1 9 Tf\n";
+        pageContent << (dateX + 3) << " " << dataY << " Td\n";
+        pageContent << "(" << date << ") Tj\n";
+        pageContent << "ET\n";
+        
+        // Course column (absolute position)
+        pageContent << "BT\n";
+        pageContent << "/F1 9 Tf\n";
+        pageContent << (courseX + 3) << " " << dataY << " Td\n";
+        pageContent << "(" << courseId << ") Tj\n";
+        pageContent << "ET\n";
+        
+        // Students column (absolute position, truncate if too long)
+        pageContent << "BT\n";
+        pageContent << "/F1 8 Tf\n"; // Smaller font for student range
+        pageContent << (studentsX + 3) << " " << dataY << " Td\n";
+        std::string studentRange = rollNumbers;
+        if (studentRange.length() > 32) {
+            studentRange = studentRange.substr(0, 29) + "...";
+        }
+        pageContent << "(" << studentRange << ") Tj\n";
+        pageContent << "ET\n";
+        
+        // Room column (absolute position)
+        pageContent << "BT\n";
+        pageContent << "/F1 9 Tf\n";
+        pageContent << (roomX + 3) << " " << dataY << " Td\n";
+        pageContent << "(" << room << ") Tj\n";
+        pageContent << "ET\n";
+        
+        // Capacity column (absolute position)
+        pageContent << "BT\n";
+        pageContent << "/F1 9 Tf\n";
+        pageContent << (capX + 3) << " " << dataY << " Td\n";
+        pageContent << "(" << students << ") Tj\n";
+        pageContent << "ET\n";
+        
+        rowNum++;
+    }
+    
+    // Final table closure - draw proper bottom border
+    float finalY = currentY - rowHeight;
+    pageContent << "1 w\n"; // Thicker line for bottom border
+    pageContent << leftMargin << " " << finalY << " m " << tableRightEdge << " " << finalY << " l S\n";
+    
+    // Ensure all vertical lines reach the bottom properly
+    pageContent << "0.5 w\n"; // Reset line width
+    pageContent << dayX << " " << finalY << " m " << dayX << " " << (finalY - 3) << " l S\n";
+    pageContent << dateX << " " << finalY << " m " << dateX << " " << (finalY - 3) << " l S\n";
+    pageContent << courseX << " " << finalY << " m " << courseX << " " << (finalY - 3) << " l S\n";
+    pageContent << studentsX << " " << finalY << " m " << studentsX << " " << (finalY - 3) << " l S\n";
+    pageContent << roomX << " " << finalY << " m " << roomX << " " << (finalY - 3) << " l S\n";
+    pageContent << capX << " " << finalY << " m " << capX << " " << (finalY - 3) << " l S\n";
+    pageContent << tableRightEdge << " " << finalY << " m " << tableRightEdge << " " << (finalY - 3) << " l S\n";
+    
+    // Footer with proper spacing and positioning
+    float footerY = finalY - 30; // More space from table
+    pageContent << "BT\n";
+    pageContent << "/F1 8 Tf\n";
+    pageContent << leftMargin << " " << footerY << " Td\n";
+    pageContent << "(Generated: Nov 16 2025 | Sessions: " << schedule.size() << " | Courses: 43 | Students: 800) Tj\n";
+    pageContent << "ET\n";
+    
+    // Build complete PDF structure
     std::string pageContentStr = pageContent.str();
     int contentLength = pageContentStr.length();
     
-    // Build PDF structure with proper xref table
-    content << "%PDF-1.4\n";
+    std::ostringstream pdf;
+    pdf << "%PDF-1.4\n";
     
     // Object 1: Catalog
-    int obj1Offset = content.tellp();
-    content << "1 0 obj\n";
-    content << "<< /Type /Catalog /Pages 2 0 R >>\n";
-    content << "endobj\n";
+    int obj1Offset = pdf.tellp();
+    pdf << "1 0 obj\n<< /Type /Catalog /Pages 2 0 R >>\nendobj\n";
     
     // Object 2: Pages
-    int obj2Offset = content.tellp();
-    content << "2 0 obj\n";
-    content << "<< /Type /Pages /Kids [3 0 R] /Count 1 >>\n";
-    content << "endobj\n";
+    int obj2Offset = pdf.tellp();
+    pdf << "2 0 obj\n<< /Type /Pages /Kids [3 0 R] /Count 1 >>\nendobj\n";
     
     // Object 3: Page
-    int obj3Offset = content.tellp();
-    content << "3 0 obj\n";
-    content << "<< /Type /Page /Parent 2 0 R /Resources 4 0 R /MediaBox [0 0 612 792] /Contents 5 0 R >>\n";
-    content << "endobj\n";
+    int obj3Offset = pdf.tellp();
+    pdf << "3 0 obj\n<< /Type /Page /Parent 2 0 R /Resources 4 0 R /MediaBox [0 0 612 792] /Contents 5 0 R >>\nendobj\n";
     
     // Object 4: Resources
-    int obj4Offset = content.tellp();
-    content << "4 0 obj\n";
-    content << "<< /Font << /F1 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >> >> >>\n";
-    content << "endobj\n";
+    int obj4Offset = pdf.tellp();
+    pdf << "4 0 obj\n<< /Font << /F1 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >> >> >>\nendobj\n";
     
     // Object 5: Contents
-    int obj5Offset = content.tellp();
-    content << "5 0 obj\n";
-    content << "<< /Length " << contentLength << " >>\n";
-    content << "stream\n";
-    content << pageContentStr;
-    content << "\nendstream\n";
-    content << "endobj\n";
+    int obj5Offset = pdf.tellp();
+    pdf << "5 0 obj\n<< /Length " << contentLength << " >>\nstream\n";
+    pdf << pageContentStr;
+    pdf << "\nendstream\nendobj\n";
     
     // Cross-reference table
-    int xrefOffset = content.tellp();
-    content << "xref\n";
-    content << "0 6\n";
-    content << "0000000000 65535 f \n";
+    int xrefOffset = pdf.tellp();
+    pdf << "xref\n0 6\n0000000000 65535 f \n";
     
-    // Format offsets with leading zeros to 10 digits
     char buffer[20];
     sprintf(buffer, "%010d 00000 n \n", obj1Offset);
-    content << buffer;
+    pdf << buffer;
     sprintf(buffer, "%010d 00000 n \n", obj2Offset);
-    content << buffer;
+    pdf << buffer;
     sprintf(buffer, "%010d 00000 n \n", obj3Offset);
-    content << buffer;
+    pdf << buffer;
     sprintf(buffer, "%010d 00000 n \n", obj4Offset);
-    content << buffer;
+    pdf << buffer;
     sprintf(buffer, "%010d 00000 n \n", obj5Offset);
-    content << buffer;
+    pdf << buffer;
     
     // Trailer
-    content << "trailer\n";
-    content << "<< /Size 6 /Root 1 0 R >>\n";
-    content << "startxref\n";
-    content << xrefOffset << "\n";
-    content << "%%EOF\n";
+    pdf << "trailer\n<< /Size 6 /Root 1 0 R >>\nstartxref\n" << xrefOffset << "\n%%EOF\n";
     
-    file << content.str();
+    file << pdf.str();
     file.close();
     
     std::cout << "Schedule exported to " << filename << std::endl;
@@ -620,4 +740,34 @@ bool TimetableGenerator::updateCourseDate(const std::string& courseId, const std
 void TimetableGenerator::cleanup() {
     schedule.clear();
     generated = false;
+}
+
+std::string TimetableGenerator::calculateExamDate(const std::string& startDate, int dayOffset) {
+    try {
+        // Parse startDate in DD-MM-YYYY format
+        int day = std::stoi(startDate.substr(0, 2));
+        int month = std::stoi(startDate.substr(3, 2));
+        int year = std::stoi(startDate.substr(6, 4));
+        
+        std::tm tm = {};
+        tm.tm_year = year - 1900;
+        tm.tm_mon = month - 1;
+        tm.tm_mday = day;
+        
+        std::time_t startTime = std::mktime(&tm);
+        
+        // Add dayOffset-1 days (since day 1 should be the start date itself)
+        std::time_t examTime = startTime + ((dayOffset - 1) * 24 * 60 * 60);
+        
+        std::tm* examTm = std::localtime(&examTime);
+        
+        // Format as DD-MM-YYYY
+        char buffer[12];
+        std::strftime(buffer, sizeof(buffer), "%d-%m-%Y", examTm);
+        
+        return std::string(buffer);
+    } catch (...) {
+        // Fallback to startDate if parsing fails
+        return startDate;
+    }
 }

@@ -297,116 +297,140 @@ bool TimetableGenerator::exportToPDF(const std::string& filename) {
         return false;
     }
     
-    // Create page content with absolute positioning
-    std::ostringstream pageContent;
-    
-    // Title - centered
-    pageContent << "BT\n";
-    pageContent << "/F1 20 Tf\n";
-    pageContent << "150 720 Td\n";
-    pageContent << "(EXAMINATION TIMETABLE) Tj\n";
-    pageContent << "ET\n";
-    
-    // Subtitle
-    pageContent << "BT\n";
-    pageContent << "/F1 11 Tf\n";
-    pageContent << "72 690 Td\n";
-    pageContent << "(Exam Duration: 2:00 PM - 5:00 PM | Room Capacity: 55 Students) Tj\n";
-    pageContent << "ET\n";
-    
-    // Define table dimensions and positions
+    // We'll paginate the table so all sessions are included across pages.
+    // Define page and table metrics
     float leftMargin = 72;
     float tableTop = 650;
     float rowHeight = 18;
-    
-    // Column positions (absolute X coordinates) - optimized for page width
+
     float dayX = leftMargin;
     float dateX = leftMargin + 55;
     float courseX = leftMargin + 140;
     float studentsX = leftMargin + 210;
     float roomX = leftMargin + 420;
     float capX = leftMargin + 485;
-    float tableRightEdge = leftMargin + 530; // Ensure table fits within page margins
-    
-    // Table header background
-    pageContent << "0.9 g\n";
-    pageContent << leftMargin << " " << (tableTop - 2) << " " << (tableRightEdge - leftMargin) << " " << rowHeight << " re f\n";
-    pageContent << "0 g\n";
-    
-    // Draw table borders - complete border frame
-    pageContent << "0.5 w\n";
-    
-    // Calculate table bottom dynamically based on content
-    float estimatedTableBottom = tableTop - rowHeight * (schedule.size() + 3);
-    if (estimatedTableBottom < 150) {
-        estimatedTableBottom = 150; // Minimum bottom position
-    }
-    
-    // Vertical lines for columns (full height)
-    pageContent << dayX << " " << tableTop << " m " << dayX << " " << estimatedTableBottom << " l S\n";
-    pageContent << dateX << " " << tableTop << " m " << dateX << " " << estimatedTableBottom << " l S\n";
-    pageContent << courseX << " " << tableTop << " m " << courseX << " " << estimatedTableBottom << " l S\n";
-    pageContent << studentsX << " " << tableTop << " m " << studentsX << " " << estimatedTableBottom << " l S\n";
-    pageContent << roomX << " " << tableTop << " m " << roomX << " " << estimatedTableBottom << " l S\n";
-    pageContent << capX << " " << tableTop << " m " << capX << " " << estimatedTableBottom << " l S\n";
-    pageContent << tableRightEdge << " " << tableTop << " m " << tableRightEdge << " " << estimatedTableBottom << " l S\n";
-    
-    // Horizontal lines - top and header separator
-    pageContent << leftMargin << " " << tableTop << " m " << tableRightEdge << " " << tableTop << " l S\n";
-    pageContent << leftMargin << " " << (tableTop - rowHeight) << " m " << tableRightEdge << " " << (tableTop - rowHeight) << " l S\n";
-    
-    // Table headers with absolute positioning
-    float headerY = tableTop - 14;
-    
-    pageContent << "BT\n";
-    pageContent << "/F1 10 Tf\n";
-    pageContent << (dayX + 3) << " " << headerY << " Td\n";
-    pageContent << "(Day) Tj\n";
-    pageContent << "ET\n";
-    
-    pageContent << "BT\n";
-    pageContent << "/F1 10 Tf\n";
-    pageContent << (dateX + 3) << " " << headerY << " Td\n";
-    pageContent << "(Date) Tj\n";
-    pageContent << "ET\n";
-    
-    pageContent << "BT\n";
-    pageContent << "/F1 10 Tf\n";
-    pageContent << (courseX + 3) << " " << headerY << " Td\n";
-    pageContent << "(Course) Tj\n";
-    pageContent << "ET\n";
-    
-    pageContent << "BT\n";
-    pageContent << "/F1 10 Tf\n";
-    pageContent << (studentsX + 3) << " " << headerY << " Td\n";
-    pageContent << "(Students) Tj\n";
-    pageContent << "ET\n";
-    
-    pageContent << "BT\n";
-    pageContent << "/F1 10 Tf\n";
-    pageContent << (roomX + 3) << " " << headerY << " Td\n";
-    pageContent << "(Room) Tj\n";
-    pageContent << "ET\n";
-    
-    pageContent << "BT\n";
-    pageContent << "/F1 10 Tf\n";
-    pageContent << (capX + 3) << " " << headerY << " Td\n";
-    pageContent << "(Cap.) Tj\n";
-    pageContent << "ET\n";
-    
-    // Data rows with absolute positioning
+    float tableRightEdge = leftMargin + 530;
+    float minBottom = 150; // minimum bottom Y for table on each page
+
+    // Helper to create a new page header (returns an ostringstream with header content)
+    auto createPageHeader = [&](int pageNumber) {
+        std::ostringstream p;
+
+        // Title - centered
+        p << "BT\n";
+        p << "/F1 20 Tf\n";
+        p << "150 720 Td\n";
+        p << "(EXAMINATION TIMETABLE) Tj\n";
+        p << "ET\n";
+
+        // Subtitle
+        p << "BT\n";
+        p << "/F1 11 Tf\n";
+        p << "72 690 Td\n";
+        p << "(Exam Duration: 2:00 PM - 5:00 PM | Room Capacity: 55 Students) Tj\n";
+        p << "ET\n";
+
+        // Table header background and borders
+        p << "0.9 g\n";
+        p << leftMargin << " " << (tableTop - 2) << " " << (tableRightEdge - leftMargin) << " " << rowHeight << " re f\n";
+        p << "0 g\n";
+        p << "0.5 w\n";
+
+        // Note: Vertical lines will be drawn dynamically as content is added
+        // We'll draw them only to the actual table bottom, not to minBottom
+
+        // Horizontal lines - top and header separator
+        p << leftMargin << " " << tableTop << " m " << tableRightEdge << " " << tableTop << " l S\n";
+        p << leftMargin << " " << (tableTop - rowHeight) << " m " << tableRightEdge << " " << (tableTop - rowHeight) << " l S\n";
+
+        float headerY = tableTop - 14;
+
+        p << "BT\n";
+        p << "/F1 10 Tf\n";
+        p << (dayX + 3) << " " << headerY << " Td\n";
+        p << "(Day) Tj\n";
+        p << "ET\n";
+
+        p << "BT\n";
+        p << "/F1 10 Tf\n";
+        p << (dateX + 3) << " " << headerY << " Td\n";
+        p << "(Date) Tj\n";
+        p << "ET\n";
+
+        p << "BT\n";
+        p << "/F1 10 Tf\n";
+        p << (courseX + 3) << " " << headerY << " Td\n";
+        p << "(Course) Tj\n";
+        p << "ET\n";
+
+        p << "BT\n";
+        p << "/F1 10 Tf\n";
+        p << (studentsX + 3) << " " << headerY << " Td\n";
+        p << "(Students) Tj\n";
+        p << "ET\n";
+
+        p << "BT\n";
+        p << "/F1 10 Tf\n";
+        p << (roomX + 3) << " " << headerY << " Td\n";
+        p << "(Room) Tj\n";
+        p << "ET\n";
+
+        p << "BT\n";
+        p << "/F1 10 Tf\n";
+        p << (capX + 3) << " " << headerY << " Td\n";
+        p << "(Cap.) Tj\n";
+        p << "ET\n";
+
+        return p;
+    };
+
+    // Build pages by streaming rows into page headers and creating new pages when needed
+    std::vector<std::string> pageContents;
+    std::ostringstream currentPage = createPageHeader(1);
     float currentY = tableTop - rowHeight;
     int rowNum = 0;
-    
+
     for (const auto& entry : schedule) {
-        if (currentY < 150) break; // Leave more space at bottom for proper closure
-        
+        // If not enough space for another row, finish current page and start a new one
+        if (currentY < (minBottom + rowHeight)) {
+            // Draw vertical lines from tableTop to current table bottom
+            currentPage << "0.5 w\n";
+            float tableBottom = currentY;
+            currentPage << dayX << " " << tableTop << " m " << dayX << " " << tableBottom << " l S\n";
+            currentPage << dateX << " " << tableTop << " m " << dateX << " " << tableBottom << " l S\n";
+            currentPage << courseX << " " << tableTop << " m " << courseX << " " << tableBottom << " l S\n";
+            currentPage << studentsX << " " << tableTop << " m " << studentsX << " " << tableBottom << " l S\n";
+            currentPage << roomX << " " << tableTop << " m " << roomX << " " << tableBottom << " l S\n";
+            currentPage << capX << " " << tableTop << " m " << capX << " " << tableBottom << " l S\n";
+            currentPage << tableRightEdge << " " << tableTop << " m " << tableRightEdge << " " << tableBottom << " l S\n";
+            
+            // Draw bottom border
+            float finalY = currentY - rowHeight;
+            currentPage << "1 w\n";
+            currentPage << leftMargin << " " << finalY << " m " << tableRightEdge << " " << finalY << " l S\n";
+
+            float footerY = finalY - 30;
+            currentPage << "BT\n";
+            currentPage << "/F1 8 Tf\n";
+            currentPage << leftMargin << " " << footerY << " Td\n";
+            currentPage << "(Generated: Nov 16 2025 | Sessions: " << schedule.size() << ") Tj\n";
+            currentPage << "ET\n";
+
+            pageContents.push_back(currentPage.str());
+
+            // Start a new page
+            currentPage = createPageHeader(static_cast<int>(pageContents.size()) + 1);
+            currentY = tableTop - rowHeight;
+            rowNum = 0;
+        }
+
+        // Add row
         currentY -= rowHeight;
-        
+
         // Parse entry
         std::stringstream ss(entry);
         std::string day, dayNum, date, courseId, rollNumbers, room, students;
-        
+
         std::getline(ss, day, ',');
         std::getline(ss, dayNum, ',');
         std::getline(ss, date, ',');
@@ -414,143 +438,159 @@ bool TimetableGenerator::exportToPDF(const std::string& filename) {
         std::getline(ss, rollNumbers, ',');
         std::getline(ss, room, ',');
         std::getline(ss, students);
-        
+
         // Alternate row background
         if (rowNum % 2 == 0) {
-            pageContent << "0.95 g\n";
-            pageContent << leftMargin << " " << (currentY - 2) << " " << (tableRightEdge - leftMargin) << " " << rowHeight << " re f\n";
-            pageContent << "0 g\n";
+            currentPage << "0.95 g\n";
+            currentPage << leftMargin << " " << (currentY - 2) << " " << (tableRightEdge - leftMargin) << " " << rowHeight << " re f\n";
+            currentPage << "0 g\n";
         }
-        
+
         // Draw horizontal line for this row
-        pageContent << leftMargin << " " << currentY << " m " << tableRightEdge << " " << currentY << " l S\n";
-        
+        currentPage << leftMargin << " " << currentY << " m " << tableRightEdge << " " << currentY << " l S\n";
+
         float dataY = currentY + 5;
-        
-        // Day column (absolute position)
-        pageContent << "BT\n";
-        pageContent << "/F1 9 Tf\n";
-        pageContent << (dayX + 3) << " " << dataY << " Td\n";
+
+        // Day
+        currentPage << "BT\n";
+        currentPage << "/F1 9 Tf\n";
+        currentPage << (dayX + 3) << " " << dataY << " Td\n";
         std::string shortDay = day.substr(0, 3);
-        pageContent << "(" << shortDay << ") Tj\n";
-        pageContent << "ET\n";
-        
-        // Date column (absolute position)
-        pageContent << "BT\n";
-        pageContent << "/F1 9 Tf\n";
-        pageContent << (dateX + 3) << " " << dataY << " Td\n";
-        pageContent << "(" << date << ") Tj\n";
-        pageContent << "ET\n";
-        
-        // Course column (absolute position)
-        pageContent << "BT\n";
-        pageContent << "/F1 9 Tf\n";
-        pageContent << (courseX + 3) << " " << dataY << " Td\n";
-        pageContent << "(" << courseId << ") Tj\n";
-        pageContent << "ET\n";
-        
-        // Students column (absolute position, truncate if too long)
-        pageContent << "BT\n";
-        pageContent << "/F1 8 Tf\n"; // Smaller font for student range
-        pageContent << (studentsX + 3) << " " << dataY << " Td\n";
+        currentPage << "(" << shortDay << ") Tj\n";
+        currentPage << "ET\n";
+
+        // Date
+        currentPage << "BT\n";
+        currentPage << "/F1 9 Tf\n";
+        currentPage << (dateX + 3) << " " << dataY << " Td\n";
+        currentPage << "(" << date << ") Tj\n";
+        currentPage << "ET\n";
+
+        // Course
+        currentPage << "BT\n";
+        currentPage << "/F1 9 Tf\n";
+        currentPage << (courseX + 3) << " " << dataY << " Td\n";
+        currentPage << "(" << courseId << ") Tj\n";
+        currentPage << "ET\n";
+
+        // Students (truncate if too long)
+        currentPage << "BT\n";
+        currentPage << "/F1 8 Tf\n";
+        currentPage << (studentsX + 3) << " " << dataY << " Td\n";
         std::string studentRange = rollNumbers;
         if (studentRange.length() > 32) {
             studentRange = studentRange.substr(0, 29) + "...";
         }
-        pageContent << "(" << studentRange << ") Tj\n";
-        pageContent << "ET\n";
-        
-        // Room column (absolute position)
-        pageContent << "BT\n";
-        pageContent << "/F1 9 Tf\n";
-        pageContent << (roomX + 3) << " " << dataY << " Td\n";
-        pageContent << "(" << room << ") Tj\n";
-        pageContent << "ET\n";
-        
-        // Capacity column (absolute position)
-        pageContent << "BT\n";
-        pageContent << "/F1 9 Tf\n";
-        pageContent << (capX + 3) << " " << dataY << " Td\n";
-        pageContent << "(" << students << ") Tj\n";
-        pageContent << "ET\n";
-        
+        currentPage << "(" << studentRange << ") Tj\n";
+        currentPage << "ET\n";
+
+        // Room
+        currentPage << "BT\n";
+        currentPage << "/F1 9 Tf\n";
+        currentPage << (roomX + 3) << " " << dataY << " Td\n";
+        currentPage << "(" << room << ") Tj\n";
+        currentPage << "ET\n";
+
+        // Capacity
+        currentPage << "BT\n";
+        currentPage << "/F1 9 Tf\n";
+        currentPage << (capX + 3) << " " << dataY << " Td\n";
+        currentPage << "(" << students << ") Tj\n";
+        currentPage << "ET\n";
+
         rowNum++;
     }
-    
-    // Final table closure - draw proper bottom border
-    float finalY = currentY - rowHeight;
-    pageContent << "1 w\n"; // Thicker line for bottom border
-    pageContent << leftMargin << " " << finalY << " m " << tableRightEdge << " " << finalY << " l S\n";
-    
-    // Ensure all vertical lines reach the bottom properly
-    pageContent << "0.5 w\n"; // Reset line width
-    pageContent << dayX << " " << finalY << " m " << dayX << " " << (finalY - 3) << " l S\n";
-    pageContent << dateX << " " << finalY << " m " << dateX << " " << (finalY - 3) << " l S\n";
-    pageContent << courseX << " " << finalY << " m " << courseX << " " << (finalY - 3) << " l S\n";
-    pageContent << studentsX << " " << finalY << " m " << studentsX << " " << (finalY - 3) << " l S\n";
-    pageContent << roomX << " " << finalY << " m " << roomX << " " << (finalY - 3) << " l S\n";
-    pageContent << capX << " " << finalY << " m " << capX << " " << (finalY - 3) << " l S\n";
-    pageContent << tableRightEdge << " " << finalY << " m " << tableRightEdge << " " << (finalY - 3) << " l S\n";
-    
-    // Footer with proper spacing and positioning
-    float footerY = finalY - 30; // More space from table
-    pageContent << "BT\n";
-    pageContent << "/F1 8 Tf\n";
-    pageContent << leftMargin << " " << footerY << " Td\n";
-    pageContent << "(Generated: Nov 16 2025 | Sessions: " << schedule.size() << " | Courses: 43 | Students: 800) Tj\n";
-    pageContent << "ET\n";
-    
-    // Build complete PDF structure
-    std::string pageContentStr = pageContent.str();
-    int contentLength = pageContentStr.length();
-    
+
+    // Push last page
+    if (!currentPage.str().empty()) {
+        // Draw vertical lines from tableTop to actual table bottom
+        currentPage << "0.5 w\n";
+        float tableBottom = currentY;
+        currentPage << dayX << " " << tableTop << " m " << dayX << " " << tableBottom << " l S\n";
+        currentPage << dateX << " " << tableTop << " m " << dateX << " " << tableBottom << " l S\n";
+        currentPage << courseX << " " << tableTop << " m " << courseX << " " << tableBottom << " l S\n";
+        currentPage << studentsX << " " << tableTop << " m " << studentsX << " " << tableBottom << " l S\n";
+        currentPage << roomX << " " << tableTop << " m " << roomX << " " << tableBottom << " l S\n";
+        currentPage << capX << " " << tableTop << " m " << capX << " " << tableBottom << " l S\n";
+        currentPage << tableRightEdge << " " << tableTop << " m " << tableRightEdge << " " << tableBottom << " l S\n";
+        
+        // Draw bottom border for the last page
+        float finalY = currentY - rowHeight;
+        currentPage << "1 w\n";
+        currentPage << leftMargin << " " << finalY << " m " << tableRightEdge << " " << finalY << " l S\n";
+
+        float footerY = finalY - 30;
+        currentPage << "BT\n";
+        currentPage << "/F1 8 Tf\n";
+        currentPage << leftMargin << " " << footerY << " Td\n";
+        currentPage << "(Generated: Nov 16 2025 | Sessions: " << schedule.size() << ") Tj\n";
+        currentPage << "ET\n";
+
+        pageContents.push_back(currentPage.str());
+    }
+
+    // Build complete PDF structure with one page object per page
     std::ostringstream pdf;
     pdf << "%PDF-1.4\n";
-    
+
+    int numPages = static_cast<int>(pageContents.size());
+    int totalObjects = 3 + numPages + numPages; // 1:Catalog,2:Pages, 3..(2+numPages): Page objs, resources, then numPages content objs
+    int resourcesObjNum = 3 + numPages;
+
+    std::vector<int> offsets(totalObjects + 1, 0);
+
     // Object 1: Catalog
-    int obj1Offset = pdf.tellp();
+    offsets[1] = static_cast<int>(pdf.tellp());
     pdf << "1 0 obj\n<< /Type /Catalog /Pages 2 0 R >>\nendobj\n";
-    
-    // Object 2: Pages
-    int obj2Offset = pdf.tellp();
-    pdf << "2 0 obj\n<< /Type /Pages /Kids [3 0 R] /Count 1 >>\nendobj\n";
-    
-    // Object 3: Page
-    int obj3Offset = pdf.tellp();
-    pdf << "3 0 obj\n<< /Type /Page /Parent 2 0 R /Resources 4 0 R /MediaBox [0 0 612 792] /Contents 5 0 R >>\nendobj\n";
-    
-    // Object 4: Resources
-    int obj4Offset = pdf.tellp();
-    pdf << "4 0 obj\n<< /Font << /F1 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >> >> >>\nendobj\n";
-    
-    // Object 5: Contents
-    int obj5Offset = pdf.tellp();
-    pdf << "5 0 obj\n<< /Length " << contentLength << " >>\nstream\n";
-    pdf << pageContentStr;
-    pdf << "\nendstream\nendobj\n";
-    
+
+    // Object 2: Pages (kids list)
+    offsets[2] = static_cast<int>(pdf.tellp());
+    pdf << "2 0 obj\n<< /Type /Pages /Kids [";
+    for (int i = 0; i < numPages; ++i) {
+        int pageObjNum = 3 + i;
+        pdf << pageObjNum << " 0 R ";
+    }
+    pdf << "] /Count " << numPages << " >>\nendobj\n";
+
+    // Page objects (3 .. 2+numPages)
+    for (int i = 0; i < numPages; ++i) {
+        int pageObjNum = 3 + i;
+        offsets[pageObjNum] = static_cast<int>(pdf.tellp());
+        int contentObjNum = resourcesObjNum + 1 + i;
+        pdf << pageObjNum << " 0 obj\n<< /Type /Page /Parent 2 0 R /Resources " << resourcesObjNum << " 0 R /MediaBox [0 0 612 792] /Contents " << contentObjNum << " 0 R >>\nendobj\n";
+    }
+
+    // Resources object
+    offsets[resourcesObjNum] = static_cast<int>(pdf.tellp());
+    pdf << resourcesObjNum << " 0 obj\n<< /Font << /F1 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >> >> >>\nendobj\n";
+
+    // Content objects (streams)
+    for (int i = 0; i < numPages; ++i) {
+        int contentObjNum = resourcesObjNum + 1 + i;
+        offsets[contentObjNum] = static_cast<int>(pdf.tellp());
+        std::string& content = pageContents[i];
+        int length = static_cast<int>(content.length());
+        pdf << contentObjNum << " 0 obj\n<< /Length " << length << " >>\nstream\n";
+        pdf << content;
+        pdf << "\nendstream\nendobj\n";
+    }
+
     // Cross-reference table
-    int xrefOffset = pdf.tellp();
-    pdf << "xref\n0 6\n0000000000 65535 f \n";
-    
-    char buffer[20];
-    sprintf(buffer, "%010d 00000 n \n", obj1Offset);
-    pdf << buffer;
-    sprintf(buffer, "%010d 00000 n \n", obj2Offset);
-    pdf << buffer;
-    sprintf(buffer, "%010d 00000 n \n", obj3Offset);
-    pdf << buffer;
-    sprintf(buffer, "%010d 00000 n \n", obj4Offset);
-    pdf << buffer;
-    sprintf(buffer, "%010d 00000 n \n", obj5Offset);
-    pdf << buffer;
-    
+    int xrefOffset = static_cast<int>(pdf.tellp());
+    pdf << "xref\n0 " << (totalObjects + 1) << "\n";
+    pdf << "0000000000 65535 f \n";
+    char buffer[64];
+    for (int i = 1; i <= totalObjects; ++i) {
+        sprintf(buffer, "%010d 00000 n \n", offsets[i]);
+        pdf << buffer;
+    }
+
     // Trailer
-    pdf << "trailer\n<< /Size 6 /Root 1 0 R >>\nstartxref\n" << xrefOffset << "\n%%EOF\n";
-    
+    pdf << "trailer\n<< /Size " << (totalObjects + 1) << " /Root 1 0 R >>\nstartxref\n" << xrefOffset << "\n%%EOF\n";
+
     file << pdf.str();
     file.close();
-    
+
     std::cout << "Schedule exported to " << filename << std::endl;
     return true;
 }

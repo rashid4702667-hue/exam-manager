@@ -1,0 +1,801 @@
+Name,Roll Number,Batch,Program,Course ID 1,Course 1,Course ID 2,Course 2,Customised Course ID,Customised Course
+Maryam Khan,CT-25279000,2025,MS in Data Science,CT-527,Image processing & Computer Vision,CT-559,Artificial Neural Networks,,
+Mubashir Shah,CT-24279001,2024,MS in Information Security,CT-553,Emerging Trends in Information Security 3,CT-507,Wireless and Mobile Communication Networks,CT-493,Data Structure and Algorithm Design
+Usman Siddiqui,CT-25279002,2025,MS DS (Geospatial Data Science),CT-581,Statistics & Probability for Data Science,CT-5007,Web GIS,,
+Usman Siddiqui,CT-24279003,2024,MS in Data Science,CT-581,Statistics & Probability for Data Science,CT-562,Machine Learning,CT-493,Data Structure and Algorithm Design
+Hassan Raza,CT-25279004,2025,MS DS (Geospatial Data Science),CT-5005,Spatial Decision Support Systems,CT-5012,Emerging Trends in Remote Sensing & GIS,CT-495,Fundamentals of Remote Sensing and GIS
+Ali Butt,CT-25279005,2025,MS in Data Science,CT-527,Image processing & Computer Vision,CT-521,Distributed Intelligence Systems,CT-493,Data Structure and Algorithm Design
+Hassan Shah,CT-24279006,2024,MS in Computer Science and Information Technology,CT-523,Fuzzy Control & Neural Networks,CT-516,Multimedia Communications,CT-494,Introduction to Databases
+Ali Butt,CT-25279007,2025,MS DS (Geospatial Data Science),CT-5004,Advanced Programming in GIS,CT-581,Statistics & Probability for Data Science,,
+Ali Siddiqui,CT-24279008,2024,MS DS (Geospatial Data Science),CT-5012,Emerging Trends in Remote Sensing & GIS,CT-5011,GIS for Emergency Management,CT-495,Fundamentals of Remote Sensing and GIS
+Zain Shah,CT-25279009,2025,MS in Information Security,CT-542,Information Security Management,CT-544,Cyber Crimes and Security,CT-494,Introduction to Databases
+Zohaib Siddiqui,CT-25279010,2025,MS DS (Geospatial Data Science),CT-5005,Spatial Decision Support Systems,CT-5007,Web GIS,CT-495,Fundamentals of Remote Sensing and GIS
+Bilal Siddiqui,CT-25279011,2025,MS in Information Security,CT-509,Distributed Systems,CT-541,Network Security,CT-494,Introduction to Databases
+Zain Butt,CT-25279012,2025,MS DS (Geospatial Data Science),CT-5007,Web GIS,CT-5004,Advanced Programming in GIS,,
+Amna Shah,CT-25279013,2025,MS DS (Geospatial Data Science),CT-590,Data Visualization,CT-527,Image processing & Computer Vision,CT-495,Fundamentals of Remote Sensing and GIS
+Hamza Ahmed,CT-25279014,2025,MS in Computer Science and Information Technology,CT-526,Logic Programming,CT-516,Multimedia Communications,CT-494,Introduction to Databases
+Hussain Raza,CT-24279015,2024,MS in Data Science,CT-528,Advance Database Techniques,CT-529,Object Oriented Databases,CT-493,Data Structure and Algorithm Design
+Ali Ahmed,CT-25279016,2025,MS in Information Security,CT-552,Quantum Cryptography,CT-542,Information Security Management,CT-493,Data Structure and Algorithm Design
+Ayesha Siddiqui,CT-24279017,2024,MS in Information Security,CT-575,Cryptography,CT-507,Wireless and Mobile Communication Networks,CT-494,Introduction to Databases
+Ahmed Mir,CT-24279018,2024,MS in Data Science,CT-528,Advance Database Techniques,CT-521,Distributed Intelligence Systems,CT-493,Data Structure and Algorithm Design
+Hassan Raza,CT-25279019,2025,MS in Computer Science and Information Technology,CT-530,Data Mining,CT-577,Advanced Theory of Automata,CT-494,Introduction to Databases
+Ahmed Raza,CT-25279020,2025,MS in Computer Science and Information Technology,CT-511,Information System Development Methodologies,CT-506,Advanced Analysis of Algorithms,,
+Bilal Ahmed,CT-24279021,2024,MS DS (Geospatial Data Science),CT-5004,Advanced Programming in GIS,CT-5012,Emerging Trends in Remote Sensing & GIS,,
+Zain Mir,CT-24279022,2024,MS in Information Security,CT-575,Cryptography,CT-541,Network Security,CT-494,Introduction to Databases
+Dua Butt,CT-24279023,2024,MS in Information Security,CT-543,Database Security,CT-541,Network Security,,
+Hussain Ahmed,CT-24279024,2024,MS in Data Science,CT-562,Machine Learning,CT-559,Artificial Neural Networks,CT-493,Data Structure and Algorithm Design
+Amna Butt,CT-25279025,2025,MS in Data Science,CT-562,Machine Learning,CT-530,Data Mining,,
+Bilal Raza,CT-24279026,2024,MS in Information Security,CT-575,Cryptography,CT-507,Wireless and Mobile Communication Networks,,
+Dua Raza,CT-24279027,2024,MS in Data Science,CT-562,Machine Learning,CT-559,Artificial Neural Networks,CT-493,Data Structure and Algorithm Design
+Sara Shah,CT-24279028,2024,MS in Data Science,CT-525,Modeling & Simulation,CT-521,Distributed Intelligence Systems,CT-492,Object Oriented Programming
+Zohaib Mir,CT-24279029,2024,MS in Computer Science and Information Technology,CT-506,Advanced Analysis of Algorithms,CT-526,Logic Programming,,
+Zohaib Raza,CT-24279030,2024,MS DS (Geospatial Data Science),CT-5007,Web GIS,CT-5012,Emerging Trends in Remote Sensing & GIS,CT-495,Fundamentals of Remote Sensing and GIS
+Hassan Shah,CT-25279031,2025,MS DS (Geospatial Data Science),CT-590,Data Visualization,CT-562,Machine Learning,CT-495,Fundamentals of Remote Sensing and GIS
+Ali Ahmed,CT-25279032,2025,MS in Information Security,CT-553,Emerging Trends in Information Security 3,CT-554,Ethical Hacking,CT-493,Data Structure and Algorithm Design
+Fatima Shah,CT-24279033,2024,MS DS (Geospatial Data Science),CT-530,Data Mining,CT-562,Machine Learning,CT-495,Fundamentals of Remote Sensing and GIS
+Amna Shah,CT-24279034,2024,MS in Computer Science and Information Technology,CT-511,Information System Development Methodologies,CT-577,Advanced Theory of Automata,CT-491,Operating System
+Sara Siddiqui,CT-24279035,2024,MS in Information Security,CT-541,Network Security,CT-542,Information Security Management,,
+Hamza Khan,CT-24279036,2024,MS in Information Security,CT-509,Distributed Systems,CT-554,Ethical Hacking,CT-493,Data Structure and Algorithm Design
+Hussain Siddiqui,CT-25279037,2025,MS DS (Geospatial Data Science),CT-5012,Emerging Trends in Remote Sensing & GIS,CT-530,Data Mining,,
+Amna Khan,CT-24279038,2024,MS in Information Security,CT-507,Wireless and Mobile Communication Networks,CT-575,Cryptography,CT-494,Introduction to Databases
+Ali Shah,CT-24279039,2024,MS DS (Geospatial Data Science),CT-527,Image processing & Computer Vision,CT-5012,Emerging Trends in Remote Sensing & GIS,,
+Sara Raza,CT-24279040,2024,MS in Data Science,CT-527,Image processing & Computer Vision,CT-529,Object Oriented Databases,,
+Ali Raza,CT-25279041,2025,MS in Computer Science and Information Technology,CT-523,Fuzzy Control & Neural Networks,CT-506,Advanced Analysis of Algorithms,CT-491,Operating System
+Hamza Siddiqui,CT-25279042,2025,MS in Information Security,CT-507,Wireless and Mobile Communication Networks,CT-509,Distributed Systems,CT-493,Data Structure and Algorithm Design
+Mubashir Khan,CT-24279043,2024,MS in Computer Science and Information Technology,CT-512,Principles of Marketing,CT-534,Software Quality Assurance,,
+Zohaib Raza,CT-25279044,2025,MS in Information Security,CT-575,Cryptography,CT-509,Distributed Systems,,
+Ayesha Ahmed,CT-24279045,2024,MS in Computer Science and Information Technology,CT-530,Data Mining,CT-506,Advanced Analysis of Algorithms,,
+Fatima Khan,CT-25279046,2025,MS in Data Science,CT-524,Knowledge Based System,CT-559,Artificial Neural Networks,CT-492,Object Oriented Programming
+Ayesha Mir,CT-25279047,2025,MS DS (Geospatial Data Science),CT-5012,Emerging Trends in Remote Sensing & GIS,CT-5011,GIS for Emergency Management,,
+Dua Siddiqui,CT-25279048,2025,MS DS (Geospatial Data Science),CT-5004,Advanced Programming in GIS,CT-5011,GIS for Emergency Management,,
+Zohaib Siddiqui,CT-24279049,2024,MS DS (Geospatial Data Science),CT-562,Machine Learning,CT-5007,Web GIS,CT-495,Fundamentals of Remote Sensing and GIS
+Maryam Raza,CT-24279050,2024,MS in Computer Science and Information Technology,CT-577,Advanced Theory of Automata,CT-506,Advanced Analysis of Algorithms,CT-491,Operating System
+Ali Raza,CT-25279051,2025,MS in Data Science,CT-529,Object Oriented Databases,CT-521,Distributed Intelligence Systems,CT-492,Object Oriented Programming
+Ahmed Mir,CT-24279052,2024,MS in Computer Science and Information Technology,CT-530,Data Mining,CT-523,Fuzzy Control & Neural Networks,,
+Hassan Siddiqui,CT-24279053,2024,MS in Data Science,CT-521,Distributed Intelligence Systems,CT-524,Knowledge Based System,CT-493,Data Structure and Algorithm Design
+Zain Butt,CT-24279054,2024,MS in Data Science,CT-528,Advance Database Techniques,CT-525,Modeling & Simulation,CT-492,Object Oriented Programming
+Amna Khan,CT-24279055,2024,MS in Information Security,CT-541,Network Security,CT-554,Ethical Hacking,CT-494,Introduction to Databases
+Mubashir Siddiqui,CT-25279056,2025,MS in Data Science,CT-525,Modeling & Simulation,CT-562,Machine Learning,CT-493,Data Structure and Algorithm Design
+Zain Ahmed,CT-24279057,2024,MS in Computer Science and Information Technology,CT-526,Logic Programming,CT-506,Advanced Analysis of Algorithms,CT-491,Operating System
+Usman Mir,CT-25279058,2025,MS DS (Geospatial Data Science),CT-5004,Advanced Programming in GIS,CT-5005,Spatial Decision Support Systems,CT-494,Introduction to Databases
+Fatima Ahmed,CT-24279059,2024,MS DS (Geospatial Data Science),CT-530,Data Mining,CT-562,Machine Learning,,
+Mubashir Butt,CT-24279060,2024,MS in Computer Science and Information Technology,CT-513,Quality Information System,CT-506,Advanced Analysis of Algorithms,CT-494,Introduction to Databases
+Mubashir Raza,CT-25279061,2025,MS in Data Science,CT-529,Object Oriented Databases,CT-528,Advance Database Techniques,,
+Sara Ahmed,CT-25279062,2025,MS DS (Geospatial Data Science),CT-5007,Web GIS,CT-5012,Emerging Trends in Remote Sensing & GIS,CT-494,Introduction to Databases
+Sara Shah,CT-25279063,2025,MS in Information Security,CT-552,Quantum Cryptography,CT-509,Distributed Systems,CT-493,Data Structure and Algorithm Design
+Ayesha Butt,CT-25279064,2025,MS in Information Security,CT-552,Quantum Cryptography,CT-542,Information Security Management,CT-493,Data Structure and Algorithm Design
+Zohaib Siddiqui,CT-24279065,2024,MS in Data Science,CT-530,Data Mining,CT-581,Statistics & Probability for Data Science,,
+Ali Ahmed,CT-25279066,2025,MS DS (Geospatial Data Science),CT-581,Statistics & Probability for Data Science,CT-5012,Emerging Trends in Remote Sensing & GIS,,
+Ahmed Khan,CT-24279067,2024,MS in Information Security,CT-509,Distributed Systems,CT-507,Wireless and Mobile Communication Networks,,
+Hussain Raza,CT-24279068,2024,MS in Information Security,CT-542,Information Security Management,CT-554,Ethical Hacking,CT-494,Introduction to Databases
+Ahmed Siddiqui,CT-24279069,2024,MS in Computer Science and Information Technology,CT-501,Software Project Management,CT-523,Fuzzy Control & Neural Networks,,
+Dua Butt,CT-24279070,2024,MS in Data Science,CT-527,Image processing & Computer Vision,CT-521,Distributed Intelligence Systems,CT-492,Object Oriented Programming
+Zohaib Butt,CT-24279071,2024,MS in Computer Science and Information Technology,CT-506,Advanced Analysis of Algorithms,CT-534,Software Quality Assurance,,
+Amna Butt,CT-24279072,2024,MS in Information Security,CT-554,Ethical Hacking,CT-544,Cyber Crimes and Security,CT-493,Data Structure and Algorithm Design
+Ayesha Ahmed,CT-25279073,2025,MS in Computer Science and Information Technology,CT-530,Data Mining,CT-512,Principles of Marketing,CT-491,Operating System
+Usman Siddiqui,CT-25279074,2025,MS in Information Security,CT-551,Fault Tolerance and Reliability,CT-507,Wireless and Mobile Communication Networks,,
+Fatima Raza,CT-25279075,2025,MS DS (Geospatial Data Science),CT-5007,Web GIS,CT-5012,Emerging Trends in Remote Sensing & GIS,,
+Hussain Raza,CT-25279076,2025,MS DS (Geospatial Data Science),CT-530,Data Mining,CT-5005,Spatial Decision Support Systems,,
+Sara Shah,CT-24279077,2024,MS DS (Geospatial Data Science),CT-527,Image processing & Computer Vision,CT-5011,GIS for Emergency Management,CT-494,Introduction to Databases
+Usman Raza,CT-24279078,2024,MS in Computer Science and Information Technology,CT-534,Software Quality Assurance,CT-516,Multimedia Communications,,
+Bilal Raza,CT-25279079,2025,MS in Data Science,CT-521,Distributed Intelligence Systems,CT-525,Modeling & Simulation,,
+Hamza Raza,CT-25279080,2025,MS in Information Security,CT-551,Fault Tolerance and Reliability,CT-575,Cryptography,CT-494,Introduction to Databases
+Dua Mir,CT-25279081,2025,MS DS (Geospatial Data Science),CT-590,Data Visualization,CT-5007,Web GIS,CT-495,Fundamentals of Remote Sensing and GIS
+Amna Mir,CT-24279082,2024,MS DS (Geospatial Data Science),CT-590,Data Visualization,CT-530,Data Mining,CT-494,Introduction to Databases
+Ali Ahmed,CT-24279083,2024,MS DS (Geospatial Data Science),CT-5012,Emerging Trends in Remote Sensing & GIS,CT-5005,Spatial Decision Support Systems,CT-495,Fundamentals of Remote Sensing and GIS
+Hassan Ahmed,CT-25279084,2025,MS in Computer Science and Information Technology,CT-530,Data Mining,CT-526,Logic Programming,CT-494,Introduction to Databases
+Fatima Mir,CT-24279085,2024,MS in Computer Science and Information Technology,CT-516,Multimedia Communications,CT-511,Information System Development Methodologies,CT-491,Operating System
+Bilal Mir,CT-24279086,2024,MS in Information Security,CT-553,Emerging Trends in Information Security 3,CT-541,Network Security,,
+Mubashir Ahmed,CT-24279087,2024,MS DS (Geospatial Data Science),CT-5007,Web GIS,CT-530,Data Mining,,
+Ayesha Butt,CT-24279088,2024,MS DS (Geospatial Data Science),CT-530,Data Mining,CT-590,Data Visualization,,
+Amna Ahmed,CT-25279089,2025,MS DS (Geospatial Data Science),CT-5005,Spatial Decision Support Systems,CT-590,Data Visualization,,
+Usman Mir,CT-25279090,2025,MS in Data Science,CT-525,Modeling & Simulation,CT-524,Knowledge Based System,CT-492,Object Oriented Programming
+Zohaib Siddiqui,CT-25279091,2025,MS in Data Science,CT-524,Knowledge Based System,CT-530,Data Mining,CT-492,Object Oriented Programming
+Ayesha Shah,CT-25279092,2025,MS in Information Security,CT-507,Wireless and Mobile Communication Networks,CT-509,Distributed Systems,CT-493,Data Structure and Algorithm Design
+Fatima Shah,CT-24279093,2024,MS in Data Science,CT-559,Artificial Neural Networks,CT-525,Modeling & Simulation,,
+Ayesha Khan,CT-25279094,2025,MS in Computer Science and Information Technology,CT-516,Multimedia Communications,CT-512,Principles of Marketing,CT-491,Operating System
+Ali Siddiqui,CT-25279095,2025,MS in Data Science,CT-521,Distributed Intelligence Systems,CT-524,Knowledge Based System,,
+Hassan Khan,CT-24279096,2024,MS in Computer Science and Information Technology,CT-513,Quality Information System,CT-523,Fuzzy Control & Neural Networks,CT-491,Operating System
+Ali Mir,CT-24279097,2024,MS in Data Science,CT-527,Image processing & Computer Vision,CT-559,Artificial Neural Networks,CT-493,Data Structure and Algorithm Design
+Hamza Raza,CT-25279098,2025,MS in Information Security,CT-575,Cryptography,CT-542,Information Security Management,CT-493,Data Structure and Algorithm Design
+Ali Shah,CT-24279099,2024,MS in Information Security,CT-554,Ethical Hacking,CT-551,Fault Tolerance and Reliability,CT-494,Introduction to Databases
+Hussain Ahmed,CT-24279100,2024,MS in Information Security,CT-551,Fault Tolerance and Reliability,CT-541,Network Security,,
+Hussain Raza,CT-25279101,2025,MS in Information Security,CT-543,Database Security,CT-541,Network Security,,
+Sara Raza,CT-24279102,2024,MS in Computer Science and Information Technology,CT-513,Quality Information System,CT-530,Data Mining,CT-491,Operating System
+Fatima Shah,CT-25279103,2025,MS DS (Geospatial Data Science),CT-5007,Web GIS,CT-530,Data Mining,,
+Hussain Ahmed,CT-24279104,2024,MS in Data Science,CT-524,Knowledge Based System,CT-527,Image processing & Computer Vision,CT-492,Object Oriented Programming
+Hamza Raza,CT-24279105,2024,MS in Computer Science and Information Technology,CT-530,Data Mining,CT-513,Quality Information System,CT-491,Operating System
+Hamza Khan,CT-24279106,2024,MS DS (Geospatial Data Science),CT-5004,Advanced Programming in GIS,CT-5012,Emerging Trends in Remote Sensing & GIS,CT-495,Fundamentals of Remote Sensing and GIS
+Maryam Khan,CT-24279107,2024,MS in Information Security,CT-509,Distributed Systems,CT-554,Ethical Hacking,CT-494,Introduction to Databases
+Ayesha Butt,CT-25279108,2025,MS in Data Science,CT-524,Knowledge Based System,CT-530,Data Mining,,
+Maryam Mir,CT-24279109,2024,MS in Data Science,CT-581,Statistics & Probability for Data Science,CT-521,Distributed Intelligence Systems,,
+Fatima Siddiqui,CT-24279110,2024,MS in Information Security,CT-544,Cyber Crimes and Security,CT-575,Cryptography,CT-494,Introduction to Databases
+Amna Raza,CT-25279111,2025,MS DS (Geospatial Data Science),CT-530,Data Mining,CT-581,Statistics & Probability for Data Science,CT-494,Introduction to Databases
+Usman Siddiqui,CT-25279112,2025,MS in Data Science,CT-530,Data Mining,CT-527,Image processing & Computer Vision,,
+Ayesha Raza,CT-24279113,2024,MS in Data Science,CT-524,Knowledge Based System,CT-530,Data Mining,CT-493,Data Structure and Algorithm Design
+Dua Siddiqui,CT-25279114,2025,MS in Information Security,CT-555,Cloud Security,CT-575,Cryptography,,
+Sara Shah,CT-25279115,2025,MS in Computer Science and Information Technology,CT-512,Principles of Marketing,CT-501,Software Project Management,CT-494,Introduction to Databases
+Usman Butt,CT-25279116,2025,MS DS (Geospatial Data Science),CT-5005,Spatial Decision Support Systems,CT-5007,Web GIS,CT-494,Introduction to Databases
+Ayesha Butt,CT-25279117,2025,MS in Information Security,CT-554,Ethical Hacking,CT-507,Wireless and Mobile Communication Networks,CT-493,Data Structure and Algorithm Design
+Hussain Raza,CT-24279118,2024,MS in Data Science,CT-521,Distributed Intelligence Systems,CT-562,Machine Learning,CT-493,Data Structure and Algorithm Design
+Dua Shah,CT-24279119,2024,MS in Computer Science and Information Technology,CT-526,Logic Programming,CT-512,Principles of Marketing,CT-494,Introduction to Databases
+Ayesha Ahmed,CT-24279120,2024,MS in Computer Science and Information Technology,CT-526,Logic Programming,CT-577,Advanced Theory of Automata,,
+Bilal Shah,CT-25279121,2025,MS DS (Geospatial Data Science),CT-530,Data Mining,CT-5011,GIS for Emergency Management,CT-495,Fundamentals of Remote Sensing and GIS
+Hassan Butt,CT-25279122,2025,MS in Data Science,CT-521,Distributed Intelligence Systems,CT-524,Knowledge Based System,CT-492,Object Oriented Programming
+Ayesha Shah,CT-25279123,2025,MS in Data Science,CT-528,Advance Database Techniques,CT-581,Statistics & Probability for Data Science,,
+Ayesha Butt,CT-25279124,2025,MS DS (Geospatial Data Science),CT-5011,GIS for Emergency Management,CT-5007,Web GIS,CT-495,Fundamentals of Remote Sensing and GIS
+Ayesha Mir,CT-24279125,2024,MS in Information Security,CT-542,Information Security Management,CT-554,Ethical Hacking,CT-494,Introduction to Databases
+Bilal Butt,CT-24279126,2024,MS DS (Geospatial Data Science),CT-5004,Advanced Programming in GIS,CT-5012,Emerging Trends in Remote Sensing & GIS,CT-495,Fundamentals of Remote Sensing and GIS
+Bilal Ahmed,CT-24279127,2024,MS in Information Security,CT-555,Cloud Security,CT-553,Emerging Trends in Information Security 3,,
+Bilal Raza,CT-24279128,2024,MS DS (Geospatial Data Science),CT-562,Machine Learning,CT-527,Image processing & Computer Vision,CT-494,Introduction to Databases
+Mubashir Ahmed,CT-25279129,2025,MS DS (Geospatial Data Science),CT-5005,Spatial Decision Support Systems,CT-5007,Web GIS,CT-495,Fundamentals of Remote Sensing and GIS
+Hussain Khan,CT-24279130,2024,MS in Computer Science and Information Technology,CT-501,Software Project Management,CT-530,Data Mining,CT-491,Operating System
+Mubashir Siddiqui,CT-24279131,2024,MS DS (Geospatial Data Science),CT-530,Data Mining,CT-581,Statistics & Probability for Data Science,CT-494,Introduction to Databases
+Dua Khan,CT-24279132,2024,MS in Data Science,CT-527,Image processing & Computer Vision,CT-530,Data Mining,CT-492,Object Oriented Programming
+Ayesha Raza,CT-24279133,2024,MS in Computer Science and Information Technology,CT-526,Logic Programming,CT-523,Fuzzy Control & Neural Networks,CT-494,Introduction to Databases
+Ayesha Shah,CT-24279134,2024,MS in Data Science,CT-525,Modeling & Simulation,CT-530,Data Mining,,
+Bilal Butt,CT-24279135,2024,MS in Information Security,CT-552,Quantum Cryptography,CT-575,Cryptography,,
+Ali Raza,CT-25279136,2025,MS in Information Security,CT-575,Cryptography,CT-554,Ethical Hacking,CT-494,Introduction to Databases
+Ali Mir,CT-24279137,2024,MS in Data Science,CT-528,Advance Database Techniques,CT-521,Distributed Intelligence Systems,CT-493,Data Structure and Algorithm Design
+Amna Raza,CT-24279138,2024,MS DS (Geospatial Data Science),CT-5005,Spatial Decision Support Systems,CT-530,Data Mining,CT-494,Introduction to Databases
+Dua Ahmed,CT-25279139,2025,MS in Information Security,CT-551,Fault Tolerance and Reliability,CT-553,Emerging Trends in Information Security 3,CT-493,Data Structure and Algorithm Design
+Hamza Mir,CT-24279140,2024,MS in Computer Science and Information Technology,CT-511,Information System Development Methodologies,CT-516,Multimedia Communications,,
+Dua Shah,CT-25279141,2025,MS DS (Geospatial Data Science),CT-5005,Spatial Decision Support Systems,CT-581,Statistics & Probability for Data Science,,
+Fatima Butt,CT-24279142,2024,MS in Information Security,CT-575,Cryptography,CT-552,Quantum Cryptography,,
+Dua Ahmed,CT-24279143,2024,MS in Computer Science and Information Technology,CT-577,Advanced Theory of Automata,CT-501,Software Project Management,,
+Hassan Butt,CT-24279144,2024,MS in Information Security,CT-541,Network Security,CT-555,Cloud Security,CT-493,Data Structure and Algorithm Design
+Zain Butt,CT-24279145,2024,MS in Computer Science and Information Technology,CT-511,Information System Development Methodologies,CT-506,Advanced Analysis of Algorithms,,
+Bilal Mir,CT-24279146,2024,MS in Information Security,CT-542,Information Security Management,CT-509,Distributed Systems,,
+Usman Khan,CT-24279147,2024,MS DS (Geospatial Data Science),CT-530,Data Mining,CT-5005,Spatial Decision Support Systems,CT-495,Fundamentals of Remote Sensing and GIS
+Mubashir Shah,CT-25279148,2025,MS DS (Geospatial Data Science),CT-581,Statistics & Probability for Data Science,CT-5004,Advanced Programming in GIS,,
+Ahmed Shah,CT-24279149,2024,MS DS (Geospatial Data Science),CT-5005,Spatial Decision Support Systems,CT-590,Data Visualization,,
+Hamza Butt,CT-25279150,2025,MS in Information Security,CT-553,Emerging Trends in Information Security 3,CT-542,Information Security Management,CT-494,Introduction to Databases
+Ali Raza,CT-24279151,2024,MS in Computer Science and Information Technology,CT-501,Software Project Management,CT-526,Logic Programming,CT-494,Introduction to Databases
+Dua Raza,CT-25279152,2025,MS in Data Science,CT-524,Knowledge Based System,CT-559,Artificial Neural Networks,CT-492,Object Oriented Programming
+Mubashir Khan,CT-25279153,2025,MS in Information Security,CT-543,Database Security,CT-509,Distributed Systems,,
+Ayesha Butt,CT-25279154,2025,MS in Computer Science and Information Technology,CT-526,Logic Programming,CT-516,Multimedia Communications,,
+Ali Butt,CT-25279155,2025,MS in Computer Science and Information Technology,CT-513,Quality Information System,CT-506,Advanced Analysis of Algorithms,CT-491,Operating System
+Ali Shah,CT-25279156,2025,MS in Information Security,CT-507,Wireless and Mobile Communication Networks,CT-575,Cryptography,CT-494,Introduction to Databases
+Zain Raza,CT-24279157,2024,MS in Information Security,CT-553,Emerging Trends in Information Security 3,CT-552,Quantum Cryptography,CT-494,Introduction to Databases
+Amna Ahmed,CT-24279158,2024,MS in Computer Science and Information Technology,CT-516,Multimedia Communications,CT-577,Advanced Theory of Automata,CT-494,Introduction to Databases
+Usman Ahmed,CT-25279159,2025,MS in Information Security,CT-542,Information Security Management,CT-509,Distributed Systems,CT-493,Data Structure and Algorithm Design
+Usman Ahmed,CT-24279160,2024,MS in Computer Science and Information Technology,CT-577,Advanced Theory of Automata,CT-534,Software Quality Assurance,CT-494,Introduction to Databases
+Sara Ahmed,CT-25279161,2025,MS in Information Security,CT-551,Fault Tolerance and Reliability,CT-541,Network Security,CT-494,Introduction to Databases
+Maryam Mir,CT-25279162,2025,MS in Computer Science and Information Technology,CT-512,Principles of Marketing,CT-501,Software Project Management,CT-491,Operating System
+Hassan Shah,CT-24279163,2024,MS in Data Science,CT-524,Knowledge Based System,CT-521,Distributed Intelligence Systems,,
+Amna Mir,CT-25279164,2025,MS in Information Security,CT-509,Distributed Systems,CT-542,Information Security Management,CT-494,Introduction to Databases
+Zain Siddiqui,CT-24279165,2024,MS in Computer Science and Information Technology,CT-501,Software Project Management,CT-512,Principles of Marketing,,
+Sara Mir,CT-24279166,2024,MS DS (Geospatial Data Science),CT-5012,Emerging Trends in Remote Sensing & GIS,CT-5005,Spatial Decision Support Systems,CT-494,Introduction to Databases
+Fatima Raza,CT-25279167,2025,MS in Information Security,CT-544,Cyber Crimes and Security,CT-555,Cloud Security,CT-494,Introduction to Databases
+Maryam Shah,CT-25279168,2025,MS DS (Geospatial Data Science),CT-5012,Emerging Trends in Remote Sensing & GIS,CT-5007,Web GIS,CT-494,Introduction to Databases
+Dua Ahmed,CT-24279169,2024,MS in Information Security,CT-544,Cyber Crimes and Security,CT-541,Network Security,,
+Bilal Mir,CT-24279170,2024,MS in Data Science,CT-581,Statistics & Probability for Data Science,CT-521,Distributed Intelligence Systems,,
+Maryam Mir,CT-25279171,2025,MS in Data Science,CT-528,Advance Database Techniques,CT-525,Modeling & Simulation,,
+Mubashir Mir,CT-25279172,2025,MS in Computer Science and Information Technology,CT-512,Principles of Marketing,CT-526,Logic Programming,CT-491,Operating System
+Dua Ahmed,CT-25279173,2025,MS in Information Security,CT-554,Ethical Hacking,CT-543,Database Security,CT-494,Introduction to Databases
+Mubashir Raza,CT-24279174,2024,MS DS (Geospatial Data Science),CT-5012,Emerging Trends in Remote Sensing & GIS,CT-5005,Spatial Decision Support Systems,CT-494,Introduction to Databases
+Mubashir Ahmed,CT-24279175,2024,MS in Computer Science and Information Technology,CT-530,Data Mining,CT-577,Advanced Theory of Automata,CT-491,Operating System
+Zain Mir,CT-25279176,2025,MS DS (Geospatial Data Science),CT-5012,Emerging Trends in Remote Sensing & GIS,CT-581,Statistics & Probability for Data Science,CT-494,Introduction to Databases
+Dua Butt,CT-24279177,2024,MS in Information Security,CT-552,Quantum Cryptography,CT-555,Cloud Security,CT-493,Data Structure and Algorithm Design
+Ali Shah,CT-24279178,2024,MS in Information Security,CT-575,Cryptography,CT-507,Wireless and Mobile Communication Networks,,
+Zain Butt,CT-25279179,2025,MS in Data Science,CT-559,Artificial Neural Networks,CT-528,Advance Database Techniques,CT-492,Object Oriented Programming
+Amna Raza,CT-24279180,2024,MS in Data Science,CT-530,Data Mining,CT-528,Advance Database Techniques,CT-493,Data Structure and Algorithm Design
+Maryam Siddiqui,CT-25279181,2025,MS in Information Security,CT-541,Network Security,CT-542,Information Security Management,CT-493,Data Structure and Algorithm Design
+Ayesha Siddiqui,CT-25279182,2025,MS in Data Science,CT-562,Machine Learning,CT-525,Modeling & Simulation,CT-492,Object Oriented Programming
+Fatima Siddiqui,CT-24279183,2024,MS DS (Geospatial Data Science),CT-590,Data Visualization,CT-530,Data Mining,,
+Ali Khan,CT-25279184,2025,MS in Information Security,CT-541,Network Security,CT-507,Wireless and Mobile Communication Networks,CT-494,Introduction to Databases
+Dua Raza,CT-24279185,2024,MS in Computer Science and Information Technology,CT-512,Principles of Marketing,CT-511,Information System Development Methodologies,CT-491,Operating System
+Usman Mir,CT-25279186,2025,MS in Information Security,CT-555,Cloud Security,CT-541,Network Security,CT-493,Data Structure and Algorithm Design
+Mubashir Mir,CT-24279187,2024,MS in Data Science,CT-530,Data Mining,CT-528,Advance Database Techniques,CT-492,Object Oriented Programming
+Mubashir Siddiqui,CT-24279188,2024,MS in Data Science,CT-527,Image processing & Computer Vision,CT-528,Advance Database Techniques,CT-493,Data Structure and Algorithm Design
+Ayesha Butt,CT-25279189,2025,MS in Computer Science and Information Technology,CT-501,Software Project Management,CT-523,Fuzzy Control & Neural Networks,CT-494,Introduction to Databases
+Fatima Khan,CT-25279190,2025,MS in Information Security,CT-553,Emerging Trends in Information Security 3,CT-544,Cyber Crimes and Security,CT-493,Data Structure and Algorithm Design
+Usman Raza,CT-25279191,2025,MS in Computer Science and Information Technology,CT-530,Data Mining,CT-534,Software Quality Assurance,CT-494,Introduction to Databases
+Ayesha Shah,CT-24279192,2024,MS in Computer Science and Information Technology,CT-526,Logic Programming,CT-534,Software Quality Assurance,,
+Maryam Mir,CT-25279193,2025,MS in Information Security,CT-551,Fault Tolerance and Reliability,CT-542,Information Security Management,CT-493,Data Structure and Algorithm Design
+Usman Ahmed,CT-24279194,2024,MS in Information Security,CT-542,Information Security Management,CT-509,Distributed Systems,CT-493,Data Structure and Algorithm Design
+Fatima Ahmed,CT-24279195,2024,MS in Computer Science and Information Technology,CT-506,Advanced Analysis of Algorithms,CT-534,Software Quality Assurance,,
+Amna Khan,CT-24279196,2024,MS DS (Geospatial Data Science),CT-5012,Emerging Trends in Remote Sensing & GIS,CT-530,Data Mining,CT-495,Fundamentals of Remote Sensing and GIS
+Dua Butt,CT-24279197,2024,MS in Computer Science and Information Technology,CT-501,Software Project Management,CT-577,Advanced Theory of Automata,CT-494,Introduction to Databases
+Maryam Raza,CT-25279198,2025,MS in Data Science,CT-559,Artificial Neural Networks,CT-562,Machine Learning,CT-493,Data Structure and Algorithm Design
+Ayesha Butt,CT-24279199,2024,MS in Information Security,CT-544,Cyber Crimes and Security,CT-575,Cryptography,,
+Hamza Siddiqui,CT-24279200,2024,MS DS (Geospatial Data Science),CT-581,Statistics & Probability for Data Science,CT-5011,GIS for Emergency Management,,
+Ali Ahmed,CT-25279201,2025,MS DS (Geospatial Data Science),CT-581,Statistics & Probability for Data Science,CT-562,Machine Learning,CT-494,Introduction to Databases
+Hassan Shah,CT-24279202,2024,MS in Computer Science and Information Technology,CT-523,Fuzzy Control & Neural Networks,CT-516,Multimedia Communications,CT-494,Introduction to Databases
+Ali Shah,CT-24279203,2024,MS in Data Science,CT-530,Data Mining,CT-559,Artificial Neural Networks,,
+Bilal Siddiqui,CT-25279204,2025,MS DS (Geospatial Data Science),CT-527,Image processing & Computer Vision,CT-590,Data Visualization,CT-495,Fundamentals of Remote Sensing and GIS
+Sara Butt,CT-25279205,2025,MS DS (Geospatial Data Science),CT-5005,Spatial Decision Support Systems,CT-5007,Web GIS,CT-494,Introduction to Databases
+Fatima Butt,CT-24279206,2024,MS in Computer Science and Information Technology,CT-501,Software Project Management,CT-511,Information System Development Methodologies,,
+Hamza Shah,CT-24279207,2024,MS DS (Geospatial Data Science),CT-581,Statistics & Probability for Data Science,CT-5007,Web GIS,,
+Ali Mir,CT-24279208,2024,MS in Information Security,CT-507,Wireless and Mobile Communication Networks,CT-551,Fault Tolerance and Reliability,CT-494,Introduction to Databases
+Hassan Mir,CT-24279209,2024,MS in Computer Science and Information Technology,CT-523,Fuzzy Control & Neural Networks,CT-511,Information System Development Methodologies,CT-491,Operating System
+Hamza Siddiqui,CT-24279210,2024,MS in Information Security,CT-542,Information Security Management,CT-507,Wireless and Mobile Communication Networks,CT-494,Introduction to Databases
+Zohaib Khan,CT-25279211,2025,MS in Computer Science and Information Technology,CT-512,Principles of Marketing,CT-577,Advanced Theory of Automata,CT-494,Introduction to Databases
+Fatima Butt,CT-24279212,2024,MS in Data Science,CT-524,Knowledge Based System,CT-529,Object Oriented Databases,CT-492,Object Oriented Programming
+Maryam Siddiqui,CT-25279213,2025,MS in Data Science,CT-559,Artificial Neural Networks,CT-521,Distributed Intelligence Systems,CT-493,Data Structure and Algorithm Design
+Ali Khan,CT-24279214,2024,MS DS (Geospatial Data Science),CT-527,Image processing & Computer Vision,CT-5005,Spatial Decision Support Systems,,
+Dua Mir,CT-25279215,2025,MS in Information Security,CT-552,Quantum Cryptography,CT-544,Cyber Crimes and Security,,
+Ayesha Ahmed,CT-24279216,2024,MS in Data Science,CT-581,Statistics & Probability for Data Science,CT-524,Knowledge Based System,,
+Usman Ahmed,CT-25279217,2025,MS in Data Science,CT-562,Machine Learning,CT-527,Image processing & Computer Vision,CT-492,Object Oriented Programming
+Ali Ahmed,CT-25279218,2025,MS DS (Geospatial Data Science),CT-5004,Advanced Programming in GIS,CT-527,Image processing & Computer Vision,CT-494,Introduction to Databases
+Ali Khan,CT-25279219,2025,MS in Data Science,CT-525,Modeling & Simulation,CT-581,Statistics & Probability for Data Science,,
+Bilal Siddiqui,CT-25279220,2025,MS in Computer Science and Information Technology,CT-512,Principles of Marketing,CT-523,Fuzzy Control & Neural Networks,,
+Maryam Mir,CT-25279221,2025,MS DS (Geospatial Data Science),CT-527,Image processing & Computer Vision,CT-5004,Advanced Programming in GIS,CT-494,Introduction to Databases
+Dua Siddiqui,CT-25279222,2025,MS DS (Geospatial Data Science),CT-5012,Emerging Trends in Remote Sensing & GIS,CT-527,Image processing & Computer Vision,CT-495,Fundamentals of Remote Sensing and GIS
+Ali Khan,CT-24279223,2024,MS DS (Geospatial Data Science),CT-5004,Advanced Programming in GIS,CT-562,Machine Learning,,
+Maryam Ahmed,CT-24279224,2024,MS in Computer Science and Information Technology,CT-516,Multimedia Communications,CT-511,Information System Development Methodologies,,
+Amna Shah,CT-24279225,2024,MS in Data Science,CT-527,Image processing & Computer Vision,CT-562,Machine Learning,CT-493,Data Structure and Algorithm Design
+Hassan Siddiqui,CT-25279226,2025,MS in Information Security,CT-554,Ethical Hacking,CT-552,Quantum Cryptography,CT-494,Introduction to Databases
+Ayesha Butt,CT-24279227,2024,MS in Data Science,CT-527,Image processing & Computer Vision,CT-521,Distributed Intelligence Systems,CT-493,Data Structure and Algorithm Design
+Amna Butt,CT-25279228,2025,MS DS (Geospatial Data Science),CT-5007,Web GIS,CT-581,Statistics & Probability for Data Science,,
+Amna Siddiqui,CT-25279229,2025,MS in Information Security,CT-541,Network Security,CT-544,Cyber Crimes and Security,CT-493,Data Structure and Algorithm Design
+Hassan Khan,CT-25279230,2025,MS in Computer Science and Information Technology,CT-526,Logic Programming,CT-577,Advanced Theory of Automata,CT-491,Operating System
+Zohaib Mir,CT-25279231,2025,MS in Information Security,CT-543,Database Security,CT-551,Fault Tolerance and Reliability,CT-493,Data Structure and Algorithm Design
+Dua Butt,CT-25279232,2025,MS in Information Security,CT-507,Wireless and Mobile Communication Networks,CT-552,Quantum Cryptography,CT-493,Data Structure and Algorithm Design
+Zain Ahmed,CT-24279233,2024,MS DS (Geospatial Data Science),CT-5011,GIS for Emergency Management,CT-5007,Web GIS,CT-494,Introduction to Databases
+Zohaib Khan,CT-25279234,2025,MS DS (Geospatial Data Science),CT-527,Image processing & Computer Vision,CT-581,Statistics & Probability for Data Science,CT-495,Fundamentals of Remote Sensing and GIS
+Zohaib Shah,CT-24279235,2024,MS DS (Geospatial Data Science),CT-5004,Advanced Programming in GIS,CT-5012,Emerging Trends in Remote Sensing & GIS,CT-494,Introduction to Databases
+Ayesha Butt,CT-24279236,2024,MS in Computer Science and Information Technology,CT-577,Advanced Theory of Automata,CT-512,Principles of Marketing,CT-491,Operating System
+Maryam Shah,CT-24279237,2024,MS DS (Geospatial Data Science),CT-527,Image processing & Computer Vision,CT-5011,GIS for Emergency Management,,
+Amna Siddiqui,CT-24279238,2024,MS in Information Security,CT-552,Quantum Cryptography,CT-554,Ethical Hacking,,
+Hamza Raza,CT-25279239,2025,MS DS (Geospatial Data Science),CT-581,Statistics & Probability for Data Science,CT-5011,GIS for Emergency Management,CT-495,Fundamentals of Remote Sensing and GIS
+Hassan Butt,CT-25279240,2025,MS in Data Science,CT-525,Modeling & Simulation,CT-521,Distributed Intelligence Systems,CT-493,Data Structure and Algorithm Design
+Maryam Shah,CT-25279241,2025,MS in Computer Science and Information Technology,CT-501,Software Project Management,CT-506,Advanced Analysis of Algorithms,CT-491,Operating System
+Amna Khan,CT-24279242,2024,MS in Computer Science and Information Technology,CT-501,Software Project Management,CT-534,Software Quality Assurance,,
+Hussain Mir,CT-24279243,2024,MS in Computer Science and Information Technology,CT-530,Data Mining,CT-513,Quality Information System,CT-494,Introduction to Databases
+Ali Shah,CT-25279244,2025,MS DS (Geospatial Data Science),CT-530,Data Mining,CT-527,Image processing & Computer Vision,CT-494,Introduction to Databases
+Fatima Raza,CT-25279245,2025,MS in Data Science,CT-562,Machine Learning,CT-581,Statistics & Probability for Data Science,,
+Maryam Raza,CT-24279246,2024,MS in Information Security,CT-542,Information Security Management,CT-507,Wireless and Mobile Communication Networks,,
+Ayesha Raza,CT-24279247,2024,MS DS (Geospatial Data Science),CT-562,Machine Learning,CT-581,Statistics & Probability for Data Science,CT-494,Introduction to Databases
+Ali Khan,CT-24279248,2024,MS in Data Science,CT-581,Statistics & Probability for Data Science,CT-524,Knowledge Based System,CT-492,Object Oriented Programming
+Dua Siddiqui,CT-24279249,2024,MS in Computer Science and Information Technology,CT-516,Multimedia Communications,CT-506,Advanced Analysis of Algorithms,CT-494,Introduction to Databases
+Hassan Ahmed,CT-25279250,2025,MS in Data Science,CT-581,Statistics & Probability for Data Science,CT-529,Object Oriented Databases,CT-493,Data Structure and Algorithm Design
+Ayesha Butt,CT-25279251,2025,MS DS (Geospatial Data Science),CT-5012,Emerging Trends in Remote Sensing & GIS,CT-527,Image processing & Computer Vision,,
+Zain Shah,CT-24279252,2024,MS DS (Geospatial Data Science),CT-527,Image processing & Computer Vision,CT-5005,Spatial Decision Support Systems,CT-495,Fundamentals of Remote Sensing and GIS
+Hassan Khan,CT-24279253,2024,MS DS (Geospatial Data Science),CT-527,Image processing & Computer Vision,CT-5012,Emerging Trends in Remote Sensing & GIS,CT-494,Introduction to Databases
+Usman Shah,CT-24279254,2024,MS in Information Security,CT-509,Distributed Systems,CT-554,Ethical Hacking,CT-493,Data Structure and Algorithm Design
+Maryam Ahmed,CT-24279255,2024,MS in Computer Science and Information Technology,CT-526,Logic Programming,CT-506,Advanced Analysis of Algorithms,,
+Fatima Shah,CT-24279256,2024,MS in Information Security,CT-544,Cyber Crimes and Security,CT-507,Wireless and Mobile Communication Networks,CT-494,Introduction to Databases
+Ali Ahmed,CT-24279257,2024,MS DS (Geospatial Data Science),CT-530,Data Mining,CT-527,Image processing & Computer Vision,CT-494,Introduction to Databases
+Mubashir Ahmed,CT-25279258,2025,MS DS (Geospatial Data Science),CT-5012,Emerging Trends in Remote Sensing & GIS,CT-581,Statistics & Probability for Data Science,,
+Hamza Siddiqui,CT-25279259,2025,MS in Information Security,CT-575,Cryptography,CT-509,Distributed Systems,,
+Ahmed Raza,CT-24279260,2024,MS in Information Security,CT-554,Ethical Hacking,CT-575,Cryptography,CT-494,Introduction to Databases
+Ayesha Mir,CT-25279261,2025,MS DS (Geospatial Data Science),CT-5005,Spatial Decision Support Systems,CT-5011,GIS for Emergency Management,,
+Maryam Ahmed,CT-25279262,2025,MS DS (Geospatial Data Science),CT-527,Image processing & Computer Vision,CT-581,Statistics & Probability for Data Science,,
+Ali Raza,CT-24279263,2024,MS in Information Security,CT-507,Wireless and Mobile Communication Networks,CT-551,Fault Tolerance and Reliability,,
+Maryam Siddiqui,CT-25279264,2025,MS DS (Geospatial Data Science),CT-5011,GIS for Emergency Management,CT-5004,Advanced Programming in GIS,CT-495,Fundamentals of Remote Sensing and GIS
+Fatima Shah,CT-25279265,2025,MS in Computer Science and Information Technology,CT-513,Quality Information System,CT-516,Multimedia Communications,CT-494,Introduction to Databases
+Usman Raza,CT-24279266,2024,MS in Data Science,CT-521,Distributed Intelligence Systems,CT-529,Object Oriented Databases,CT-493,Data Structure and Algorithm Design
+Hamza Ahmed,CT-24279267,2024,MS in Information Security,CT-552,Quantum Cryptography,CT-575,Cryptography,,
+Usman Mir,CT-24279268,2024,MS in Information Security,CT-575,Cryptography,CT-541,Network Security,CT-493,Data Structure and Algorithm Design
+Zain Ahmed,CT-24279269,2024,MS DS (Geospatial Data Science),CT-562,Machine Learning,CT-581,Statistics & Probability for Data Science,,
+Ali Mir,CT-24279270,2024,MS in Computer Science and Information Technology,CT-506,Advanced Analysis of Algorithms,CT-577,Advanced Theory of Automata,CT-491,Operating System
+Zain Ahmed,CT-25279271,2025,MS in Information Security,CT-509,Distributed Systems,CT-555,Cloud Security,CT-494,Introduction to Databases
+Ali Khan,CT-25279272,2025,MS DS (Geospatial Data Science),CT-562,Machine Learning,CT-5011,GIS for Emergency Management,CT-494,Introduction to Databases
+Zohaib Butt,CT-25279273,2025,MS DS (Geospatial Data Science),CT-562,Machine Learning,CT-581,Statistics & Probability for Data Science,CT-495,Fundamentals of Remote Sensing and GIS
+Ahmed Siddiqui,CT-25279274,2025,MS in Information Security,CT-541,Network Security,CT-575,Cryptography,CT-493,Data Structure and Algorithm Design
+Usman Raza,CT-24279275,2024,MS in Data Science,CT-528,Advance Database Techniques,CT-527,Image processing & Computer Vision,,
+Ahmed Khan,CT-24279276,2024,MS in Data Science,CT-524,Knowledge Based System,CT-528,Advance Database Techniques,CT-493,Data Structure and Algorithm Design
+Ali Ahmed,CT-25279277,2025,MS in Data Science,CT-529,Object Oriented Databases,CT-524,Knowledge Based System,CT-493,Data Structure and Algorithm Design
+Ayesha Mir,CT-24279278,2024,MS in Computer Science and Information Technology,CT-511,Information System Development Methodologies,CT-577,Advanced Theory of Automata,CT-491,Operating System
+Fatima Mir,CT-25279279,2025,MS in Information Security,CT-509,Distributed Systems,CT-553,Emerging Trends in Information Security 3,CT-493,Data Structure and Algorithm Design
+Fatima Khan,CT-25279280,2025,MS in Computer Science and Information Technology,CT-534,Software Quality Assurance,CT-530,Data Mining,CT-491,Operating System
+Zain Mir,CT-25279281,2025,MS in Data Science,CT-530,Data Mining,CT-562,Machine Learning,,
+Ayesha Butt,CT-24279282,2024,MS in Data Science,CT-581,Statistics & Probability for Data Science,CT-562,Machine Learning,CT-493,Data Structure and Algorithm Design
+Ahmed Butt,CT-25279283,2025,MS in Computer Science and Information Technology,CT-506,Advanced Analysis of Algorithms,CT-534,Software Quality Assurance,CT-494,Introduction to Databases
+Dua Raza,CT-25279284,2025,MS in Computer Science and Information Technology,CT-577,Advanced Theory of Automata,CT-534,Software Quality Assurance,,
+Dua Butt,CT-25279285,2025,MS in Computer Science and Information Technology,CT-530,Data Mining,CT-577,Advanced Theory of Automata,CT-491,Operating System
+Maryam Siddiqui,CT-25279286,2025,MS in Computer Science and Information Technology,CT-513,Quality Information System,CT-511,Information System Development Methodologies,CT-491,Operating System
+Fatima Siddiqui,CT-25279287,2025,MS in Computer Science and Information Technology,CT-577,Advanced Theory of Automata,CT-501,Software Project Management,,
+Dua Butt,CT-24279288,2024,MS in Data Science,CT-524,Knowledge Based System,CT-562,Machine Learning,CT-492,Object Oriented Programming
+Dua Ahmed,CT-24279289,2024,MS in Computer Science and Information Technology,CT-530,Data Mining,CT-577,Advanced Theory of Automata,CT-491,Operating System
+Mubashir Raza,CT-25279290,2025,MS in Data Science,CT-581,Statistics & Probability for Data Science,CT-528,Advance Database Techniques,CT-492,Object Oriented Programming
+Fatima Shah,CT-24279291,2024,MS in Information Security,CT-551,Fault Tolerance and Reliability,CT-542,Information Security Management,,
+Ahmed Shah,CT-24279292,2024,MS in Data Science,CT-562,Machine Learning,CT-529,Object Oriented Databases,CT-493,Data Structure and Algorithm Design
+Ahmed Raza,CT-24279293,2024,MS in Information Security,CT-553,Emerging Trends in Information Security 3,CT-542,Information Security Management,CT-493,Data Structure and Algorithm Design
+Zohaib Siddiqui,CT-24279294,2024,MS in Data Science,CT-525,Modeling & Simulation,CT-528,Advance Database Techniques,CT-493,Data Structure and Algorithm Design
+Usman Ahmed,CT-24279295,2024,MS in Computer Science and Information Technology,CT-577,Advanced Theory of Automata,CT-511,Information System Development Methodologies,CT-491,Operating System
+Dua Khan,CT-25279296,2025,MS in Data Science,CT-527,Image processing & Computer Vision,CT-528,Advance Database Techniques,,
+Dua Shah,CT-25279297,2025,MS in Data Science,CT-581,Statistics & Probability for Data Science,CT-562,Machine Learning,CT-493,Data Structure and Algorithm Design
+Hussain Siddiqui,CT-25279298,2025,MS in Data Science,CT-525,Modeling & Simulation,CT-559,Artificial Neural Networks,CT-493,Data Structure and Algorithm Design
+Zain Raza,CT-24279299,2024,MS DS (Geospatial Data Science),CT-5011,GIS for Emergency Management,CT-5005,Spatial Decision Support Systems,CT-494,Introduction to Databases
+Mubashir Khan,CT-24279300,2024,MS in Information Security,CT-575,Cryptography,CT-541,Network Security,CT-494,Introduction to Databases
+Zain Raza,CT-25279301,2025,MS in Information Security,CT-555,Cloud Security,CT-544,Cyber Crimes and Security,CT-494,Introduction to Databases
+Ali Shah,CT-25279302,2025,MS in Data Science,CT-527,Image processing & Computer Vision,CT-524,Knowledge Based System,CT-492,Object Oriented Programming
+Ahmed Raza,CT-24279303,2024,MS in Information Security,CT-554,Ethical Hacking,CT-552,Quantum Cryptography,CT-493,Data Structure and Algorithm Design
+Hamza Mir,CT-25279304,2025,MS in Information Security,CT-541,Network Security,CT-551,Fault Tolerance and Reliability,CT-494,Introduction to Databases
+Ahmed Butt,CT-25279305,2025,MS in Computer Science and Information Technology,CT-534,Software Quality Assurance,CT-501,Software Project Management,,
+Ali Raza,CT-24279306,2024,MS in Data Science,CT-581,Statistics & Probability for Data Science,CT-562,Machine Learning,CT-492,Object Oriented Programming
+Ayesha Khan,CT-25279307,2025,MS in Data Science,CT-530,Data Mining,CT-521,Distributed Intelligence Systems,CT-493,Data Structure and Algorithm Design
+Hassan Khan,CT-24279308,2024,MS DS (Geospatial Data Science),CT-562,Machine Learning,CT-5011,GIS for Emergency Management,CT-494,Introduction to Databases
+Dua Siddiqui,CT-25279309,2025,MS DS (Geospatial Data Science),CT-530,Data Mining,CT-581,Statistics & Probability for Data Science,CT-494,Introduction to Databases
+Amna Siddiqui,CT-24279310,2024,MS DS (Geospatial Data Science),CT-5007,Web GIS,CT-530,Data Mining,,
+Ahmed Shah,CT-24279311,2024,MS in Computer Science and Information Technology,CT-511,Information System Development Methodologies,CT-513,Quality Information System,CT-491,Operating System
+Bilal Shah,CT-24279312,2024,MS in Information Security,CT-541,Network Security,CT-543,Database Security,,
+Ahmed Shah,CT-25279313,2025,MS in Information Security,CT-543,Database Security,CT-555,Cloud Security,,
+Ayesha Butt,CT-24279314,2024,MS in Data Science,CT-530,Data Mining,CT-528,Advance Database Techniques,CT-493,Data Structure and Algorithm Design
+Maryam Raza,CT-25279315,2025,MS DS (Geospatial Data Science),CT-590,Data Visualization,CT-527,Image processing & Computer Vision,CT-495,Fundamentals of Remote Sensing and GIS
+Ayesha Khan,CT-24279316,2024,MS in Computer Science and Information Technology,CT-513,Quality Information System,CT-534,Software Quality Assurance,CT-491,Operating System
+Bilal Shah,CT-25279317,2025,MS in Information Security,CT-551,Fault Tolerance and Reliability,CT-553,Emerging Trends in Information Security 3,CT-494,Introduction to Databases
+Mubashir Raza,CT-25279318,2025,MS in Computer Science and Information Technology,CT-511,Information System Development Methodologies,CT-512,Principles of Marketing,,
+Bilal Shah,CT-24279319,2024,MS in Data Science,CT-528,Advance Database Techniques,CT-529,Object Oriented Databases,CT-493,Data Structure and Algorithm Design
+Hamza Mir,CT-25279320,2025,MS in Data Science,CT-524,Knowledge Based System,CT-559,Artificial Neural Networks,CT-493,Data Structure and Algorithm Design
+Usman Mir,CT-24279321,2024,MS in Information Security,CT-553,Emerging Trends in Information Security 3,CT-575,Cryptography,,
+Ahmed Shah,CT-24279322,2024,MS in Data Science,CT-529,Object Oriented Databases,CT-559,Artificial Neural Networks,,
+Zain Mir,CT-24279323,2024,MS in Information Security,CT-555,Cloud Security,CT-553,Emerging Trends in Information Security 3,CT-493,Data Structure and Algorithm Design
+Bilal Khan,CT-24279324,2024,MS in Information Security,CT-555,Cloud Security,CT-541,Network Security,CT-493,Data Structure and Algorithm Design
+Maryam Khan,CT-25279325,2025,MS DS (Geospatial Data Science),CT-5005,Spatial Decision Support Systems,CT-5012,Emerging Trends in Remote Sensing & GIS,,
+Hussain Khan,CT-24279326,2024,MS in Data Science,CT-559,Artificial Neural Networks,CT-581,Statistics & Probability for Data Science,CT-492,Object Oriented Programming
+Ali Butt,CT-24279327,2024,MS in Computer Science and Information Technology,CT-534,Software Quality Assurance,CT-577,Advanced Theory of Automata,CT-494,Introduction to Databases
+Sara Siddiqui,CT-24279328,2024,MS in Computer Science and Information Technology,CT-513,Quality Information System,CT-577,Advanced Theory of Automata,CT-494,Introduction to Databases
+Ahmed Khan,CT-24279329,2024,MS in Computer Science and Information Technology,CT-530,Data Mining,CT-516,Multimedia Communications,CT-494,Introduction to Databases
+Zohaib Butt,CT-25279330,2025,MS DS (Geospatial Data Science),CT-530,Data Mining,CT-5005,Spatial Decision Support Systems,CT-495,Fundamentals of Remote Sensing and GIS
+Hussain Butt,CT-25279331,2025,MS DS (Geospatial Data Science),CT-5011,GIS for Emergency Management,CT-527,Image processing & Computer Vision,CT-495,Fundamentals of Remote Sensing and GIS
+Zohaib Khan,CT-24279332,2024,MS in Data Science,CT-562,Machine Learning,CT-524,Knowledge Based System,,
+Fatima Khan,CT-25279333,2025,MS DS (Geospatial Data Science),CT-530,Data Mining,CT-562,Machine Learning,CT-495,Fundamentals of Remote Sensing and GIS
+Ahmed Khan,CT-24279334,2024,MS in Information Security,CT-542,Information Security Management,CT-544,Cyber Crimes and Security,,
+Hussain Siddiqui,CT-25279335,2025,MS in Information Security,CT-551,Fault Tolerance and Reliability,CT-543,Database Security,CT-493,Data Structure and Algorithm Design
+Hussain Ahmed,CT-25279336,2025,MS in Information Security,CT-552,Quantum Cryptography,CT-544,Cyber Crimes and Security,CT-493,Data Structure and Algorithm Design
+Ayesha Raza,CT-25279337,2025,MS in Data Science,CT-528,Advance Database Techniques,CT-525,Modeling & Simulation,CT-493,Data Structure and Algorithm Design
+Mubashir Mir,CT-24279338,2024,MS in Information Security,CT-554,Ethical Hacking,CT-551,Fault Tolerance and Reliability,CT-493,Data Structure and Algorithm Design
+Sara Ahmed,CT-25279339,2025,MS DS (Geospatial Data Science),CT-581,Statistics & Probability for Data Science,CT-5011,GIS for Emergency Management,CT-494,Introduction to Databases
+Ahmed Butt,CT-24279340,2024,MS in Computer Science and Information Technology,CT-530,Data Mining,CT-506,Advanced Analysis of Algorithms,CT-494,Introduction to Databases
+Hassan Raza,CT-25279341,2025,MS in Information Security,CT-552,Quantum Cryptography,CT-554,Ethical Hacking,CT-493,Data Structure and Algorithm Design
+Ali Ahmed,CT-24279342,2024,MS in Data Science,CT-521,Distributed Intelligence Systems,CT-562,Machine Learning,CT-492,Object Oriented Programming
+Mubashir Butt,CT-25279343,2025,MS in Information Security,CT-542,Information Security Management,CT-543,Database Security,CT-493,Data Structure and Algorithm Design
+Sara Shah,CT-24279344,2024,MS DS (Geospatial Data Science),CT-530,Data Mining,CT-5007,Web GIS,CT-495,Fundamentals of Remote Sensing and GIS
+Ali Ahmed,CT-24279345,2024,MS in Information Security,CT-507,Wireless and Mobile Communication Networks,CT-554,Ethical Hacking,,
+Hassan Butt,CT-24279346,2024,MS DS (Geospatial Data Science),CT-527,Image processing & Computer Vision,CT-530,Data Mining,,
+Ayesha Shah,CT-25279347,2025,MS in Data Science,CT-524,Knowledge Based System,CT-521,Distributed Intelligence Systems,CT-493,Data Structure and Algorithm Design
+Zain Ahmed,CT-25279348,2025,MS in Data Science,CT-559,Artificial Neural Networks,CT-562,Machine Learning,CT-493,Data Structure and Algorithm Design
+Hassan Raza,CT-25279349,2025,MS in Computer Science and Information Technology,CT-511,Information System Development Methodologies,CT-523,Fuzzy Control & Neural Networks,CT-491,Operating System
+Dua Siddiqui,CT-25279350,2025,MS DS (Geospatial Data Science),CT-581,Statistics & Probability for Data Science,CT-5005,Spatial Decision Support Systems,CT-494,Introduction to Databases
+Dua Ahmed,CT-25279351,2025,MS in Information Security,CT-555,Cloud Security,CT-551,Fault Tolerance and Reliability,,
+Fatima Mir,CT-24279352,2024,MS in Computer Science and Information Technology,CT-512,Principles of Marketing,CT-511,Information System Development Methodologies,CT-491,Operating System
+Mubashir Ahmed,CT-24279353,2024,MS in Computer Science and Information Technology,CT-523,Fuzzy Control & Neural Networks,CT-530,Data Mining,CT-491,Operating System
+Zain Siddiqui,CT-25279354,2025,MS in Information Security,CT-541,Network Security,CT-554,Ethical Hacking,CT-494,Introduction to Databases
+Fatima Mir,CT-25279355,2025,MS DS (Geospatial Data Science),CT-5012,Emerging Trends in Remote Sensing & GIS,CT-581,Statistics & Probability for Data Science,,
+Maryam Mir,CT-24279356,2024,MS in Computer Science and Information Technology,CT-534,Software Quality Assurance,CT-526,Logic Programming,CT-491,Operating System
+Ahmed Ahmed,CT-24279357,2024,MS DS (Geospatial Data Science),CT-581,Statistics & Probability for Data Science,CT-5005,Spatial Decision Support Systems,CT-494,Introduction to Databases
+Usman Raza,CT-24279358,2024,MS DS (Geospatial Data Science),CT-562,Machine Learning,CT-581,Statistics & Probability for Data Science,CT-495,Fundamentals of Remote Sensing and GIS
+Dua Butt,CT-24279359,2024,MS in Information Security,CT-541,Network Security,CT-555,Cloud Security,,
+Dua Butt,CT-24279360,2024,MS DS (Geospatial Data Science),CT-5012,Emerging Trends in Remote Sensing & GIS,CT-581,Statistics & Probability for Data Science,,
+Fatima Siddiqui,CT-25279361,2025,MS in Information Security,CT-543,Database Security,CT-554,Ethical Hacking,CT-494,Introduction to Databases
+Amna Ahmed,CT-24279362,2024,MS in Computer Science and Information Technology,CT-512,Principles of Marketing,CT-530,Data Mining,,
+Sara Butt,CT-25279363,2025,MS in Information Security,CT-551,Fault Tolerance and Reliability,CT-544,Cyber Crimes and Security,,
+Dua Khan,CT-24279364,2024,MS in Data Science,CT-524,Knowledge Based System,CT-562,Machine Learning,CT-492,Object Oriented Programming
+Ayesha Butt,CT-24279365,2024,MS in Data Science,CT-529,Object Oriented Databases,CT-562,Machine Learning,,
+Amna Mir,CT-24279366,2024,MS DS (Geospatial Data Science),CT-5007,Web GIS,CT-5012,Emerging Trends in Remote Sensing & GIS,CT-495,Fundamentals of Remote Sensing and GIS
+Ali Ahmed,CT-24279367,2024,MS in Computer Science and Information Technology,CT-534,Software Quality Assurance,CT-577,Advanced Theory of Automata,CT-494,Introduction to Databases
+Zain Mir,CT-25279368,2025,MS in Computer Science and Information Technology,CT-534,Software Quality Assurance,CT-577,Advanced Theory of Automata,CT-491,Operating System
+Zohaib Butt,CT-25279369,2025,MS in Data Science,CT-559,Artificial Neural Networks,CT-562,Machine Learning,CT-493,Data Structure and Algorithm Design
+Hamza Ahmed,CT-25279370,2025,MS DS (Geospatial Data Science),CT-5012,Emerging Trends in Remote Sensing & GIS,CT-5011,GIS for Emergency Management,CT-494,Introduction to Databases
+Dua Raza,CT-24279371,2024,MS in Computer Science and Information Technology,CT-534,Software Quality Assurance,CT-530,Data Mining,,
+Dua Butt,CT-25279372,2025,MS in Data Science,CT-581,Statistics & Probability for Data Science,CT-529,Object Oriented Databases,,
+Ayesha Siddiqui,CT-24279373,2024,MS in Computer Science and Information Technology,CT-577,Advanced Theory of Automata,CT-534,Software Quality Assurance,,
+Zohaib Siddiqui,CT-25279374,2025,MS in Computer Science and Information Technology,CT-526,Logic Programming,CT-534,Software Quality Assurance,CT-491,Operating System
+Dua Siddiqui,CT-24279375,2024,MS DS (Geospatial Data Science),CT-590,Data Visualization,CT-5011,GIS for Emergency Management,,
+Zain Ahmed,CT-24279376,2024,MS DS (Geospatial Data Science),CT-5011,GIS for Emergency Management,CT-581,Statistics & Probability for Data Science,CT-494,Introduction to Databases
+Zain Siddiqui,CT-24279377,2024,MS DS (Geospatial Data Science),CT-590,Data Visualization,CT-562,Machine Learning,,
+Ayesha Raza,CT-24279378,2024,MS in Computer Science and Information Technology,CT-530,Data Mining,CT-523,Fuzzy Control & Neural Networks,,
+Ahmed Mir,CT-25279379,2025,MS in Data Science,CT-527,Image processing & Computer Vision,CT-528,Advance Database Techniques,CT-493,Data Structure and Algorithm Design
+Ali Raza,CT-25279380,2025,MS in Computer Science and Information Technology,CT-506,Advanced Analysis of Algorithms,CT-534,Software Quality Assurance,,
+Zain Mir,CT-24279381,2024,MS DS (Geospatial Data Science),CT-5005,Spatial Decision Support Systems,CT-5007,Web GIS,CT-494,Introduction to Databases
+Zohaib Ahmed,CT-24279382,2024,MS in Computer Science and Information Technology,CT-511,Information System Development Methodologies,CT-530,Data Mining,CT-494,Introduction to Databases
+Ahmed Raza,CT-25279383,2025,MS in Information Security,CT-542,Information Security Management,CT-553,Emerging Trends in Information Security 3,,
+Bilal Raza,CT-25279384,2025,MS in Computer Science and Information Technology,CT-511,Information System Development Methodologies,CT-501,Software Project Management,CT-494,Introduction to Databases
+Ayesha Mir,CT-24279385,2024,MS in Data Science,CT-525,Modeling & Simulation,CT-528,Advance Database Techniques,,
+Maryam Mir,CT-24279386,2024,MS in Data Science,CT-529,Object Oriented Databases,CT-581,Statistics & Probability for Data Science,CT-493,Data Structure and Algorithm Design
+Usman Raza,CT-24279387,2024,MS in Computer Science and Information Technology,CT-501,Software Project Management,CT-506,Advanced Analysis of Algorithms,CT-494,Introduction to Databases
+Hamza Raza,CT-24279388,2024,MS in Information Security,CT-507,Wireless and Mobile Communication Networks,CT-553,Emerging Trends in Information Security 3,,
+Mubashir Mir,CT-25279389,2025,MS DS (Geospatial Data Science),CT-5012,Emerging Trends in Remote Sensing & GIS,CT-590,Data Visualization,CT-494,Introduction to Databases
+Amna Mir,CT-24279390,2024,MS in Information Security,CT-507,Wireless and Mobile Communication Networks,CT-575,Cryptography,CT-494,Introduction to Databases
+Amna Raza,CT-24279391,2024,MS in Information Security,CT-507,Wireless and Mobile Communication Networks,CT-575,Cryptography,,
+Hussain Raza,CT-25279392,2025,MS in Data Science,CT-529,Object Oriented Databases,CT-528,Advance Database Techniques,CT-492,Object Oriented Programming
+Dua Khan,CT-25279393,2025,MS in Computer Science and Information Technology,CT-516,Multimedia Communications,CT-530,Data Mining,CT-491,Operating System
+Fatima Ahmed,CT-25279394,2025,MS in Data Science,CT-529,Object Oriented Databases,CT-524,Knowledge Based System,CT-493,Data Structure and Algorithm Design
+Sara Ahmed,CT-25279395,2025,MS in Data Science,CT-562,Machine Learning,CT-581,Statistics & Probability for Data Science,,
+Ayesha Butt,CT-25279396,2025,MS in Data Science,CT-527,Image processing & Computer Vision,CT-529,Object Oriented Databases,CT-493,Data Structure and Algorithm Design
+Dua Ahmed,CT-25279397,2025,MS in Data Science,CT-562,Machine Learning,CT-530,Data Mining,CT-492,Object Oriented Programming
+Amna Ahmed,CT-24279398,2024,MS in Data Science,CT-527,Image processing & Computer Vision,CT-562,Machine Learning,CT-492,Object Oriented Programming
+Ahmed Khan,CT-25279399,2025,MS in Information Security,CT-543,Database Security,CT-551,Fault Tolerance and Reliability,,
+Ali Raza,CT-24279400,2024,MS DS (Geospatial Data Science),CT-5007,Web GIS,CT-590,Data Visualization,CT-494,Introduction to Databases
+Bilal Shah,CT-24279401,2024,MS DS (Geospatial Data Science),CT-530,Data Mining,CT-590,Data Visualization,CT-495,Fundamentals of Remote Sensing and GIS
+Hamza Ahmed,CT-24279402,2024,MS in Information Security,CT-509,Distributed Systems,CT-552,Quantum Cryptography,,
+Zohaib Raza,CT-24279403,2024,MS in Computer Science and Information Technology,CT-516,Multimedia Communications,CT-523,Fuzzy Control & Neural Networks,,
+Usman Siddiqui,CT-24279404,2024,MS in Computer Science and Information Technology,CT-513,Quality Information System,CT-523,Fuzzy Control & Neural Networks,CT-491,Operating System
+Hussain Raza,CT-24279405,2024,MS DS (Geospatial Data Science),CT-5007,Web GIS,CT-5012,Emerging Trends in Remote Sensing & GIS,,
+Zohaib Shah,CT-24279406,2024,MS DS (Geospatial Data Science),CT-5007,Web GIS,CT-530,Data Mining,,
+Usman Khan,CT-24279407,2024,MS in Computer Science and Information Technology,CT-577,Advanced Theory of Automata,CT-523,Fuzzy Control & Neural Networks,CT-494,Introduction to Databases
+Usman Shah,CT-24279408,2024,MS in Data Science,CT-581,Statistics & Probability for Data Science,CT-528,Advance Database Techniques,CT-493,Data Structure and Algorithm Design
+Hassan Mir,CT-25279409,2025,MS in Information Security,CT-542,Information Security Management,CT-507,Wireless and Mobile Communication Networks,CT-493,Data Structure and Algorithm Design
+Maryam Ahmed,CT-25279410,2025,MS in Information Security,CT-544,Cyber Crimes and Security,CT-554,Ethical Hacking,CT-493,Data Structure and Algorithm Design
+Mubashir Ahmed,CT-24279411,2024,MS in Computer Science and Information Technology,CT-501,Software Project Management,CT-506,Advanced Analysis of Algorithms,,
+Hassan Ahmed,CT-24279412,2024,MS in Data Science,CT-521,Distributed Intelligence Systems,CT-528,Advance Database Techniques,,
+Hamza Raza,CT-25279413,2025,MS in Data Science,CT-530,Data Mining,CT-524,Knowledge Based System,,
+Fatima Butt,CT-24279414,2024,MS in Information Security,CT-544,Cyber Crimes and Security,CT-543,Database Security,CT-493,Data Structure and Algorithm Design
+Ali Butt,CT-25279415,2025,MS DS (Geospatial Data Science),CT-581,Statistics & Probability for Data Science,CT-590,Data Visualization,CT-495,Fundamentals of Remote Sensing and GIS
+Hassan Mir,CT-24279416,2024,MS in Data Science,CT-527,Image processing & Computer Vision,CT-529,Object Oriented Databases,,
+Ahmed Mir,CT-25279417,2025,MS in Data Science,CT-521,Distributed Intelligence Systems,CT-562,Machine Learning,CT-493,Data Structure and Algorithm Design
+Sara Khan,CT-25279418,2025,MS in Information Security,CT-553,Emerging Trends in Information Security 3,CT-509,Distributed Systems,CT-494,Introduction to Databases
+Zain Shah,CT-24279419,2024,MS DS (Geospatial Data Science),CT-5011,GIS for Emergency Management,CT-562,Machine Learning,CT-494,Introduction to Databases
+Hamza Khan,CT-24279420,2024,MS in Computer Science and Information Technology,CT-513,Quality Information System,CT-516,Multimedia Communications,CT-491,Operating System
+Hamza Shah,CT-25279421,2025,MS in Information Security,CT-542,Information Security Management,CT-555,Cloud Security,,
+Hussain Shah,CT-25279422,2025,MS in Information Security,CT-509,Distributed Systems,CT-554,Ethical Hacking,,
+Maryam Khan,CT-24279423,2024,MS in Computer Science and Information Technology,CT-506,Advanced Analysis of Algorithms,CT-501,Software Project Management,CT-491,Operating System
+Maryam Ahmed,CT-24279424,2024,MS in Information Security,CT-544,Cyber Crimes and Security,CT-541,Network Security,CT-493,Data Structure and Algorithm Design
+Ayesha Khan,CT-25279425,2025,MS in Computer Science and Information Technology,CT-513,Quality Information System,CT-506,Advanced Analysis of Algorithms,,
+Ahmed Siddiqui,CT-25279426,2025,MS in Computer Science and Information Technology,CT-512,Principles of Marketing,CT-501,Software Project Management,CT-494,Introduction to Databases
+Ahmed Butt,CT-24279427,2024,MS in Data Science,CT-527,Image processing & Computer Vision,CT-530,Data Mining,CT-492,Object Oriented Programming
+Usman Mir,CT-25279428,2025,MS in Computer Science and Information Technology,CT-526,Logic Programming,CT-513,Quality Information System,,
+Hamza Mir,CT-25279429,2025,MS in Information Security,CT-509,Distributed Systems,CT-544,Cyber Crimes and Security,CT-493,Data Structure and Algorithm Design
+Ali Ahmed,CT-24279430,2024,MS DS (Geospatial Data Science),CT-581,Statistics & Probability for Data Science,CT-5005,Spatial Decision Support Systems,CT-494,Introduction to Databases
+Mubashir Shah,CT-24279431,2024,MS in Data Science,CT-524,Knowledge Based System,CT-521,Distributed Intelligence Systems,CT-492,Object Oriented Programming
+Sara Khan,CT-24279432,2024,MS DS (Geospatial Data Science),CT-527,Image processing & Computer Vision,CT-530,Data Mining,CT-495,Fundamentals of Remote Sensing and GIS
+Ayesha Khan,CT-25279433,2025,MS in Computer Science and Information Technology,CT-501,Software Project Management,CT-506,Advanced Analysis of Algorithms,CT-491,Operating System
+Hassan Raza,CT-24279434,2024,MS DS (Geospatial Data Science),CT-581,Statistics & Probability for Data Science,CT-527,Image processing & Computer Vision,,
+Hamza Raza,CT-25279435,2025,MS in Information Security,CT-543,Database Security,CT-575,Cryptography,,
+Hussain Ahmed,CT-25279436,2025,MS in Data Science,CT-530,Data Mining,CT-528,Advance Database Techniques,CT-492,Object Oriented Programming
+Bilal Shah,CT-25279437,2025,MS in Information Security,CT-544,Cyber Crimes and Security,CT-507,Wireless and Mobile Communication Networks,,
+Ayesha Raza,CT-24279438,2024,MS in Data Science,CT-562,Machine Learning,CT-527,Image processing & Computer Vision,CT-492,Object Oriented Programming
+Maryam Khan,CT-25279439,2025,MS in Computer Science and Information Technology,CT-501,Software Project Management,CT-516,Multimedia Communications,,
+Ali Ahmed,CT-24279440,2024,MS in Information Security,CT-544,Cyber Crimes and Security,CT-509,Distributed Systems,CT-494,Introduction to Databases
+Zohaib Khan,CT-25279441,2025,MS in Data Science,CT-525,Modeling & Simulation,CT-524,Knowledge Based System,CT-492,Object Oriented Programming
+Hussain Khan,CT-24279442,2024,MS in Data Science,CT-562,Machine Learning,CT-559,Artificial Neural Networks,,
+Hamza Siddiqui,CT-25279443,2025,MS DS (Geospatial Data Science),CT-5007,Web GIS,CT-527,Image processing & Computer Vision,,
+Sara Mir,CT-25279444,2025,MS DS (Geospatial Data Science),CT-581,Statistics & Probability for Data Science,CT-5005,Spatial Decision Support Systems,CT-495,Fundamentals of Remote Sensing and GIS
+Fatima Raza,CT-25279445,2025,MS in Data Science,CT-530,Data Mining,CT-524,Knowledge Based System,,
+Dua Mir,CT-24279446,2024,MS in Computer Science and Information Technology,CT-530,Data Mining,CT-513,Quality Information System,CT-494,Introduction to Databases
+Ahmed Khan,CT-25279447,2025,MS in Data Science,CT-562,Machine Learning,CT-528,Advance Database Techniques,,
+Hamza Butt,CT-24279448,2024,MS DS (Geospatial Data Science),CT-5011,GIS for Emergency Management,CT-527,Image processing & Computer Vision,CT-494,Introduction to Databases
+Fatima Shah,CT-25279449,2025,MS in Computer Science and Information Technology,CT-526,Logic Programming,CT-506,Advanced Analysis of Algorithms,CT-494,Introduction to Databases
+Zohaib Shah,CT-25279450,2025,MS in Data Science,CT-529,Object Oriented Databases,CT-524,Knowledge Based System,CT-493,Data Structure and Algorithm Design
+Hamza Khan,CT-25279451,2025,MS in Information Security,CT-507,Wireless and Mobile Communication Networks,CT-543,Database Security,CT-494,Introduction to Databases
+Sara Raza,CT-24279452,2024,MS in Computer Science and Information Technology,CT-530,Data Mining,CT-513,Quality Information System,CT-494,Introduction to Databases
+Ali Butt,CT-24279453,2024,MS in Data Science,CT-527,Image processing & Computer Vision,CT-525,Modeling & Simulation,,
+Hussain Raza,CT-25279454,2025,MS in Information Security,CT-509,Distributed Systems,CT-553,Emerging Trends in Information Security 3,CT-494,Introduction to Databases
+Hamza Khan,CT-24279455,2024,MS in Data Science,CT-530,Data Mining,CT-562,Machine Learning,CT-492,Object Oriented Programming
+Maryam Shah,CT-25279456,2025,MS in Data Science,CT-562,Machine Learning,CT-525,Modeling & Simulation,,
+Zohaib Shah,CT-24279457,2024,MS in Computer Science and Information Technology,CT-530,Data Mining,CT-512,Principles of Marketing,,
+Hussain Siddiqui,CT-25279458,2025,MS DS (Geospatial Data Science),CT-590,Data Visualization,CT-5005,Spatial Decision Support Systems,,
+Ahmed Khan,CT-25279459,2025,MS in Data Science,CT-524,Knowledge Based System,CT-525,Modeling & Simulation,CT-492,Object Oriented Programming
+Amna Khan,CT-24279460,2024,MS in Information Security,CT-541,Network Security,CT-554,Ethical Hacking,,
+Zain Mir,CT-25279461,2025,MS DS (Geospatial Data Science),CT-5012,Emerging Trends in Remote Sensing & GIS,CT-5004,Advanced Programming in GIS,,
+Maryam Raza,CT-24279462,2024,MS in Information Security,CT-509,Distributed Systems,CT-507,Wireless and Mobile Communication Networks,CT-493,Data Structure and Algorithm Design
+Fatima Khan,CT-25279463,2025,MS DS (Geospatial Data Science),CT-5011,GIS for Emergency Management,CT-562,Machine Learning,,
+Dua Siddiqui,CT-25279464,2025,MS in Computer Science and Information Technology,CT-516,Multimedia Communications,CT-513,Quality Information System,CT-494,Introduction to Databases
+Zohaib Siddiqui,CT-24279465,2024,MS in Data Science,CT-562,Machine Learning,CT-527,Image processing & Computer Vision,CT-493,Data Structure and Algorithm Design
+Hamza Siddiqui,CT-24279466,2024,MS in Data Science,CT-562,Machine Learning,CT-529,Object Oriented Databases,,
+Maryam Shah,CT-24279467,2024,MS in Information Security,CT-555,Cloud Security,CT-575,Cryptography,,
+Mubashir Shah,CT-24279468,2024,MS in Computer Science and Information Technology,CT-506,Advanced Analysis of Algorithms,CT-577,Advanced Theory of Automata,,
+Bilal Siddiqui,CT-25279469,2025,MS in Information Security,CT-507,Wireless and Mobile Communication Networks,CT-575,Cryptography,,
+Hamza Shah,CT-24279470,2024,MS in Information Security,CT-543,Database Security,CT-552,Quantum Cryptography,CT-493,Data Structure and Algorithm Design
+Hussain Shah,CT-25279471,2025,MS in Data Science,CT-525,Modeling & Simulation,CT-529,Object Oriented Databases,CT-492,Object Oriented Programming
+Bilal Butt,CT-24279472,2024,MS in Computer Science and Information Technology,CT-511,Information System Development Methodologies,CT-512,Principles of Marketing,CT-494,Introduction to Databases
+Bilal Mir,CT-24279473,2024,MS in Computer Science and Information Technology,CT-512,Principles of Marketing,CT-534,Software Quality Assurance,CT-491,Operating System
+Hussain Siddiqui,CT-25279474,2025,MS in Information Security,CT-555,Cloud Security,CT-551,Fault Tolerance and Reliability,CT-494,Introduction to Databases
+Maryam Shah,CT-25279475,2025,MS in Information Security,CT-543,Database Security,CT-542,Information Security Management,,
+Maryam Raza,CT-25279476,2025,MS in Data Science,CT-525,Modeling & Simulation,CT-581,Statistics & Probability for Data Science,,
+Usman Butt,CT-24279477,2024,MS in Data Science,CT-528,Advance Database Techniques,CT-581,Statistics & Probability for Data Science,,
+Hassan Khan,CT-25279478,2025,MS in Computer Science and Information Technology,CT-506,Advanced Analysis of Algorithms,CT-501,Software Project Management,CT-491,Operating System
+Hassan Khan,CT-24279479,2024,MS in Data Science,CT-559,Artificial Neural Networks,CT-562,Machine Learning,,
+Bilal Ahmed,CT-25279480,2025,MS DS (Geospatial Data Science),CT-5004,Advanced Programming in GIS,CT-5012,Emerging Trends in Remote Sensing & GIS,CT-495,Fundamentals of Remote Sensing and GIS
+Hassan Shah,CT-25279481,2025,MS in Information Security,CT-552,Quantum Cryptography,CT-541,Network Security,CT-494,Introduction to Databases
+Hassan Khan,CT-24279482,2024,MS in Computer Science and Information Technology,CT-512,Principles of Marketing,CT-516,Multimedia Communications,CT-491,Operating System
+Zain Siddiqui,CT-25279483,2025,MS in Computer Science and Information Technology,CT-511,Information System Development Methodologies,CT-523,Fuzzy Control & Neural Networks,,
+Dua Khan,CT-24279484,2024,MS DS (Geospatial Data Science),CT-527,Image processing & Computer Vision,CT-562,Machine Learning,CT-495,Fundamentals of Remote Sensing and GIS
+Ayesha Raza,CT-25279485,2025,MS in Computer Science and Information Technology,CT-511,Information System Development Methodologies,CT-506,Advanced Analysis of Algorithms,CT-494,Introduction to Databases
+Maryam Ahmed,CT-25279486,2025,MS DS (Geospatial Data Science),CT-530,Data Mining,CT-581,Statistics & Probability for Data Science,CT-494,Introduction to Databases
+Hussain Shah,CT-24279487,2024,MS in Computer Science and Information Technology,CT-526,Logic Programming,CT-512,Principles of Marketing,CT-491,Operating System
+Ayesha Butt,CT-25279488,2025,MS DS (Geospatial Data Science),CT-530,Data Mining,CT-562,Machine Learning,,
+Hassan Khan,CT-25279489,2025,MS DS (Geospatial Data Science),CT-590,Data Visualization,CT-581,Statistics & Probability for Data Science,,
+Ayesha Khan,CT-25279490,2025,MS in Information Security,CT-543,Database Security,CT-553,Emerging Trends in Information Security 3,CT-493,Data Structure and Algorithm Design
+Ali Siddiqui,CT-25279491,2025,MS DS (Geospatial Data Science),CT-5005,Spatial Decision Support Systems,CT-581,Statistics & Probability for Data Science,CT-495,Fundamentals of Remote Sensing and GIS
+Ahmed Butt,CT-24279492,2024,MS DS (Geospatial Data Science),CT-5007,Web GIS,CT-530,Data Mining,CT-494,Introduction to Databases
+Hassan Khan,CT-24279493,2024,MS in Computer Science and Information Technology,CT-523,Fuzzy Control & Neural Networks,CT-513,Quality Information System,,
+Zohaib Siddiqui,CT-25279494,2025,MS DS (Geospatial Data Science),CT-5005,Spatial Decision Support Systems,CT-5012,Emerging Trends in Remote Sensing & GIS,,
+Fatima Mir,CT-25279495,2025,MS in Computer Science and Information Technology,CT-506,Advanced Analysis of Algorithms,CT-577,Advanced Theory of Automata,CT-494,Introduction to Databases
+Sara Shah,CT-24279496,2024,MS in Data Science,CT-528,Advance Database Techniques,CT-562,Machine Learning,,
+Usman Butt,CT-24279497,2024,MS in Computer Science and Information Technology,CT-534,Software Quality Assurance,CT-526,Logic Programming,,
+Ayesha Mir,CT-25279498,2025,MS in Computer Science and Information Technology,CT-516,Multimedia Communications,CT-530,Data Mining,,
+Bilal Khan,CT-24279499,2024,MS in Data Science,CT-521,Distributed Intelligence Systems,CT-530,Data Mining,CT-492,Object Oriented Programming
+Hussain Siddiqui,CT-24279500,2024,MS in Information Security,CT-554,Ethical Hacking,CT-552,Quantum Cryptography,CT-493,Data Structure and Algorithm Design
+Zain Mir,CT-24279501,2024,MS in Information Security,CT-542,Information Security Management,CT-509,Distributed Systems,,
+Sara Shah,CT-24279502,2024,MS DS (Geospatial Data Science),CT-5011,GIS for Emergency Management,CT-527,Image processing & Computer Vision,CT-494,Introduction to Databases
+Dua Siddiqui,CT-25279503,2025,MS in Data Science,CT-530,Data Mining,CT-527,Image processing & Computer Vision,CT-493,Data Structure and Algorithm Design
+Dua Siddiqui,CT-25279504,2025,MS in Information Security,CT-507,Wireless and Mobile Communication Networks,CT-543,Database Security,CT-493,Data Structure and Algorithm Design
+Ayesha Shah,CT-24279505,2024,MS in Information Security,CT-551,Fault Tolerance and Reliability,CT-553,Emerging Trends in Information Security 3,CT-493,Data Structure and Algorithm Design
+Mubashir Raza,CT-25279506,2025,MS in Data Science,CT-525,Modeling & Simulation,CT-527,Image processing & Computer Vision,CT-492,Object Oriented Programming
+Dua Ahmed,CT-25279507,2025,MS in Computer Science and Information Technology,CT-530,Data Mining,CT-526,Logic Programming,,
+Maryam Mir,CT-24279508,2024,MS DS (Geospatial Data Science),CT-5007,Web GIS,CT-5004,Advanced Programming in GIS,,
+Dua Khan,CT-25279509,2025,MS in Data Science,CT-559,Artificial Neural Networks,CT-562,Machine Learning,,
+Maryam Butt,CT-25279510,2025,MS in Computer Science and Information Technology,CT-506,Advanced Analysis of Algorithms,CT-523,Fuzzy Control & Neural Networks,,
+Hamza Siddiqui,CT-24279511,2024,MS in Computer Science and Information Technology,CT-506,Advanced Analysis of Algorithms,CT-516,Multimedia Communications,,
+Sara Butt,CT-24279512,2024,MS in Data Science,CT-521,Distributed Intelligence Systems,CT-559,Artificial Neural Networks,CT-492,Object Oriented Programming
+Zohaib Ahmed,CT-24279513,2024,MS in Information Security,CT-543,Database Security,CT-555,Cloud Security,CT-494,Introduction to Databases
+Ali Mir,CT-25279514,2025,MS in Computer Science and Information Technology,CT-501,Software Project Management,CT-523,Fuzzy Control & Neural Networks,,
+Hamza Butt,CT-24279515,2024,MS DS (Geospatial Data Science),CT-562,Machine Learning,CT-527,Image processing & Computer Vision,,
+Bilal Raza,CT-24279516,2024,MS in Computer Science and Information Technology,CT-530,Data Mining,CT-534,Software Quality Assurance,CT-494,Introduction to Databases
+Zohaib Raza,CT-25279517,2025,MS in Computer Science and Information Technology,CT-513,Quality Information System,CT-512,Principles of Marketing,CT-494,Introduction to Databases
+Ali Khan,CT-24279518,2024,MS in Computer Science and Information Technology,CT-577,Advanced Theory of Automata,CT-530,Data Mining,CT-494,Introduction to Databases
+Hussain Siddiqui,CT-25279519,2025,MS DS (Geospatial Data Science),CT-527,Image processing & Computer Vision,CT-590,Data Visualization,CT-495,Fundamentals of Remote Sensing and GIS
+Hassan Butt,CT-25279520,2025,MS in Computer Science and Information Technology,CT-530,Data Mining,CT-526,Logic Programming,CT-491,Operating System
+Dua Siddiqui,CT-25279521,2025,MS in Computer Science and Information Technology,CT-501,Software Project Management,CT-512,Principles of Marketing,CT-494,Introduction to Databases
+Bilal Shah,CT-25279522,2025,MS in Data Science,CT-524,Knowledge Based System,CT-521,Distributed Intelligence Systems,CT-492,Object Oriented Programming
+Sara Butt,CT-24279523,2024,MS DS (Geospatial Data Science),CT-5012,Emerging Trends in Remote Sensing & GIS,CT-5004,Advanced Programming in GIS,,
+Hassan Siddiqui,CT-24279524,2024,MS in Information Security,CT-575,Cryptography,CT-509,Distributed Systems,CT-494,Introduction to Databases
+Usman Siddiqui,CT-24279525,2024,MS DS (Geospatial Data Science),CT-5004,Advanced Programming in GIS,CT-590,Data Visualization,,
+Zohaib Raza,CT-24279526,2024,MS in Information Security,CT-507,Wireless and Mobile Communication Networks,CT-544,Cyber Crimes and Security,CT-493,Data Structure and Algorithm Design
+Hussain Mir,CT-25279527,2025,MS in Computer Science and Information Technology,CT-506,Advanced Analysis of Algorithms,CT-523,Fuzzy Control & Neural Networks,,
+Hamza Mir,CT-24279528,2024,MS in Computer Science and Information Technology,CT-516,Multimedia Communications,CT-534,Software Quality Assurance,CT-494,Introduction to Databases
+Ali Ahmed,CT-24279529,2024,MS in Data Science,CT-528,Advance Database Techniques,CT-527,Image processing & Computer Vision,CT-492,Object Oriented Programming
+Bilal Ahmed,CT-24279530,2024,MS in Computer Science and Information Technology,CT-530,Data Mining,CT-516,Multimedia Communications,CT-491,Operating System
+Hassan Raza,CT-24279531,2024,MS in Information Security,CT-553,Emerging Trends in Information Security 3,CT-551,Fault Tolerance and Reliability,CT-493,Data Structure and Algorithm Design
+Hamza Butt,CT-24279532,2024,MS DS (Geospatial Data Science),CT-5012,Emerging Trends in Remote Sensing & GIS,CT-590,Data Visualization,CT-495,Fundamentals of Remote Sensing and GIS
+Hussain Ahmed,CT-24279533,2024,MS in Data Science,CT-524,Knowledge Based System,CT-525,Modeling & Simulation,CT-492,Object Oriented Programming
+Bilal Ahmed,CT-25279534,2025,MS in Data Science,CT-527,Image processing & Computer Vision,CT-581,Statistics & Probability for Data Science,CT-492,Object Oriented Programming
+Dua Khan,CT-24279535,2024,MS in Information Security,CT-553,Emerging Trends in Information Security 3,CT-551,Fault Tolerance and Reliability,CT-493,Data Structure and Algorithm Design
+Hamza Siddiqui,CT-24279536,2024,MS in Computer Science and Information Technology,CT-501,Software Project Management,CT-530,Data Mining,,
+Maryam Raza,CT-25279537,2025,MS in Data Science,CT-581,Statistics & Probability for Data Science,CT-529,Object Oriented Databases,,
+Hamza Shah,CT-24279538,2024,MS in Computer Science and Information Technology,CT-530,Data Mining,CT-577,Advanced Theory of Automata,,
+Maryam Mir,CT-25279539,2025,MS DS (Geospatial Data Science),CT-5011,GIS for Emergency Management,CT-5004,Advanced Programming in GIS,,
+Usman Mir,CT-24279540,2024,MS in Information Security,CT-543,Database Security,CT-507,Wireless and Mobile Communication Networks,,
+Maryam Khan,CT-25279541,2025,MS in Information Security,CT-544,Cyber Crimes and Security,CT-542,Information Security Management,CT-494,Introduction to Databases
+Dua Siddiqui,CT-25279542,2025,MS in Data Science,CT-559,Artificial Neural Networks,CT-524,Knowledge Based System,CT-493,Data Structure and Algorithm Design
+Fatima Ahmed,CT-25279543,2025,MS in Information Security,CT-542,Information Security Management,CT-551,Fault Tolerance and Reliability,CT-494,Introduction to Databases
+Maryam Ahmed,CT-25279544,2025,MS in Information Security,CT-507,Wireless and Mobile Communication Networks,CT-509,Distributed Systems,CT-494,Introduction to Databases
+Zohaib Raza,CT-24279545,2024,MS in Computer Science and Information Technology,CT-506,Advanced Analysis of Algorithms,CT-523,Fuzzy Control & Neural Networks,CT-494,Introduction to Databases
+Usman Raza,CT-25279546,2025,MS in Data Science,CT-528,Advance Database Techniques,CT-524,Knowledge Based System,CT-492,Object Oriented Programming
+Hamza Ahmed,CT-25279547,2025,MS in Data Science,CT-562,Machine Learning,CT-521,Distributed Intelligence Systems,CT-492,Object Oriented Programming
+Hamza Siddiqui,CT-25279548,2025,MS in Data Science,CT-525,Modeling & Simulation,CT-521,Distributed Intelligence Systems,,
+Mubashir Shah,CT-25279549,2025,MS in Data Science,CT-562,Machine Learning,CT-527,Image processing & Computer Vision,,
+Hussain Butt,CT-25279550,2025,MS in Data Science,CT-581,Statistics & Probability for Data Science,CT-530,Data Mining,,
+Amna Khan,CT-25279551,2025,MS in Computer Science and Information Technology,CT-526,Logic Programming,CT-506,Advanced Analysis of Algorithms,CT-494,Introduction to Databases
+Ayesha Khan,CT-24279552,2024,MS in Computer Science and Information Technology,CT-512,Principles of Marketing,CT-511,Information System Development Methodologies,,
+Mubashir Shah,CT-25279553,2025,MS DS (Geospatial Data Science),CT-590,Data Visualization,CT-5005,Spatial Decision Support Systems,CT-494,Introduction to Databases
+Hussain Siddiqui,CT-25279554,2025,MS in Computer Science and Information Technology,CT-512,Principles of Marketing,CT-516,Multimedia Communications,,
+Hamza Ahmed,CT-24279555,2024,MS DS (Geospatial Data Science),CT-527,Image processing & Computer Vision,CT-530,Data Mining,CT-495,Fundamentals of Remote Sensing and GIS
+Hussain Ahmed,CT-24279556,2024,MS in Information Security,CT-507,Wireless and Mobile Communication Networks,CT-553,Emerging Trends in Information Security 3,,
+Dua Mir,CT-25279557,2025,MS in Computer Science and Information Technology,CT-506,Advanced Analysis of Algorithms,CT-511,Information System Development Methodologies,,
+Maryam Ahmed,CT-25279558,2025,MS in Information Security,CT-507,Wireless and Mobile Communication Networks,CT-551,Fault Tolerance and Reliability,CT-493,Data Structure and Algorithm Design
+Zain Butt,CT-24279559,2024,MS in Computer Science and Information Technology,CT-512,Principles of Marketing,CT-501,Software Project Management,CT-494,Introduction to Databases
+Hassan Ahmed,CT-24279560,2024,MS DS (Geospatial Data Science),CT-562,Machine Learning,CT-5007,Web GIS,CT-495,Fundamentals of Remote Sensing and GIS
+Ayesha Khan,CT-24279561,2024,MS in Computer Science and Information Technology,CT-501,Software Project Management,CT-526,Logic Programming,CT-491,Operating System
+Dua Raza,CT-24279562,2024,MS in Data Science,CT-527,Image processing & Computer Vision,CT-525,Modeling & Simulation,CT-492,Object Oriented Programming
+Amna Ahmed,CT-25279563,2025,MS DS (Geospatial Data Science),CT-581,Statistics & Probability for Data Science,CT-5011,GIS for Emergency Management,,
+Zain Raza,CT-24279564,2024,MS in Information Security,CT-542,Information Security Management,CT-553,Emerging Trends in Information Security 3,CT-493,Data Structure and Algorithm Design
+Ali Khan,CT-25279565,2025,MS DS (Geospatial Data Science),CT-5007,Web GIS,CT-5004,Advanced Programming in GIS,CT-495,Fundamentals of Remote Sensing and GIS
+Amna Ahmed,CT-25279566,2025,MS DS (Geospatial Data Science),CT-5012,Emerging Trends in Remote Sensing & GIS,CT-562,Machine Learning,CT-495,Fundamentals of Remote Sensing and GIS
+Dua Butt,CT-24279567,2024,MS in Data Science,CT-529,Object Oriented Databases,CT-562,Machine Learning,CT-493,Data Structure and Algorithm Design
+Dua Ahmed,CT-24279568,2024,MS in Information Security,CT-509,Distributed Systems,CT-553,Emerging Trends in Information Security 3,,
+Maryam Butt,CT-24279569,2024,MS in Data Science,CT-529,Object Oriented Databases,CT-559,Artificial Neural Networks,CT-493,Data Structure and Algorithm Design
+Usman Mir,CT-25279570,2025,MS in Computer Science and Information Technology,CT-516,Multimedia Communications,CT-523,Fuzzy Control & Neural Networks,,
+Hussain Raza,CT-24279571,2024,MS in Data Science,CT-529,Object Oriented Databases,CT-530,Data Mining,CT-493,Data Structure and Algorithm Design
+Fatima Butt,CT-25279572,2025,MS in Computer Science and Information Technology,CT-534,Software Quality Assurance,CT-501,Software Project Management,,
+Amna Ahmed,CT-24279573,2024,MS in Computer Science and Information Technology,CT-512,Principles of Marketing,CT-513,Quality Information System,CT-491,Operating System
+Zohaib Butt,CT-24279574,2024,MS DS (Geospatial Data Science),CT-5004,Advanced Programming in GIS,CT-5007,Web GIS,,
+Hamza Shah,CT-25279575,2025,MS in Computer Science and Information Technology,CT-513,Quality Information System,CT-530,Data Mining,,
+Zain Ahmed,CT-25279576,2025,MS in Information Security,CT-552,Quantum Cryptography,CT-541,Network Security,CT-494,Introduction to Databases
+Zohaib Ahmed,CT-24279577,2024,MS in Computer Science and Information Technology,CT-512,Principles of Marketing,CT-501,Software Project Management,CT-491,Operating System
+Ayesha Mir,CT-25279578,2025,MS in Information Security,CT-507,Wireless and Mobile Communication Networks,CT-555,Cloud Security,CT-494,Introduction to Databases
+Hassan Ahmed,CT-24279579,2024,MS in Data Science,CT-521,Distributed Intelligence Systems,CT-528,Advance Database Techniques,CT-493,Data Structure and Algorithm Design
+Fatima Butt,CT-25279580,2025,MS in Data Science,CT-524,Knowledge Based System,CT-581,Statistics & Probability for Data Science,,
+Fatima Khan,CT-24279581,2024,MS in Computer Science and Information Technology,CT-534,Software Quality Assurance,CT-513,Quality Information System,,
+Zohaib Siddiqui,CT-25279582,2025,MS in Information Security,CT-543,Database Security,CT-553,Emerging Trends in Information Security 3,,
+Ahmed Mir,CT-24279583,2024,MS DS (Geospatial Data Science),CT-530,Data Mining,CT-590,Data Visualization,CT-495,Fundamentals of Remote Sensing and GIS
+Ayesha Ahmed,CT-24279584,2024,MS DS (Geospatial Data Science),CT-530,Data Mining,CT-562,Machine Learning,CT-495,Fundamentals of Remote Sensing and GIS
+Amna Butt,CT-25279585,2025,MS in Data Science,CT-529,Object Oriented Databases,CT-562,Machine Learning,CT-493,Data Structure and Algorithm Design
+Hassan Ahmed,CT-24279586,2024,MS in Information Security,CT-509,Distributed Systems,CT-553,Emerging Trends in Information Security 3,CT-493,Data Structure and Algorithm Design
+Hassan Raza,CT-24279587,2024,MS DS (Geospatial Data Science),CT-5011,GIS for Emergency Management,CT-581,Statistics & Probability for Data Science,,
+Ayesha Siddiqui,CT-25279588,2025,MS DS (Geospatial Data Science),CT-562,Machine Learning,CT-5012,Emerging Trends in Remote Sensing & GIS,CT-495,Fundamentals of Remote Sensing and GIS
+Zain Mir,CT-25279589,2025,MS DS (Geospatial Data Science),CT-5011,GIS for Emergency Management,CT-562,Machine Learning,CT-494,Introduction to Databases
+Zohaib Butt,CT-25279590,2025,MS in Information Security,CT-552,Quantum Cryptography,CT-555,Cloud Security,CT-494,Introduction to Databases
+Zohaib Shah,CT-25279591,2025,MS in Data Science,CT-559,Artificial Neural Networks,CT-524,Knowledge Based System,CT-492,Object Oriented Programming
+Ayesha Khan,CT-25279592,2025,MS in Data Science,CT-524,Knowledge Based System,CT-521,Distributed Intelligence Systems,CT-492,Object Oriented Programming
+Amna Mir,CT-25279593,2025,MS DS (Geospatial Data Science),CT-590,Data Visualization,CT-5011,GIS for Emergency Management,,
+Maryam Raza,CT-24279594,2024,MS DS (Geospatial Data Science),CT-562,Machine Learning,CT-5012,Emerging Trends in Remote Sensing & GIS,CT-494,Introduction to Databases
+Hussain Shah,CT-25279595,2025,MS in Information Security,CT-543,Database Security,CT-552,Quantum Cryptography,,
+Maryam Butt,CT-25279596,2025,MS in Computer Science and Information Technology,CT-512,Principles of Marketing,CT-577,Advanced Theory of Automata,,
+Ali Shah,CT-24279597,2024,MS DS (Geospatial Data Science),CT-581,Statistics & Probability for Data Science,CT-562,Machine Learning,CT-494,Introduction to Databases
+Hussain Butt,CT-25279598,2025,MS in Computer Science and Information Technology,CT-526,Logic Programming,CT-511,Information System Development Methodologies,CT-494,Introduction to Databases
+Fatima Raza,CT-24279599,2024,MS in Data Science,CT-521,Distributed Intelligence Systems,CT-525,Modeling & Simulation,CT-493,Data Structure and Algorithm Design
+Mubashir Ahmed,CT-25279600,2025,MS in Information Security,CT-575,Cryptography,CT-553,Emerging Trends in Information Security 3,,
+Sara Mir,CT-24279601,2024,MS in Data Science,CT-529,Object Oriented Databases,CT-562,Machine Learning,,
+Ahmed Shah,CT-25279602,2025,MS in Information Security,CT-542,Information Security Management,CT-552,Quantum Cryptography,CT-493,Data Structure and Algorithm Design
+Hassan Siddiqui,CT-24279603,2024,MS in Computer Science and Information Technology,CT-516,Multimedia Communications,CT-534,Software Quality Assurance,CT-494,Introduction to Databases
+Hassan Shah,CT-24279604,2024,MS in Information Security,CT-551,Fault Tolerance and Reliability,CT-552,Quantum Cryptography,CT-493,Data Structure and Algorithm Design
+Fatima Raza,CT-24279605,2024,MS DS (Geospatial Data Science),CT-5011,GIS for Emergency Management,CT-590,Data Visualization,,
+Bilal Butt,CT-25279606,2025,MS in Computer Science and Information Technology,CT-513,Quality Information System,CT-526,Logic Programming,CT-494,Introduction to Databases
+Maryam Siddiqui,CT-25279607,2025,MS DS (Geospatial Data Science),CT-5011,GIS for Emergency Management,CT-527,Image processing & Computer Vision,,
+Hamza Butt,CT-24279608,2024,MS in Information Security,CT-552,Quantum Cryptography,CT-555,Cloud Security,,
+Ayesha Butt,CT-25279609,2025,MS in Information Security,CT-551,Fault Tolerance and Reliability,CT-507,Wireless and Mobile Communication Networks,,
+Amna Raza,CT-24279610,2024,MS in Information Security,CT-554,Ethical Hacking,CT-509,Distributed Systems,CT-493,Data Structure and Algorithm Design
+Amna Ahmed,CT-24279611,2024,MS in Information Security,CT-541,Network Security,CT-554,Ethical Hacking,CT-494,Introduction to Databases
+Zohaib Ahmed,CT-25279612,2025,MS in Information Security,CT-552,Quantum Cryptography,CT-509,Distributed Systems,,
+Ayesha Shah,CT-25279613,2025,MS in Information Security,CT-553,Emerging Trends in Information Security 3,CT-544,Cyber Crimes and Security,CT-494,Introduction to Databases
+Amna Raza,CT-24279614,2024,MS in Information Security,CT-553,Emerging Trends in Information Security 3,CT-554,Ethical Hacking,,
+Usman Ahmed,CT-24279615,2024,MS in Information Security,CT-544,Cyber Crimes and Security,CT-507,Wireless and Mobile Communication Networks,CT-494,Introduction to Databases
+Sara Ahmed,CT-24279616,2024,MS DS (Geospatial Data Science),CT-527,Image processing & Computer Vision,CT-581,Statistics & Probability for Data Science,CT-494,Introduction to Databases
+Ayesha Siddiqui,CT-25279617,2025,MS in Computer Science and Information Technology,CT-534,Software Quality Assurance,CT-523,Fuzzy Control & Neural Networks,CT-494,Introduction to Databases
+Fatima Butt,CT-25279618,2025,MS in Data Science,CT-525,Modeling & Simulation,CT-521,Distributed Intelligence Systems,CT-493,Data Structure and Algorithm Design
+Mubashir Mir,CT-25279619,2025,MS in Computer Science and Information Technology,CT-512,Principles of Marketing,CT-526,Logic Programming,CT-494,Introduction to Databases
+Hussain Butt,CT-25279620,2025,MS in Computer Science and Information Technology,CT-501,Software Project Management,CT-511,Information System Development Methodologies,,
+Mubashir Ahmed,CT-25279621,2025,MS in Information Security,CT-555,Cloud Security,CT-551,Fault Tolerance and Reliability,,
+Usman Mir,CT-25279622,2025,MS in Data Science,CT-581,Statistics & Probability for Data Science,CT-529,Object Oriented Databases,CT-492,Object Oriented Programming
+Hassan Butt,CT-24279623,2024,MS in Computer Science and Information Technology,CT-577,Advanced Theory of Automata,CT-516,Multimedia Communications,,
+Usman Mir,CT-24279624,2024,MS in Computer Science and Information Technology,CT-513,Quality Information System,CT-530,Data Mining,CT-491,Operating System
+Ali Raza,CT-25279625,2025,MS DS (Geospatial Data Science),CT-527,Image processing & Computer Vision,CT-5011,GIS for Emergency Management,,
+Usman Shah,CT-25279626,2025,MS in Information Security,CT-554,Ethical Hacking,CT-507,Wireless and Mobile Communication Networks,CT-493,Data Structure and Algorithm Design
+Ahmed Ahmed,CT-24279627,2024,MS in Data Science,CT-581,Statistics & Probability for Data Science,CT-562,Machine Learning,CT-492,Object Oriented Programming
+Ali Raza,CT-24279628,2024,MS in Computer Science and Information Technology,CT-530,Data Mining,CT-523,Fuzzy Control & Neural Networks,CT-494,Introduction to Databases
+Bilal Shah,CT-24279629,2024,MS DS (Geospatial Data Science),CT-527,Image processing & Computer Vision,CT-5004,Advanced Programming in GIS,,
+Hussain Siddiqui,CT-25279630,2025,MS in Computer Science and Information Technology,CT-513,Quality Information System,CT-577,Advanced Theory of Automata,CT-494,Introduction to Databases
+Dua Ahmed,CT-25279631,2025,MS DS (Geospatial Data Science),CT-5011,GIS for Emergency Management,CT-5007,Web GIS,CT-495,Fundamentals of Remote Sensing and GIS
+Maryam Khan,CT-25279632,2025,MS DS (Geospatial Data Science),CT-5004,Advanced Programming in GIS,CT-562,Machine Learning,,
+Hussain Raza,CT-24279633,2024,MS in Information Security,CT-553,Emerging Trends in Information Security 3,CT-507,Wireless and Mobile Communication Networks,CT-494,Introduction to Databases
+Hassan Ahmed,CT-25279634,2025,MS in Data Science,CT-530,Data Mining,CT-559,Artificial Neural Networks,CT-493,Data Structure and Algorithm Design
+Hussain Mir,CT-24279635,2024,MS in Information Security,CT-555,Cloud Security,CT-541,Network Security,CT-494,Introduction to Databases
+Hassan Butt,CT-25279636,2025,MS in Data Science,CT-521,Distributed Intelligence Systems,CT-581,Statistics & Probability for Data Science,CT-492,Object Oriented Programming
+Zohaib Mir,CT-25279637,2025,MS in Data Science,CT-562,Machine Learning,CT-521,Distributed Intelligence Systems,CT-492,Object Oriented Programming
+Amna Shah,CT-24279638,2024,MS DS (Geospatial Data Science),CT-5005,Spatial Decision Support Systems,CT-590,Data Visualization,,
+Zohaib Khan,CT-25279639,2025,MS in Information Security,CT-551,Fault Tolerance and Reliability,CT-552,Quantum Cryptography,CT-493,Data Structure and Algorithm Design
+Fatima Ahmed,CT-25279640,2025,MS in Computer Science and Information Technology,CT-526,Logic Programming,CT-523,Fuzzy Control & Neural Networks,CT-494,Introduction to Databases
+Zohaib Ahmed,CT-24279641,2024,MS DS (Geospatial Data Science),CT-530,Data Mining,CT-562,Machine Learning,CT-494,Introduction to Databases
+Hassan Khan,CT-25279642,2025,MS in Computer Science and Information Technology,CT-511,Information System Development Methodologies,CT-513,Quality Information System,CT-491,Operating System
+Maryam Siddiqui,CT-24279643,2024,MS in Computer Science and Information Technology,CT-530,Data Mining,CT-501,Software Project Management,,
+Hussain Ahmed,CT-24279644,2024,MS in Computer Science and Information Technology,CT-506,Advanced Analysis of Algorithms,CT-516,Multimedia Communications,,
+Sara Butt,CT-25279645,2025,MS in Data Science,CT-528,Advance Database Techniques,CT-521,Distributed Intelligence Systems,,
+Usman Butt,CT-25279646,2025,MS in Computer Science and Information Technology,CT-534,Software Quality Assurance,CT-577,Advanced Theory of Automata,,
+Zohaib Khan,CT-24279647,2024,MS in Information Security,CT-543,Database Security,CT-541,Network Security,CT-493,Data Structure and Algorithm Design
+Dua Shah,CT-25279648,2025,MS in Computer Science and Information Technology,CT-516,Multimedia Communications,CT-530,Data Mining,CT-494,Introduction to Databases
+Fatima Khan,CT-24279649,2024,MS in Information Security,CT-509,Distributed Systems,CT-553,Emerging Trends in Information Security 3,,
+Dua Siddiqui,CT-24279650,2024,MS in Computer Science and Information Technology,CT-534,Software Quality Assurance,CT-512,Principles of Marketing,CT-494,Introduction to Databases
+Mubashir Butt,CT-25279651,2025,MS DS (Geospatial Data Science),CT-527,Image processing & Computer Vision,CT-5004,Advanced Programming in GIS,CT-495,Fundamentals of Remote Sensing and GIS
+Bilal Khan,CT-25279652,2025,MS DS (Geospatial Data Science),CT-5005,Spatial Decision Support Systems,CT-5012,Emerging Trends in Remote Sensing & GIS,CT-495,Fundamentals of Remote Sensing and GIS
+Ayesha Butt,CT-24279653,2024,MS in Data Science,CT-528,Advance Database Techniques,CT-529,Object Oriented Databases,CT-492,Object Oriented Programming
+Fatima Shah,CT-24279654,2024,MS in Computer Science and Information Technology,CT-513,Quality Information System,CT-511,Information System Development Methodologies,CT-494,Introduction to Databases
+Hussain Shah,CT-25279655,2025,MS DS (Geospatial Data Science),CT-5005,Spatial Decision Support Systems,CT-5011,GIS for Emergency Management,CT-495,Fundamentals of Remote Sensing and GIS
+Hamza Butt,CT-25279656,2025,MS in Computer Science and Information Technology,CT-526,Logic Programming,CT-513,Quality Information System,,
+Hamza Mir,CT-25279657,2025,MS in Data Science,CT-528,Advance Database Techniques,CT-525,Modeling & Simulation,CT-492,Object Oriented Programming
+Hassan Mir,CT-24279658,2024,MS in Computer Science and Information Technology,CT-516,Multimedia Communications,CT-534,Software Quality Assurance,CT-491,Operating System
+Hussain Mir,CT-25279659,2025,MS in Information Security,CT-555,Cloud Security,CT-554,Ethical Hacking,CT-493,Data Structure and Algorithm Design
+Mubashir Shah,CT-24279660,2024,MS in Computer Science and Information Technology,CT-513,Quality Information System,CT-501,Software Project Management,,
+Hassan Shah,CT-24279661,2024,MS in Data Science,CT-524,Knowledge Based System,CT-521,Distributed Intelligence Systems,CT-493,Data Structure and Algorithm Design
+Fatima Shah,CT-25279662,2025,MS in Computer Science and Information Technology,CT-511,Information System Development Methodologies,CT-523,Fuzzy Control & Neural Networks,,
+Dua Ahmed,CT-25279663,2025,MS DS (Geospatial Data Science),CT-5004,Advanced Programming in GIS,CT-5005,Spatial Decision Support Systems,CT-494,Introduction to Databases
+Usman Mir,CT-25279664,2025,MS in Computer Science and Information Technology,CT-523,Fuzzy Control & Neural Networks,CT-501,Software Project Management,,
+Zain Khan,CT-24279665,2024,MS in Data Science,CT-529,Object Oriented Databases,CT-525,Modeling & Simulation,CT-492,Object Oriented Programming
+Ayesha Butt,CT-25279666,2025,MS in Computer Science and Information Technology,CT-526,Logic Programming,CT-523,Fuzzy Control & Neural Networks,CT-494,Introduction to Databases
+Ahmed Ahmed,CT-24279667,2024,MS in Information Security,CT-575,Cryptography,CT-543,Database Security,CT-494,Introduction to Databases
+Ali Khan,CT-25279668,2025,MS in Computer Science and Information Technology,CT-530,Data Mining,CT-523,Fuzzy Control & Neural Networks,CT-494,Introduction to Databases
+Hamza Shah,CT-25279669,2025,MS DS (Geospatial Data Science),CT-5004,Advanced Programming in GIS,CT-5011,GIS for Emergency Management,CT-494,Introduction to Databases
+Amna Siddiqui,CT-25279670,2025,MS in Computer Science and Information Technology,CT-513,Quality Information System,CT-511,Information System Development Methodologies,,
+Bilal Siddiqui,CT-24279671,2024,MS in Data Science,CT-562,Machine Learning,CT-581,Statistics & Probability for Data Science,CT-493,Data Structure and Algorithm Design
+Ayesha Siddiqui,CT-24279672,2024,MS in Computer Science and Information Technology,CT-577,Advanced Theory of Automata,CT-526,Logic Programming,CT-491,Operating System
+Zohaib Shah,CT-24279673,2024,MS in Computer Science and Information Technology,CT-530,Data Mining,CT-513,Quality Information System,,
+Usman Mir,CT-25279674,2025,MS in Information Security,CT-542,Information Security Management,CT-541,Network Security,CT-493,Data Structure and Algorithm Design
+Sara Khan,CT-24279675,2024,MS in Computer Science and Information Technology,CT-526,Logic Programming,CT-501,Software Project Management,CT-491,Operating System
+Sara Shah,CT-25279676,2025,MS in Computer Science and Information Technology,CT-523,Fuzzy Control & Neural Networks,CT-512,Principles of Marketing,,
+Sara Khan,CT-24279677,2024,MS in Computer Science and Information Technology,CT-512,Principles of Marketing,CT-513,Quality Information System,CT-494,Introduction to Databases
+Amna Raza,CT-25279678,2025,MS DS (Geospatial Data Science),CT-590,Data Visualization,CT-5004,Advanced Programming in GIS,,
+Dua Mir,CT-24279679,2024,MS in Data Science,CT-528,Advance Database Techniques,CT-525,Modeling & Simulation,,
+Hussain Khan,CT-25279680,2025,MS in Data Science,CT-525,Modeling & Simulation,CT-581,Statistics & Probability for Data Science,,
+Mubashir Siddiqui,CT-25279681,2025,MS DS (Geospatial Data Science),CT-590,Data Visualization,CT-5004,Advanced Programming in GIS,CT-495,Fundamentals of Remote Sensing and GIS
+Ali Mir,CT-24279682,2024,MS in Data Science,CT-528,Advance Database Techniques,CT-529,Object Oriented Databases,CT-492,Object Oriented Programming
+Fatima Khan,CT-25279683,2025,MS in Information Security,CT-552,Quantum Cryptography,CT-509,Distributed Systems,CT-493,Data Structure and Algorithm Design
+Ayesha Raza,CT-24279684,2024,MS DS (Geospatial Data Science),CT-590,Data Visualization,CT-5005,Spatial Decision Support Systems,,
+Hamza Siddiqui,CT-24279685,2024,MS in Information Security,CT-507,Wireless and Mobile Communication Networks,CT-575,Cryptography,CT-494,Introduction to Databases
+Ayesha Mir,CT-25279686,2025,MS in Information Security,CT-509,Distributed Systems,CT-507,Wireless and Mobile Communication Networks,CT-493,Data Structure and Algorithm Design
+Zain Mir,CT-25279687,2025,MS in Computer Science and Information Technology,CT-513,Quality Information System,CT-523,Fuzzy Control & Neural Networks,CT-494,Introduction to Databases
+Ahmed Mir,CT-25279688,2025,MS DS (Geospatial Data Science),CT-562,Machine Learning,CT-5011,GIS for Emergency Management,,
+Mubashir Siddiqui,CT-25279689,2025,MS DS (Geospatial Data Science),CT-5007,Web GIS,CT-527,Image processing & Computer Vision,CT-494,Introduction to Databases
+Mubashir Siddiqui,CT-25279690,2025,MS in Information Security,CT-551,Fault Tolerance and Reliability,CT-541,Network Security,,
+Bilal Mir,CT-24279691,2024,MS in Computer Science and Information Technology,CT-523,Fuzzy Control & Neural Networks,CT-513,Quality Information System,,
+Zohaib Khan,CT-25279692,2025,MS DS (Geospatial Data Science),CT-581,Statistics & Probability for Data Science,CT-5005,Spatial Decision Support Systems,CT-494,Introduction to Databases
+Hassan Mir,CT-24279693,2024,MS DS (Geospatial Data Science),CT-562,Machine Learning,CT-5004,Advanced Programming in GIS,CT-494,Introduction to Databases
+Amna Siddiqui,CT-25279694,2025,MS in Information Security,CT-552,Quantum Cryptography,CT-542,Information Security Management,CT-494,Introduction to Databases
+Amna Raza,CT-24279695,2024,MS in Computer Science and Information Technology,CT-577,Advanced Theory of Automata,CT-516,Multimedia Communications,,
+Hamza Raza,CT-24279696,2024,MS in Information Security,CT-555,Cloud Security,CT-544,Cyber Crimes and Security,,
+Dua Raza,CT-24279697,2024,MS DS (Geospatial Data Science),CT-5004,Advanced Programming in GIS,CT-527,Image processing & Computer Vision,CT-494,Introduction to Databases
+Dua Raza,CT-25279698,2025,MS in Data Science,CT-581,Statistics & Probability for Data Science,CT-527,Image processing & Computer Vision,CT-493,Data Structure and Algorithm Design
+Hussain Butt,CT-24279699,2024,MS in Data Science,CT-581,Statistics & Probability for Data Science,CT-521,Distributed Intelligence Systems,,
+Ali Siddiqui,CT-25279700,2025,MS in Computer Science and Information Technology,CT-501,Software Project Management,CT-534,Software Quality Assurance,CT-494,Introduction to Databases
+Ayesha Khan,CT-25279701,2025,MS in Information Security,CT-509,Distributed Systems,CT-553,Emerging Trends in Information Security 3,,
+Sara Mir,CT-25279702,2025,MS in Information Security,CT-552,Quantum Cryptography,CT-509,Distributed Systems,CT-494,Introduction to Databases
+Ahmed Butt,CT-25279703,2025,MS in Data Science,CT-562,Machine Learning,CT-530,Data Mining,,
+Ali Ahmed,CT-25279704,2025,MS DS (Geospatial Data Science),CT-581,Statistics & Probability for Data Science,CT-5007,Web GIS,,
+Zain Butt,CT-24279705,2024,MS in Data Science,CT-528,Advance Database Techniques,CT-524,Knowledge Based System,CT-492,Object Oriented Programming
+Zohaib Butt,CT-24279706,2024,MS in Information Security,CT-541,Network Security,CT-544,Cyber Crimes and Security,CT-493,Data Structure and Algorithm Design
+Hamza Ahmed,CT-25279707,2025,MS in Information Security,CT-551,Fault Tolerance and Reliability,CT-543,Database Security,CT-493,Data Structure and Algorithm Design
+Ahmed Butt,CT-24279708,2024,MS in Computer Science and Information Technology,CT-512,Principles of Marketing,CT-526,Logic Programming,CT-491,Operating System
+Ahmed Ahmed,CT-24279709,2024,MS in Data Science,CT-559,Artificial Neural Networks,CT-581,Statistics & Probability for Data Science,,
+Sara Siddiqui,CT-25279710,2025,MS in Data Science,CT-529,Object Oriented Databases,CT-530,Data Mining,,
+Hamza Ahmed,CT-25279711,2025,MS in Data Science,CT-528,Advance Database Techniques,CT-559,Artificial Neural Networks,CT-493,Data Structure and Algorithm Design
+Hassan Siddiqui,CT-24279712,2024,MS DS (Geospatial Data Science),CT-5011,GIS for Emergency Management,CT-530,Data Mining,,
+Fatima Butt,CT-25279713,2025,MS in Computer Science and Information Technology,CT-516,Multimedia Communications,CT-577,Advanced Theory of Automata,CT-491,Operating System
+Zohaib Khan,CT-24279714,2024,MS DS (Geospatial Data Science),CT-527,Image processing & Computer Vision,CT-5012,Emerging Trends in Remote Sensing & GIS,CT-495,Fundamentals of Remote Sensing and GIS
+Mubashir Ahmed,CT-24279715,2024,MS in Information Security,CT-509,Distributed Systems,CT-555,Cloud Security,,
+Hassan Siddiqui,CT-24279716,2024,MS DS (Geospatial Data Science),CT-527,Image processing & Computer Vision,CT-562,Machine Learning,,
+Maryam Butt,CT-24279717,2024,MS DS (Geospatial Data Science),CT-5011,GIS for Emergency Management,CT-5005,Spatial Decision Support Systems,CT-495,Fundamentals of Remote Sensing and GIS
+Amna Shah,CT-25279718,2025,MS in Information Security,CT-543,Database Security,CT-541,Network Security,CT-494,Introduction to Databases
+Mubashir Siddiqui,CT-24279719,2024,MS DS (Geospatial Data Science),CT-5004,Advanced Programming in GIS,CT-590,Data Visualization,,
+Mubashir Raza,CT-25279720,2025,MS in Information Security,CT-544,Cyber Crimes and Security,CT-554,Ethical Hacking,CT-494,Introduction to Databases
+Amna Shah,CT-25279721,2025,MS in Data Science,CT-524,Knowledge Based System,CT-562,Machine Learning,CT-492,Object Oriented Programming
+Amna Butt,CT-25279722,2025,MS in Computer Science and Information Technology,CT-523,Fuzzy Control & Neural Networks,CT-530,Data Mining,CT-491,Operating System
+Sara Mir,CT-25279723,2025,MS in Information Security,CT-554,Ethical Hacking,CT-555,Cloud Security,,
+Fatima Shah,CT-24279724,2024,MS DS (Geospatial Data Science),CT-5005,Spatial Decision Support Systems,CT-562,Machine Learning,CT-494,Introduction to Databases
+Sara Siddiqui,CT-25279725,2025,MS in Computer Science and Information Technology,CT-523,Fuzzy Control & Neural Networks,CT-530,Data Mining,CT-494,Introduction to Databases
+Bilal Butt,CT-25279726,2025,MS in Data Science,CT-559,Artificial Neural Networks,CT-529,Object Oriented Databases,CT-492,Object Oriented Programming
+Hassan Raza,CT-24279727,2024,MS DS (Geospatial Data Science),CT-590,Data Visualization,CT-5011,GIS for Emergency Management,,
+Hussain Mir,CT-25279728,2025,MS DS (Geospatial Data Science),CT-581,Statistics & Probability for Data Science,CT-527,Image processing & Computer Vision,CT-495,Fundamentals of Remote Sensing and GIS
+Fatima Mir,CT-25279729,2025,MS in Computer Science and Information Technology,CT-513,Quality Information System,CT-501,Software Project Management,CT-491,Operating System
+Zain Siddiqui,CT-24279730,2024,MS in Computer Science and Information Technology,CT-530,Data Mining,CT-511,Information System Development Methodologies,CT-494,Introduction to Databases
+Hamza Ahmed,CT-25279731,2025,MS in Data Science,CT-527,Image processing & Computer Vision,CT-529,Object Oriented Databases,CT-493,Data Structure and Algorithm Design
+Zohaib Siddiqui,CT-25279732,2025,MS in Computer Science and Information Technology,CT-512,Principles of Marketing,CT-523,Fuzzy Control & Neural Networks,,
+Bilal Raza,CT-25279733,2025,MS DS (Geospatial Data Science),CT-581,Statistics & Probability for Data Science,CT-5012,Emerging Trends in Remote Sensing & GIS,,
+Ali Raza,CT-24279734,2024,MS in Information Security,CT-554,Ethical Hacking,CT-509,Distributed Systems,CT-494,Introduction to Databases
+Zain Shah,CT-24279735,2024,MS in Data Science,CT-559,Artificial Neural Networks,CT-528,Advance Database Techniques,CT-492,Object Oriented Programming
+Hassan Mir,CT-24279736,2024,MS DS (Geospatial Data Science),CT-581,Statistics & Probability for Data Science,CT-527,Image processing & Computer Vision,,
+Ali Mir,CT-25279737,2025,MS in Information Security,CT-552,Quantum Cryptography,CT-555,Cloud Security,,
+Zain Butt,CT-24279738,2024,MS DS (Geospatial Data Science),CT-590,Data Visualization,CT-581,Statistics & Probability for Data Science,CT-495,Fundamentals of Remote Sensing and GIS
+Mubashir Shah,CT-24279739,2024,MS in Data Science,CT-559,Artificial Neural Networks,CT-529,Object Oriented Databases,CT-492,Object Oriented Programming
+Amna Ahmed,CT-24279740,2024,MS in Information Security,CT-552,Quantum Cryptography,CT-544,Cyber Crimes and Security,CT-493,Data Structure and Algorithm Design
+Sara Siddiqui,CT-25279741,2025,MS in Computer Science and Information Technology,CT-516,Multimedia Communications,CT-501,Software Project Management,CT-491,Operating System
+Usman Butt,CT-25279742,2025,MS in Information Security,CT-509,Distributed Systems,CT-541,Network Security,CT-494,Introduction to Databases
+Zain Butt,CT-25279743,2025,MS DS (Geospatial Data Science),CT-590,Data Visualization,CT-5011,GIS for Emergency Management,CT-495,Fundamentals of Remote Sensing and GIS
+Ayesha Khan,CT-24279744,2024,MS in Computer Science and Information Technology,CT-506,Advanced Analysis of Algorithms,CT-501,Software Project Management,CT-494,Introduction to Databases
+Zohaib Butt,CT-24279745,2024,MS in Computer Science and Information Technology,CT-516,Multimedia Communications,CT-526,Logic Programming,,
+Hussain Siddiqui,CT-25279746,2025,MS DS (Geospatial Data Science),CT-5004,Advanced Programming in GIS,CT-5012,Emerging Trends in Remote Sensing & GIS,,
+Ayesha Butt,CT-24279747,2024,MS in Data Science,CT-530,Data Mining,CT-581,Statistics & Probability for Data Science,CT-492,Object Oriented Programming
+Ahmed Shah,CT-25279748,2025,MS in Data Science,CT-529,Object Oriented Databases,CT-524,Knowledge Based System,CT-493,Data Structure and Algorithm Design
+Ali Ahmed,CT-24279749,2024,MS DS (Geospatial Data Science),CT-5012,Emerging Trends in Remote Sensing & GIS,CT-5005,Spatial Decision Support Systems,,
+Bilal Ahmed,CT-25279750,2025,MS in Information Security,CT-553,Emerging Trends in Information Security 3,CT-554,Ethical Hacking,CT-493,Data Structure and Algorithm Design
+Mubashir Mir,CT-24279751,2024,MS in Data Science,CT-524,Knowledge Based System,CT-562,Machine Learning,CT-493,Data Structure and Algorithm Design
+Hussain Khan,CT-24279752,2024,MS in Data Science,CT-530,Data Mining,CT-528,Advance Database Techniques,CT-493,Data Structure and Algorithm Design
+Hussain Shah,CT-25279753,2025,MS in Information Security,CT-575,Cryptography,CT-507,Wireless and Mobile Communication Networks,CT-493,Data Structure and Algorithm Design
+Usman Butt,CT-24279754,2024,MS in Data Science,CT-524,Knowledge Based System,CT-527,Image processing & Computer Vision,CT-493,Data Structure and Algorithm Design
+Ahmed Shah,CT-25279755,2025,MS in Computer Science and Information Technology,CT-577,Advanced Theory of Automata,CT-530,Data Mining,,
+Amna Khan,CT-24279756,2024,MS in Information Security,CT-543,Database Security,CT-542,Information Security Management,CT-493,Data Structure and Algorithm Design
+Dua Siddiqui,CT-24279757,2024,MS DS (Geospatial Data Science),CT-581,Statistics & Probability for Data Science,CT-5012,Emerging Trends in Remote Sensing & GIS,CT-495,Fundamentals of Remote Sensing and GIS
+Fatima Raza,CT-24279758,2024,MS in Computer Science and Information Technology,CT-512,Principles of Marketing,CT-523,Fuzzy Control & Neural Networks,CT-491,Operating System
+Bilal Khan,CT-25279759,2025,MS DS (Geospatial Data Science),CT-5004,Advanced Programming in GIS,CT-581,Statistics & Probability for Data Science,,
+Ayesha Mir,CT-25279760,2025,MS in Data Science,CT-559,Artificial Neural Networks,CT-581,Statistics & Probability for Data Science,CT-492,Object Oriented Programming
+Ayesha Khan,CT-25279761,2025,MS DS (Geospatial Data Science),CT-581,Statistics & Probability for Data Science,CT-5007,Web GIS,CT-494,Introduction to Databases
+Hussain Ahmed,CT-25279762,2025,MS DS (Geospatial Data Science),CT-530,Data Mining,CT-527,Image processing & Computer Vision,CT-494,Introduction to Databases
+Ahmed Shah,CT-24279763,2024,MS in Data Science,CT-521,Distributed Intelligence Systems,CT-525,Modeling & Simulation,CT-493,Data Structure and Algorithm Design
+Sara Mir,CT-25279764,2025,MS DS (Geospatial Data Science),CT-590,Data Visualization,CT-527,Image processing & Computer Vision,CT-494,Introduction to Databases
+Zohaib Butt,CT-24279765,2024,MS in Computer Science and Information Technology,CT-513,Quality Information System,CT-523,Fuzzy Control & Neural Networks,CT-491,Operating System
+Maryam Raza,CT-24279766,2024,MS in Data Science,CT-528,Advance Database Techniques,CT-529,Object Oriented Databases,CT-493,Data Structure and Algorithm Design
+Maryam Butt,CT-24279767,2024,MS in Data Science,CT-529,Object Oriented Databases,CT-559,Artificial Neural Networks,CT-492,Object Oriented Programming
+Ali Shah,CT-25279768,2025,MS DS (Geospatial Data Science),CT-5005,Spatial Decision Support Systems,CT-562,Machine Learning,,
+Hamza Mir,CT-25279769,2025,MS in Data Science,CT-521,Distributed Intelligence Systems,CT-559,Artificial Neural Networks,CT-493,Data Structure and Algorithm Design
+Fatima Raza,CT-25279770,2025,MS in Information Security,CT-552,Quantum Cryptography,CT-575,Cryptography,CT-493,Data Structure and Algorithm Design
+Bilal Butt,CT-24279771,2024,MS in Data Science,CT-527,Image processing & Computer Vision,CT-559,Artificial Neural Networks,,
+Dua Siddiqui,CT-24279772,2024,MS DS (Geospatial Data Science),CT-5007,Web GIS,CT-562,Machine Learning,CT-495,Fundamentals of Remote Sensing and GIS
+Ayesha Ahmed,CT-25279773,2025,MS in Computer Science and Information Technology,CT-526,Logic Programming,CT-511,Information System Development Methodologies,CT-494,Introduction to Databases
+Amna Raza,CT-25279774,2025,MS DS (Geospatial Data Science),CT-527,Image processing & Computer Vision,CT-590,Data Visualization,,
+Zain Shah,CT-24279775,2024,MS DS (Geospatial Data Science),CT-5012,Emerging Trends in Remote Sensing & GIS,CT-562,Machine Learning,CT-494,Introduction to Databases
+Maryam Khan,CT-25279776,2025,MS in Data Science,CT-528,Advance Database Techniques,CT-562,Machine Learning,,
+Mubashir Siddiqui,CT-24279777,2024,MS in Information Security,CT-542,Information Security Management,CT-554,Ethical Hacking,,
+Ali Shah,CT-25279778,2025,MS in Data Science,CT-562,Machine Learning,CT-581,Statistics & Probability for Data Science,CT-492,Object Oriented Programming
+Hussain Ahmed,CT-24279779,2024,MS in Data Science,CT-530,Data Mining,CT-559,Artificial Neural Networks,CT-492,Object Oriented Programming
+Zain Mir,CT-25279780,2025,MS in Data Science,CT-527,Image processing & Computer Vision,CT-581,Statistics & Probability for Data Science,,
+Usman Khan,CT-24279781,2024,MS in Data Science,CT-530,Data Mining,CT-559,Artificial Neural Networks,CT-492,Object Oriented Programming
+Hussain Ahmed,CT-25279782,2025,MS in Data Science,CT-528,Advance Database Techniques,CT-562,Machine Learning,,
+Dua Shah,CT-24279783,2024,MS DS (Geospatial Data Science),CT-5011,GIS for Emergency Management,CT-5007,Web GIS,CT-495,Fundamentals of Remote Sensing and GIS
+Zohaib Ahmed,CT-25279784,2025,MS DS (Geospatial Data Science),CT-527,Image processing & Computer Vision,CT-581,Statistics & Probability for Data Science,,
+Ahmed Ahmed,CT-24279785,2024,MS DS (Geospatial Data Science),CT-5005,Spatial Decision Support Systems,CT-5011,GIS for Emergency Management,CT-494,Introduction to Databases
+Ahmed Siddiqui,CT-25279786,2025,MS in Data Science,CT-530,Data Mining,CT-524,Knowledge Based System,CT-492,Object Oriented Programming
+Dua Ahmed,CT-25279787,2025,MS in Information Security,CT-554,Ethical Hacking,CT-555,Cloud Security,CT-494,Introduction to Databases
+Hassan Raza,CT-24279788,2024,MS in Data Science,CT-562,Machine Learning,CT-530,Data Mining,CT-492,Object Oriented Programming
+Ali Siddiqui,CT-25279789,2025,MS in Information Security,CT-554,Ethical Hacking,CT-551,Fault Tolerance and Reliability,CT-493,Data Structure and Algorithm Design
+Zohaib Raza,CT-24279790,2024,MS DS (Geospatial Data Science),CT-527,Image processing & Computer Vision,CT-562,Machine Learning,CT-494,Introduction to Databases
+Hamza Mir,CT-25279791,2025,MS in Information Security,CT-553,Emerging Trends in Information Security 3,CT-552,Quantum Cryptography,,
+Dua Raza,CT-24279792,2024,MS in Information Security,CT-544,Cyber Crimes and Security,CT-553,Emerging Trends in Information Security 3,,
+Amna Khan,CT-25279793,2025,MS in Computer Science and Information Technology,CT-530,Data Mining,CT-513,Quality Information System,CT-494,Introduction to Databases
+Zohaib Ahmed,CT-24279794,2024,MS in Data Science,CT-524,Knowledge Based System,CT-559,Artificial Neural Networks,CT-492,Object Oriented Programming
+Ali Shah,CT-25279795,2025,MS in Computer Science and Information Technology,CT-530,Data Mining,CT-526,Logic Programming,,
+Mubashir Khan,CT-24279796,2024,MS in Information Security,CT-554,Ethical Hacking,CT-509,Distributed Systems,,
+Ali Butt,CT-25279797,2025,MS in Information Security,CT-551,Fault Tolerance and Reliability,CT-507,Wireless and Mobile Communication Networks,CT-493,Data Structure and Algorithm Design
+Usman Raza,CT-25279798,2025,MS in Information Security,CT-551,Fault Tolerance and Reliability,CT-575,Cryptography,,
+Zain Khan,CT-24279799,2024,MS in Computer Science and Information Technology,CT-512,Principles of Marketing,CT-526,Logic Programming,,

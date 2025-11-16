@@ -1,5 +1,8 @@
 #include "../include/DatabaseManager.h"
 #include <iostream>
+#include <fstream>
+#include <sstream>
+#include <map>
 
 using namespace std;
 
@@ -10,7 +13,7 @@ using namespace std;
  */
 
 DatabaseManager::DatabaseManager()
-    : hEnv(nullptr), hDbc(nullptr), hStmt(nullptr), connected(false) {
+    : hEnv(nullptr), hDbc(nullptr), hStmt(nullptr), connected(false), csvDataLoaded(false) {
     cout << "Using MOCK Database Manager (No Oracle needed)" << endl;
 }
 
@@ -51,7 +54,102 @@ void DatabaseManager::disconnect() {
     }
 }
 
+bool DatabaseManager::importFromCSV(const string& filename) {
+    cout << "\n=== CSV Import Mode ===" << endl;
+    cout << "Loading data from CSV file: " << filename << endl;
+    
+    // Clear existing CSV data
+    csvCourses = LinkedList<Course>();
+    csvStudents = LinkedList<Student>();
+    csvEnrollments = LinkedList<Enrollment>();
+    
+    ifstream file(filename);
+    if (!file.is_open()) {
+        cerr << "Error: Could not open CSV file: " << filename << endl;
+        return false;
+    }
+    
+    string line;
+    bool isFirstLine = true;
+    map<string, Course> courseMap; // To avoid duplicate courses
+    map<string, Student> studentMap; // To avoid duplicate students
+    
+    while (getline(file, line)) {
+        if (isFirstLine) {
+            isFirstLine = false;
+            continue; // Skip header line
+        }
+        
+        if (line.empty()) continue;
+        
+        // Parse CSV line
+        vector<string> fields;
+        stringstream ss(line);
+        string field;
+        
+        while (getline(ss, field, ',')) {
+            // Remove quotes if present
+            if (!field.empty() && field[0] == '"' && field[field.length()-1] == '"') {
+                field = field.substr(1, field.length()-2);
+            }
+            fields.push_back(field);
+        }
+        
+        if (fields.size() < 6) {
+            cout << "Warning: Skipping invalid line: " << line << endl;
+            continue;
+        }
+        
+        // Extract data from CSV fields
+        string studentName = fields[0];
+        string rollNo = fields[1];
+        string batch = fields[2];
+        string program = fields[3];
+        
+        // Add student if not already added
+        if (studentMap.find(rollNo) == studentMap.end()) {
+            Student student(rollNo, studentName, batch, program);
+            studentMap.insert(make_pair(rollNo, student));
+            csvStudents.insertAtEnd(student);
+        }
+        
+        // Process courses (fields 4-5, 6-7, 8-9 for regular courses, 8-9 for custom course)
+        for (int i = 4; i < fields.size() - 1; i += 2) {
+            if (i + 1 < fields.size() && !fields[i].empty() && !fields[i+1].empty()) {
+                string courseId = fields[i];
+                string courseName = fields[i+1];
+                
+                // Add course if not already added
+                if (courseMap.find(courseId) == courseMap.end()) {
+                    Course course(courseId, courseName, "Imported");
+                    courseMap.insert(make_pair(courseId, course));
+                    csvCourses.insertAtEnd(course);
+                }
+                
+                // Add enrollment
+                csvEnrollments.insertAtEnd(Enrollment(rollNo, courseId));
+            }
+        }
+    }
+    
+    file.close();
+    csvDataLoaded = true;
+    connected = false; // Use CSV data instead of database
+    
+    cout << "CSV Import completed successfully!" << endl;
+    cout << "Imported " << csvStudents.getSize() << " students" << endl;
+    cout << "Imported " << csvCourses.getSize() << " courses" << endl;
+    cout << "Imported " << csvEnrollments.getSize() << " enrollments\n" << endl;
+    
+    return true;
+}
+
 LinkedList<Course> DatabaseManager::fetchCourses() {
+    if (csvDataLoaded) {
+        cout << "Returning " << csvCourses.getSize() << " courses from CSV data." << endl;
+        return csvCourses;
+    }
+    
     LinkedList<Course> courses;
     
     if (!connected) {
@@ -76,6 +174,11 @@ LinkedList<Course> DatabaseManager::fetchCourses() {
 }
 
 LinkedList<Student> DatabaseManager::fetchStudents() {
+    if (csvDataLoaded) {
+        cout << "Returning " << csvStudents.getSize() << " students from CSV data." << endl;
+        return csvStudents;
+    }
+    
     LinkedList<Student> students;
     
     if (!connected) {
@@ -108,6 +211,11 @@ LinkedList<Student> DatabaseManager::fetchStudents() {
 }
 
 LinkedList<Enrollment> DatabaseManager::fetchEnrollments() {
+    if (csvDataLoaded) {
+        cout << "Returning " << csvEnrollments.getSize() << " enrollments from CSV data." << endl;
+        return csvEnrollments;
+    }
+    
     LinkedList<Enrollment> enrollments;
     
     if (!connected) {

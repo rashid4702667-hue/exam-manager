@@ -125,3 +125,15 @@ void ScheduleTableModel::setSchedule(const TimetableGenerator &generator)
 
     endResetModel();
 }
+
+void ScheduleTableModel::clear()
+{
+    beginResetModel();
+    
+    // Clear current schedule
+    for (auto &day : schedule) {
+        day.fill(ExamSlot());
+    }
+    
+    endResetModel();
+}

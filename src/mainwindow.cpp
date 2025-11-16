@@ -48,6 +48,26 @@ MainWindow::MainWindow(QWidget *parent)
     }
 }
 
+void MainWindow::onImportCSV()
+{
+    QString fileName = QFileDialog::getOpenFileName(this,
+        "Import Student Data from CSV", "",
+        "CSV Files (*.csv);;All Files (*)");
+
+    if (fileName.isEmpty()) return;
+
+    if (dbManager.importFromCSV(fileName.toStdString())) {
+        scheduleGenerated = false; // Reset schedule status
+        QMessageBox::information(this, "Import Success",
+            "Successfully imported data from CSV file! You can now generate a timetable using this data.");
+        enableScheduleActions(true);
+        scheduleModel->clear();
+    } else {
+        QMessageBox::critical(this, "Import Error",
+            "Failed to import data from CSV file! Please check the file format and try again.");
+    }
+}
+
 MainWindow::~MainWindow()
 {
     try {
@@ -70,6 +90,7 @@ void MainWindow::setupConnections()
 {
     // Connect menu actions
     connect(ui->actionConnect, &QAction::triggered, this, &MainWindow::onConnectDatabase);
+    connect(ui->actionImportCSV, &QAction::triggered, this, &MainWindow::onImportCSV);
     connect(ui->actionGenerate, &QAction::triggered, this, &MainWindow::onGenerateTimetable);
     connect(ui->actionViewSchedule, &QAction::triggered, this, &MainWindow::onViewSchedule);
     connect(ui->actionExportCSV, &QAction::triggered, this, &MainWindow::onExportCSV);
@@ -98,10 +119,12 @@ void MainWindow::onConnectDatabase()
     }
 }
 
+
 void MainWindow::onGenerateTimetable()
 {
-    if (!isConnected) {
-        QMessageBox::warning(this, "Not Connected", "Please connect to the database first!");
+    if (!isConnected && !dbManager.isDataFromCSV()) {
+        QMessageBox::warning(this, "No Data Source",
+            "Please connect to the database or import CSV data first!");
         return;
     }
     
@@ -110,19 +133,23 @@ void MainWindow::onGenerateTimetable()
         QString startDate = dialog.getStartDate();
         generator.setStartDate(startDate.toStdString());
         
+        QString dataSource = dbManager.isDataFromCSV() ? "CSV data" : "database";
+        
         if (generator.generate()) {
             scheduleGenerated = true;
             updateScheduleView();
             // Enable view/export actions now that a schedule exists
             enableScheduleActions(true);
-            QMessageBox::information(this, "Success", "Timetable generated successfully!");
+            QMessageBox::information(this, "Success", 
+                QString("Timetable generated successfully using %1!").arg(dataSource));
             
             // Auto-export to CSV
             if (generator.exportToCSV("exam_schedule.csv")) {
                 QMessageBox::information(this, "Export", "Schedule automatically saved to 'exam_schedule.csv'");
             }
         } else {
-            QMessageBox::critical(this, "Error", "Failed to generate timetable!");
+            QMessageBox::critical(this, "Error", 
+                QString("Failed to generate timetable using %1!").arg(dataSource));
         }
     }
 }

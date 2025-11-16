@@ -1,0 +1,5 @@
+Name,Roll Number,Batch,Program,Course ID 1,Course 1,Course ID 2,Course 2,Customised Course ID,Customised Course
+John Doe,CT-25001,2025,MS in Data Science,CT-527,Image Processing,CT-559,Neural Networks,,
+Jane Smith,CT-25002,2025,MS in Computer Science,CT-553,Information Security,CT-507,Mobile Networks,CT-493,Data Structures
+Bob Johnson,CT-24001,2024,MS in Data Science,CT-581,Statistics for DS,CT-562,Machine Learning,,
+Alice Brown,CT-25003,2025,MS in Information Security,CT-542,Security Management,CT-544,Cyber Security,CT-494,Database Systems

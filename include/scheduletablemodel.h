@@ -17,6 +17,7 @@ public:
     QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override;
 
     void setSchedule(const TimetableGenerator &generator);
+    void clear();
 
 private:
     struct ExamSlot {

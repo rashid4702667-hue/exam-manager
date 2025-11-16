@@ -22,6 +22,7 @@ public:
 
 private slots:
     void onConnectDatabase();
+    void onImportCSV();
     void onGenerateTimetable();
     void onViewSchedule();
     void onExportCSV();

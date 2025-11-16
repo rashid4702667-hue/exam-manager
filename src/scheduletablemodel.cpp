@@ -5,7 +5,7 @@
 ScheduleTableModel::ScheduleTableModel(QObject *parent)
     : QAbstractTableModel(parent)
     , maxDays(15)
-    , maxRooms(8)
+    , maxRooms(16)
 {
     // Initialize empty schedule
     schedule.resize(maxDays);
@@ -53,7 +53,11 @@ QVariant ScheduleTableModel::headerData(int section, Qt::Orientation orientation
         return QVariant();
 
     if (orientation == Qt::Horizontal) {
-        return QString("Room #%1").arg(section + 1);
+        if (section < 11) {
+            return QString("Room #%1").arg(section + 1);
+        } else {
+            return QString("Lab%1").arg(section - 10);
+        }
     } else {
         return QString("Day %1").arg(section + 1);
     }
@@ -101,9 +105,19 @@ void ScheduleTableModel::setSchedule(const TimetableGenerator &generator)
                 // Get roll numbers (tokens[4])
                 std::string studentRange = tokens[4];
                 
-                // Get room number from "Room#X" format (tokens[5])
+                // Get room number from "Room#X" or "LabX" format (tokens[5])
                 std::string roomStr = tokens[5];
-                int roomNum = std::stoi(roomStr.substr(roomStr.find("#") + 1)) - 1;
+                int roomNum = 0;
+                
+                if (roomStr.find("Room#") != std::string::npos) {
+                    roomNum = std::stoi(roomStr.substr(roomStr.find("#") + 1)) - 1;
+                } else if (roomStr.find("Lab") != std::string::npos) {
+                    // Map Lab1-Lab5 to positions 11-15 (since Room#1-Room#11 use 0-10)
+                    roomNum = std::stoi(roomStr.substr(3)) + 10; // Lab1 -> 11, Lab2 -> 12, etc.
+                } else {
+                    qDebug() << "Unknown room format:" << QString::fromStdString(roomStr);
+                    continue;
+                }
                 
                 // Get number of students from "X/Y" format (tokens[6])
                 std::string capacity = tokens[6];

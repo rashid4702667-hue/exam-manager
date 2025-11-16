@@ -50,8 +50,9 @@
        <widget class="QLabel" name="label_2">
         <property name="text">
          <string>• Exam period: Up to 15 days
-• Available rooms: Room#1 to Room#8
+• Available rooms: Room#1 to Room#11, Lab1 to Lab5
 • Room capacity: 55 seats each
+• Total exam centers: 16 venues
 • Exam time: 2:00 PM - 5:00 PM (3 hours)</string>
         </property>
        </widget>

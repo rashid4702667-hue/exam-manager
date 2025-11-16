@@ -29,6 +29,7 @@ private slots:
     void onExportText();
     void onExportPDF();
     void onShiftCourse();
+    void onChangeTestDate();
     void onAnalytics();
     void onAbout();
 

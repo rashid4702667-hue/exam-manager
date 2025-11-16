@@ -47,6 +47,33 @@ if ($LASTEXITCODE -eq 0) {
     Copy-Item "$QtBinPath\Qt6Core.dll" .
     Copy-Item "$QtBinPath\Qt6Gui.dll" .
     Copy-Item "$QtBinPath\Qt6Widgets.dll" .
+    Copy-Item "$QtBinPath\Qt6PrintSupport.dll" .
+    Copy-Item "$QtBinPath\Qt6Charts.dll" .
+    Copy-Item "$QtBinPath\Qt6OpenGL.dll" .
+    Copy-Item "$QtBinPath\Qt6OpenGLWidgets.dll" .
+    Copy-Item "$QtBinPath\Qt6Network.dll" .
+    Copy-Item "$QtBinPath\Qt6Svg.dll" .
+    
+    # Copy MinGW runtime DLLs
+    Write-Host "Copying MinGW runtime DLLs..." -ForegroundColor Yellow
+    Copy-Item "$MinGWPath\libgcc_s_seh-1.dll" .
+    Copy-Item "$MinGWPath\libstdc++-6.dll" .
+    Copy-Item "$MinGWPath\libwinpthread-1.dll" .
+    
+    # Copy platform plugins
+    Write-Host "Copying platform plugins..." -ForegroundColor Yellow
+    $platformsDir = "platforms"
+    if (!(Test-Path $platformsDir)) { mkdir $platformsDir }
+    Copy-Item "$QtPath\plugins\platforms\*" $platformsDir -Recurse -Force
+    
+    # Copy other plugin directories
+    $pluginDirs = @("iconengines", "imageformats", "styles", "tls", "networkinformation")
+    foreach ($dir in $pluginDirs) {
+        if (!(Test-Path $dir)) { mkdir $dir }
+        if (Test-Path "$QtPath\plugins\$dir") {
+            Copy-Item "$QtPath\plugins\$dir\*" $dir -Recurse -Force
+        }
+    }
     
     Write-Host "Setup complete! You can now run: .\TimetablePlannerGUI.exe" -ForegroundColor Green
 } else {

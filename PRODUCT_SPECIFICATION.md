@@ -86,9 +86,9 @@ The application follows a **Model-View-Controller (MVC)** pattern with Qt's sign
 
 ### 2. Intelligent Timetable Generation
 - **Conflict Detection**: Automatically identifies student enrollment conflicts
-- **Room Optimization**: Distributes students across available rooms
+- **Room Optimization**: Distributes students across available rooms and labs
 - **Date Scheduling**: Spreads exams across multiple days
-- **Capacity Management**: Ensures room capacity limits (55 students/room)
+- **Capacity Management**: Ensures room and lab capacity limits (55 students per venue, 16 total venues)
 
 ### 3. Multi-Format Export System
 #### CSV Export
@@ -303,7 +303,7 @@ void quickSort();
 **Core Logic**:
 1. **Data Fetching**: Retrieve courses, students, and enrollments
 2. **Conflict Analysis**: Identify overlapping enrollments
-3. **Room Distribution**: Allocate students to rooms (max 55/room)
+3. **Room Distribution**: Allocate students to rooms and labs (max 55 per venue)
 4. **Date Scheduling**: Distribute exams across multiple days
 5. **Schedule Optimization**: Minimize conflicts and maximize efficiency
 
@@ -315,7 +315,15 @@ schedule.push_back("Friday,1,02-01-2026,ML101,CT-24312 to CT-24318,Room#2,25/55"
 
 // Day 2: Saturday - AI401
 schedule.push_back("Saturday,2,03-01-2026,AI401,CT-24001 to CT-24085,Room#1,55/55");
-// ... additional room allocations
+
+// Day 5: Tuesday - Lab sessions
+schedule.push_back("Tuesday,5,06-01-2026,DB301,CT-24001 to CT-24055,Lab1,55/55");
+schedule.push_back("Tuesday,5,06-01-2026,OOP201,CT-24056 to CT-24110,Lab2,55/55");
+
+// Day 8: Friday Week 2 - Additional Room sessions
+schedule.push_back("Friday,8,09-01-2026,DS501,CT-24001 to CT-24055,Room#6,55/55");
+schedule.push_back("Friday,8,09-01-2026,DS501,CT-24056 to CT-24110,Room#7,55/55");
+// ... additional room and lab allocations
 ```
 
 ### 2. Conflict Detection Algorithm

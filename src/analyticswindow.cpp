@@ -177,13 +177,16 @@ AnalyticsData AnalyticsWindow::createSampleAnalyticsData()
     data.examCountPerDay["Saturday"] = 4; // AI401 sessions  
     data.examCountPerDay["Sunday"] = 1;  // CS301 session
     data.examCountPerDay["Monday"] = 4;  // CN601 sessions
-    data.examCountPerDay["Tuesday"] = 0;
-    data.examCountPerDay["Wednesday"] = 0;
-    data.examCountPerDay["Thursday"] = 0;
+    data.examCountPerDay["Tuesday"] = 2;  // DB301, OOP201 lab sessions
+    data.examCountPerDay["Wednesday"] = 2; // SE701, WD801 lab sessions
+    data.examCountPerDay["Thursday"] = 2; // CC901, CY102 lab sessions
+    data.examCountPerDay["Friday2"] = 2; // DS501 sessions in Room#6, Room#7
+    data.examCountPerDay["Saturday2"] = 2; // WD801 sessions in Room#8, Room#9
+    data.examCountPerDay["Sunday2"] = 2; // SE701 sessions in Room#10, Room#11
     
     // Real department distribution based on course codes
-    data.examCountPerDepartment["Computer Science"] = 7; // ML101, AI401, CS301, CN601
-    data.examCountPerDepartment["Information Technology"] = 4;
+    data.examCountPerDepartment["Computer Science"] = 10; // ML101, AI401, CS301, CN601, OOP201, SE701, CC901
+    data.examCountPerDepartment["Information Technology"] = 7; // DB301, WD801, CY102 + others
     data.examCountPerDepartment["Data Science"] = 2;
     data.examCountPerDepartment["Networks"] = 4;
     
@@ -193,16 +196,36 @@ AnalyticsData AnalyticsWindow::createSampleAnalyticsData()
     data.roomUtilizationPercentage["Room#3"] = 100.0; // 55/55 students
     data.roomUtilizationPercentage["Room#4"] = 85.4;  // 47/55 students
     data.roomUtilizationPercentage["Room#5"] = 76.4;  // 42/55 students
+    data.roomUtilizationPercentage["Room#6"] = 100.0; // 55/55 students
+    data.roomUtilizationPercentage["Room#7"] = 100.0; // 55/55 students
+    data.roomUtilizationPercentage["Room#8"] = 100.0; // 55/55 students
+    data.roomUtilizationPercentage["Room#9"] = 100.0; // 55/55 students
+    data.roomUtilizationPercentage["Room#10"] = 100.0; // 55/55 students
+    data.roomUtilizationPercentage["Room#11"] = 81.8;  // 45/55 students
+    
+    // Lab room utilization
+    data.roomUtilizationPercentage["Lab1"] = 100.0; // 55/55 + 45/55 for multiple sessions
+    data.roomUtilizationPercentage["Lab2"] = 100.0; // 55/55 students
+    data.roomUtilizationPercentage["Lab3"] = 100.0; // 55/55 students
+    data.roomUtilizationPercentage["Lab4"] = 100.0; // 55/55 students
+    data.roomUtilizationPercentage["Lab5"] = 100.0; // 55/55 students
     
     // Real conflict data - No conflicts detected as per timetable
     data.conflictsPerCourse["ML101"] = 0; // Split across 2 rooms, no conflicts
     data.conflictsPerCourse["AI401"] = 0; // Split across 4 rooms, no conflicts
     data.conflictsPerCourse["CS301"] = 0; // Single room, no conflicts
     data.conflictsPerCourse["CN601"] = 0; // Split across 4 rooms, no conflicts
+    data.conflictsPerCourse["DB301"] = 0; // Lab session, no conflicts
+    data.conflictsPerCourse["OOP201"] = 0; // Lab session, no conflicts
+    data.conflictsPerCourse["SE701"] = 0; // Lab session, no conflicts
+    data.conflictsPerCourse["WD801"] = 0; // Lab session, no conflicts
+    data.conflictsPerCourse["CC901"] = 0; // Lab session, no conflicts
+    data.conflictsPerCourse["CY102"] = 0; // Lab session, no conflicts
+    data.conflictsPerCourse["DS501"] = 0; // Additional room sessions, no conflicts
     
     // Real room load over days based on actual schedule
-    std::vector<std::string> rooms = {"Room#1", "Room#2", "Room#3", "Room#4", "Room#5"};
-    std::vector<std::string> days = {"Friday", "Saturday", "Sunday", "Monday", "Tuesday"};
+    std::vector<std::string> rooms = {"Room#1", "Room#2", "Room#3", "Room#4", "Room#5", "Room#6", "Room#7", "Room#8", "Room#9", "Room#10", "Room#11", "Lab1", "Lab2", "Lab3", "Lab4", "Lab5"};
+    std::vector<std::string> days = {"Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday2", "Saturday2", "Sunday2"};
     
     // Set actual room loads based on timetable
     // Friday - ML101
@@ -220,6 +243,25 @@ AnalyticsData AnalyticsWindow::createSampleAnalyticsData()
     data.roomLoadPerDay[{"Room#3", "Monday"}] = 55; // CT-24139 to CT-24203
     data.roomLoadPerDay[{"Room#4", "Monday"}] = 55; // CT-24205 to CT-24269
     data.roomLoadPerDay[{"Room#5", "Monday"}] = 42; // CT-24273 to CT-24320
+    
+    // Tuesday - Lab sessions
+    data.roomLoadPerDay[{"Lab1", "Tuesday"}] = 55; // DB301: CT-24001 to CT-24055
+    data.roomLoadPerDay[{"Lab2", "Tuesday"}] = 55; // OOP201: CT-24056 to CT-24110
+    // Wednesday - Lab sessions
+    data.roomLoadPerDay[{"Lab3", "Wednesday"}] = 55; // SE701: CT-24111 to CT-24165
+    data.roomLoadPerDay[{"Lab4", "Wednesday"}] = 55; // WD801: CT-24166 to CT-24220
+    // Thursday - Lab sessions
+    data.roomLoadPerDay[{"Lab5", "Thursday"}] = 55; // CC901: CT-24221 to CT-24275
+    data.roomLoadPerDay[{"Lab1", "Thursday"}] = 45; // CY102: CT-24276 to CT-24320
+    // Friday Week 2 - Additional Room sessions
+    data.roomLoadPerDay[{"Room#6", "Friday2"}] = 55; // DS501: CT-24001 to CT-24055
+    data.roomLoadPerDay[{"Room#7", "Friday2"}] = 55; // DS501: CT-24056 to CT-24110
+    // Saturday Week 2 - Additional Room sessions
+    data.roomLoadPerDay[{"Room#8", "Saturday2"}] = 55; // WD801: CT-24111 to CT-24165
+    data.roomLoadPerDay[{"Room#9", "Saturday2"}] = 55; // WD801: CT-24166 to CT-24220
+    // Sunday Week 2 - Additional Room sessions
+    data.roomLoadPerDay[{"Room#10", "Sunday2"}] = 55; // SE701: CT-24221 to CT-24275
+    data.roomLoadPerDay[{"Room#11", "Sunday2"}] = 45; // SE701: CT-24276 to CT-24320
     
     // Set unused room-day combinations to 0
     for (const auto& room : rooms) {

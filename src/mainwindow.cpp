@@ -5,6 +5,7 @@
 #include "analyticswindow.h"
 #include <QMessageBox>
 #include <QFileDialog>
+#include <QInputDialog>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -97,6 +98,7 @@ void MainWindow::setupConnections()
     connect(ui->actionExportText, &QAction::triggered, this, &MainWindow::onExportText);
     connect(ui->actionExportPDF, &QAction::triggered, this, &MainWindow::onExportPDF);
     connect(ui->actionShiftCourse, &QAction::triggered, this, &MainWindow::onShiftCourse);
+    connect(ui->actionChangeTestDate, &QAction::triggered, this, &MainWindow::onChangeTestDate);
     connect(ui->actionAnalytics, &QAction::triggered, this, &MainWindow::onAnalytics);
     connect(ui->actionAbout, &QAction::triggered, this, &MainWindow::onAbout);
 }
@@ -231,6 +233,77 @@ void MainWindow::onShiftCourse()
     QMessageBox::information(this, "Not Implemented", "Course shifting feature coming soon!");
 }
 
+void MainWindow::onChangeTestDate()
+{
+    if (!scheduleGenerated) {
+        QMessageBox::warning(this, "No Schedule", "Please generate a timetable first!");
+        return;
+    }
+    
+    // Get available courses from the schedule
+    std::vector<std::pair<std::string, std::string>> courses = generator.getCoursesWithDates();
+    
+    if (courses.empty()) {
+        QMessageBox::warning(this, "No Courses", "No courses found in the current schedule!");
+        return;
+    }
+    
+    // Create a dialog to show courses and let user select
+    QString courseList = "Available Courses:\n\n";
+    for (size_t i = 0; i < courses.size(); i++) {
+        courseList += QString("ID: %1 - Date: %2\n")
+                     .arg(QString::fromStdString(courses[i].first))
+                     .arg(QString::fromStdString(courses[i].second));
+    }
+    
+    bool ok;
+    QString courseId = QInputDialog::getText(this, "Select Course", 
+        courseList + "\nEnter the Course ID you want to change:", 
+        QLineEdit::Normal, "", &ok);
+    
+    if (!ok || courseId.isEmpty()) {
+        return;
+    }
+    
+    // Check if the entered course ID exists
+    bool found = false;
+    std::string currentDate;
+    for (const auto& course : courses) {
+        if (course.first == courseId.toStdString()) {
+            found = true;
+            currentDate = course.second;
+            break;
+        }
+    }
+    
+    if (!found) {
+        QMessageBox::warning(this, "Invalid Course ID", "The entered course ID was not found!");
+        return;
+    }
+    
+    // Get new date from user
+    QString newDateStr = QInputDialog::getText(this, "Change Test Date",
+        QString("Current date for %1: %2\nEnter new date (DD-MM-YYYY):")
+        .arg(courseId)
+        .arg(QString::fromStdString(currentDate)),
+        QLineEdit::Normal, QString::fromStdString(currentDate), &ok);
+    
+    if (!ok || newDateStr.isEmpty()) {
+        return;
+    }
+    
+    // Update the course date
+    if (generator.updateCourseDate(courseId.toStdString(), newDateStr.toStdString())) {
+        updateScheduleView();
+        QMessageBox::information(this, "Success", 
+            QString("Test date for course %1 has been changed to %2!")
+            .arg(courseId)
+            .arg(newDateStr));
+    } else {
+        QMessageBox::critical(this, "Error", "Failed to update the test date!");
+    }
+}
+
 void MainWindow::onAnalytics()
 {
     if (!analyticsWindow) {
@@ -275,5 +348,6 @@ void MainWindow::enableScheduleActions(bool enable)
     ui->actionExportText->setEnabled(enable && scheduleGenerated);
     ui->actionExportPDF->setEnabled(enable && scheduleGenerated);
     ui->actionShiftCourse->setEnabled(enable && scheduleGenerated);
+    ui->actionChangeTestDate->setEnabled(enable && scheduleGenerated);
     ui->actionAnalytics->setEnabled(enable); // Analytics can work with or without generated schedule
 }

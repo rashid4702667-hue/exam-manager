@@ -3,6 +3,9 @@
 #include <fstream>
 #include <sstream>
 #include <cstdio>
+#include <map>
+#include <ctime>
+#include <iomanip>
 
 TimetableGenerator::TimetableGenerator(DatabaseManager& db)
     : database(db), generated(false) {
@@ -31,6 +34,22 @@ bool TimetableGenerator::generate() {
     schedule.push_back("Monday,4,05-01-2026,CN601,CT-24139 to CT-24203,Room#3,55/55");
     schedule.push_back("Monday,4,05-01-2026,CN601,CT-24205 to CT-24269,Room#4,55/55");
     schedule.push_back("Monday,4,05-01-2026,CN601,CT-24273 to CT-24320,Room#5,42/55");
+    
+    // Additional lab sessions for better room utilization
+    schedule.push_back("Tuesday,5,06-01-2026,DB301,CT-24001 to CT-24055,Lab1,55/55");
+    schedule.push_back("Tuesday,5,06-01-2026,OOP201,CT-24056 to CT-24110,Lab2,55/55");
+    schedule.push_back("Wednesday,6,07-01-2026,SE701,CT-24111 to CT-24165,Lab3,55/55");
+    schedule.push_back("Wednesday,6,07-01-2026,WD801,CT-24166 to CT-24220,Lab4,55/55");
+    schedule.push_back("Thursday,7,08-01-2026,CC901,CT-24221 to CT-24275,Lab5,55/55");
+    schedule.push_back("Thursday,7,08-01-2026,CY102,CT-24276 to CT-24320,Lab1,45/55");
+    
+    // Additional sessions using Room#6 through Room#11
+    schedule.push_back("Friday,8,09-01-2026,DS501,CT-24001 to CT-24055,Room#6,55/55");
+    schedule.push_back("Friday,8,09-01-2026,DS501,CT-24056 to CT-24110,Room#7,55/55");
+    schedule.push_back("Saturday,9,10-01-2026,WD801,CT-24111 to CT-24165,Room#8,55/55");
+    schedule.push_back("Saturday,9,10-01-2026,WD801,CT-24166 to CT-24220,Room#9,55/55");
+    schedule.push_back("Sunday,10,11-01-2026,SE701,CT-24221 to CT-24275,Room#10,55/55");
+    schedule.push_back("Sunday,10,11-01-2026,SE701,CT-24276 to CT-24320,Room#11,45/55");
     
     generated = true;
     return true;
@@ -108,18 +127,30 @@ bool TimetableGenerator::exportToCSV(const std::string& filename) {
             } else if (courseId == "CN601") {
                 courseName = "Computer Networks";
                 section = "5-Jan";
+            } else if (courseId == "DB301") {
+                courseName = "Database Systems";
+                section = "6-Jan";
+            } else if (courseId == "OOP201") {
+                courseName = "Object Oriented Programming";
+                section = "6-Jan";
+            } else if (courseId == "SE701") {
+                courseName = "Software Engineering";
+                section = "7-Jan";
+            } else if (courseId == "WD801") {
+                courseName = "Web Development";
+                section = "7-Jan";
+            } else if (courseId == "CC901") {
+                courseName = "Cloud Computing";
+                section = "8-Jan";
             } else if (courseId == "CY102") {
                 courseName = "Cybersecurity";
-                section = "2-Jan";
+                section = "8-Jan";
             } else if (courseId == "DS501") {
                 courseName = "Data Structures";
                 section = "4-Jan";
-            } else if (courseId == "WD801") {
-                courseName = "Web Development";
-                section = "3-Jan";
-            } else if (courseId == "OOP201") {
-                courseName = "Object Oriented";
-                section = "2-Jan";
+            } else {
+                courseName = "Unknown Course";
+                section = "1-Jan";
             }
 
             // Write in the new format
@@ -410,6 +441,180 @@ std::vector<std::string> TimetableGenerator::getSchedule() const {
 
 bool TimetableGenerator::isGenerated() const {
     return generated;
+}
+
+std::vector<std::pair<std::string, std::string>> TimetableGenerator::getCoursesWithDates() const {
+    std::vector<std::pair<std::string, std::string>> courses;
+    
+    if (!generated || schedule.empty()) {
+        return courses;
+    }
+    
+    // Extract unique courses and their dates from the schedule
+    std::map<std::string, std::string> courseMap;
+    
+    for (const auto& entry : schedule) {
+        try {
+            std::string day, dayNum, date, courseId;
+            size_t nextPos;
+            std::string str = entry;
+            
+            // Parse day
+            nextPos = str.find(","); 
+            day = str.substr(0, nextPos); 
+            str = str.substr(nextPos + 1);
+            
+            // Parse day number
+            nextPos = str.find(","); 
+            dayNum = str.substr(0, nextPos); 
+            str = str.substr(nextPos + 1);
+            
+            // Parse date
+            nextPos = str.find(","); 
+            date = str.substr(0, nextPos); 
+            str = str.substr(nextPos + 1);
+            
+            // Parse courseId
+            nextPos = str.find(","); 
+            courseId = str.substr(0, nextPos);
+            
+            // Store course and date (only store first occurrence of each course)
+            if (courseMap.find(courseId) == courseMap.end()) {
+                courseMap[courseId] = date;
+            }
+        } catch (const std::exception& e) {
+            std::cerr << "Error parsing schedule entry: " << e.what() << std::endl;
+            continue;
+        }
+    }
+    
+    // Convert map to vector
+    for (const auto& pair : courseMap) {
+        courses.push_back(pair);
+    }
+    
+    return courses;
+}
+
+bool TimetableGenerator::updateCourseDate(const std::string& courseId, const std::string& newDate) {
+    if (!generated || schedule.empty()) {
+        return false;
+    }
+    
+    // Helper function to get day name from date (DD-MM-YYYY format)
+    auto getDayName = [](const std::string& dateStr) -> std::string {
+        try {
+            // Parse DD-MM-YYYY format
+            int day = std::stoi(dateStr.substr(0, 2));
+            int month = std::stoi(dateStr.substr(3, 2));
+            int year = std::stoi(dateStr.substr(6, 4));
+            
+            std::tm tm = {};
+            tm.tm_year = year - 1900;
+            tm.tm_mon = month - 1;
+            tm.tm_mday = day;
+            
+            std::time_t time = std::mktime(&tm);
+            std::tm* timeinfo = std::localtime(&time);
+            
+            const char* days[] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+            return std::string(days[timeinfo->tm_wday]);
+        } catch (...) {
+            return "Monday"; // Default fallback
+        }
+    };
+    
+    // Helper function to calculate day number from start date
+    auto getDayNumber = [](const std::string& dateStr, const std::string& startDate) -> std::string {
+        try {
+            // Parse both dates
+            int day1 = std::stoi(dateStr.substr(0, 2));
+            int month1 = std::stoi(dateStr.substr(3, 2));
+            int year1 = std::stoi(dateStr.substr(6, 4));
+            
+            int day2 = std::stoi(startDate.substr(0, 2));
+            int month2 = std::stoi(startDate.substr(3, 2));
+            int year2 = std::stoi(startDate.substr(6, 4));
+            
+            std::tm tm1 = {};
+            tm1.tm_year = year1 - 1900;
+            tm1.tm_mon = month1 - 1;
+            tm1.tm_mday = day1;
+            
+            std::tm tm2 = {};
+            tm2.tm_year = year2 - 1900;
+            tm2.tm_mon = month2 - 1;
+            tm2.tm_mday = day2;
+            
+            std::time_t time1 = std::mktime(&tm1);
+            std::time_t time2 = std::mktime(&tm2);
+            
+            double diff = std::difftime(time1, time2) / (24 * 60 * 60);
+            int dayNumber = static_cast<int>(diff) + 1;
+            
+            return std::to_string(dayNumber > 0 ? dayNumber : 1);
+        } catch (...) {
+            return "1"; // Default fallback
+        }
+    };
+    
+    bool updated = false;
+    std::string newDayName = getDayName(newDate);
+    std::string newDayNum = getDayNumber(newDate, startDate);
+    
+    // Update all schedule entries for the specified course
+    for (auto& entry : schedule) {
+        try {
+            std::string day, dayNum, date, entryId, rollNumbers, room, students;
+            size_t nextPos;
+            std::string str = entry;
+            
+            // Parse day
+            nextPos = str.find(","); 
+            day = str.substr(0, nextPos); 
+            str = str.substr(nextPos + 1);
+            
+            // Parse day number
+            nextPos = str.find(","); 
+            dayNum = str.substr(0, nextPos); 
+            str = str.substr(nextPos + 1);
+            
+            // Parse date
+            nextPos = str.find(","); 
+            date = str.substr(0, nextPos); 
+            str = str.substr(nextPos + 1);
+            
+            // Parse courseId
+            nextPos = str.find(","); 
+            entryId = str.substr(0, nextPos);
+            str = str.substr(nextPos + 1);
+            
+            // If this entry matches the course we want to update
+            if (entryId == courseId) {
+                // Parse remaining fields
+                nextPos = str.find(","); 
+                rollNumbers = str.substr(0, nextPos); 
+                str = str.substr(nextPos + 1);
+                
+                nextPos = str.find(","); 
+                room = str.substr(0, nextPos); 
+                str = str.substr(nextPos + 1);
+                
+                students = str; // Remaining string
+                
+                // Rebuild the entry with new date, day name, and day number
+                entry = newDayName + "," + newDayNum + "," + newDate + "," + 
+                       courseId + "," + rollNumbers + "," + room + "," + students;
+                
+                updated = true;
+            }
+        } catch (const std::exception& e) {
+            std::cerr << "Error updating schedule entry: " << e.what() << std::endl;
+            continue;
+        }
+    }
+    
+    return updated;
 }
 
 void TimetableGenerator::cleanup() {

@@ -22,6 +22,10 @@ public:
     std::vector<std::string> getSchedule() const;
     bool isGenerated() const;
     
+    // Methods for changing test dates
+    std::vector<std::pair<std::string, std::string>> getCoursesWithDates() const;
+    bool updateCourseDate(const std::string& courseId, const std::string& newDate);
+    
 private:
     DatabaseManager& database;
     bool generated;
